@@ -6,13 +6,15 @@ const Viewer = () => {
   const navigate = useNavigate();
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [projectExists, setProjectExists] = useState(true);
+  const [projectName, setProjectName] = useState(id);
 
   useEffect(() => {
     fetch('/projects.json')
       .then(res => res.json())
       .then(projects => {
-        const exists = projects.some(p => p.id === id);
-        setProjectExists(exists);
+        const project = projects.find(p => p.id === id);
+        setProjectExists(Boolean(project));
+        setProjectName(project?.name || id);
       })
       .catch(() => setProjectExists(false));
   }, [id]);
@@ -36,15 +38,16 @@ const Viewer = () => {
       {!isFullscreen && (
         <div className="viewer-toolbar">
           <button onClick={() => navigate('/')} className="back-button">
-            ← Back to Hub
+            &lt; Back to Hub
           </button>
-          <div className="project-title">Project: {id}</div>
+          <div className="project-title">{id} - {projectName}</div>
           <button
             onClick={() => setIsFullscreen(true)}
             className="fullscreen-btn"
+            aria-label="Enter fullscreen"
             title="Enter Fullscreen"
           >
-            ⛶
+            []
           </button>
         </div>
       )}
@@ -59,9 +62,10 @@ const Viewer = () => {
           <button
             onClick={() => setIsFullscreen(false)}
             className="exit-fullscreen-btn"
+            aria-label="Exit fullscreen"
             title="Exit Fullscreen"
           >
-            ✕
+            X
           </button>
         )}
       </div>

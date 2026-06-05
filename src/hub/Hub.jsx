@@ -36,6 +36,10 @@ const Hub = () => {
   if (loading) return <div className="hub-status">Loading projects...</div>;
   if (error) return <div className="hub-status error">Error: {error}</div>;
 
+  const emptyMessage = projects.length === 0
+    ? 'No projects published yet. Project 001 is next.'
+    : 'No projects found matching your criteria.';
+
   return (
     <div className="hub-container">
       <header className="hub-header">
@@ -86,7 +90,7 @@ const Hub = () => {
             </Link>
           ))
         ) : (
-          <div className="no-results">No projects found matching your criteria.</div>
+          <div className="no-results">{emptyMessage}</div>
         )}
       </div>
     </div>

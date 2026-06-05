@@ -1,12 +1,1 @@
-[
-  {
-    "id": "000-demo",
-    "name": "Dark Preview Card",
-    "description": "Small layout exercise focused on contrast, spacing, and embedded project preview behavior."
-  },
-  {
-    "id": "001-demo",
-    "name": "Status Panel",
-    "description": "Compact interface exercise with a simple status message and console event check."
-  }
-]
+[]

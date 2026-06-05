@@ -2,6 +2,7 @@
   "name": "javascript-100",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@10.33.0",
   "dependencies": {
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
@@ -9,11 +10,15 @@
     "react-scripts": "^5.0.1"
   },
   "scripts": {
+    "sync:projects": "node scripts/sync-projects.js",
+    "predev": "node scripts/sync-projects.js",
+    "dev": "react-scripts start",
+    "prestart": "node scripts/sync-projects.js",
     "start": "react-scripts start",
+    "prebuild": "node scripts/sync-projects.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "dev": "react-scripts start"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

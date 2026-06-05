@@ -1,8 +1,10 @@
 # dependencies
 node_modules
+package-lock.json
 
 # production build
 build
+public/projects/
 
 # logs
 *.log
@@ -10,6 +12,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+tmp/
 
 # local tooling
 .vscode/*
