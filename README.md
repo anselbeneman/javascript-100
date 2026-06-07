@@ -11,7 +11,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for project rules, validation expectation
 ## Structure
 
 ```text
-NNN/                  Standalone project folders when published
+001/                  Ray Tracing Studio
+NNN/                  Additional standalone project folders when published
 public/               Static shell assets
 public/projects/      Generated iframe copy, do not edit directly
 schemas/              JSON Schemas for project metadata
@@ -45,6 +46,8 @@ pnpm run icons:generate
 pnpm run sync:projects
 pnpm run verify:github
 pnpm run verify:projects
+pnpm run test:001
+pnpm run smoke:projects
 pnpm run budget:build
 pnpm run preview
 pnpm run preview:check
@@ -61,7 +64,7 @@ Before publishing changes, run:
 pnpm run validate
 ```
 
-This syncs generated project assets, verifies GitHub repository config, verifies the project registry, checks standalone JavaScript syntax, validates hub SEO/social metadata, validates public discovery files, validates each project HTML metadata, checks DOM ids/selectors referenced by project scripts, confirms generated public copies match their source folders, confirms numbered projects stay standalone, builds the production bundle, checks the bundle size budget, and smoke tests production preview routes. GitHub Actions runs the same gate on pushes and pull requests.
+This syncs generated project assets, verifies GitHub repository config, verifies the project registry, runs dedicated tests for published project internals, checks standalone JavaScript syntax, smoke tests project workers, validates hub SEO/social metadata, validates public discovery files, validates each project HTML metadata, checks DOM ids/selectors referenced by project scripts, confirms generated public copies match their source folders, confirms numbered projects stay standalone, builds the production bundle, checks the bundle size budget, and smoke tests production preview routes. GitHub Actions runs the same gate on pushes and pull requests.
 
 The hub bundle budget is intentionally small because numbered projects are standalone iframe assets. Current limits are 96 KiB gzip JavaScript, 10 KiB gzip CSS, and 110 KiB gzip combined static JS/CSS.
 
@@ -78,6 +81,12 @@ The React router also includes an internal wildcard 404 route so unknown paths r
 The public folder also includes `robots.txt`, `sitemap.xml`, PNG install icons, and `site.webmanifest` so browsers, crawlers, and link preview tools have explicit production metadata.
 
 Production responses use explicit security headers, including a self-hosted Content Security Policy that permits local scripts, styles, images, workers, and same-origin project iframes while blocking remote code by default.
+
+## Projects
+
+### 001 - Ray Tracing Studio
+
+Vanilla JavaScript path tracing studio with Canvas 2D rendering, Web Worker tile rendering, pure JS render/canvas presenter cores, progressive sample accumulation, adaptive tile variance, ray-sphere and ray-plane intersections, diffuse, metal, glass, and emissive materials, checker surfaces, depth of field, ACES tone mapping, direct lighting, preview denoise, viewport-fit controls, quality profiles, live ETA/ray metrics, pause/resume, unit-tested math/render helpers, and PNG/JSON export.
 
 ## License
 

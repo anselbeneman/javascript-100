@@ -1,0 +1,453 @@
+:root {
+  --bg: #0b0d10;
+  --panel: #12161c;
+  --panel-2: #171d25;
+  --line: #26303c;
+  --text: #ecf2f8;
+  --muted: #9daab8;
+  --accent: #f7df1e;
+  --accent-2: #5dd6ff;
+  --accent-3: #ff9f5d;
+  --danger: #ff6b6b;
+  --shadow: rgba(0, 0, 0, 0.32);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(93, 214, 255, 0.14), transparent 28rem),
+    radial-gradient(circle at 80% 0%, rgba(247, 223, 30, 0.12), transparent 26rem),
+    var(--bg);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.studio-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 330px;
+  align-items: start;
+  gap: 14px;
+  padding: 14px;
+}
+
+.viewport-panel,
+.control-panel {
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(19, 25, 33, 0.94), rgba(11, 13, 16, 0.92)),
+    rgba(18, 22, 28, 0.88);
+  box-shadow: 0 24px 70px var(--shadow);
+}
+
+.viewport-panel {
+  position: sticky;
+  top: 14px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 10px;
+}
+
+.topbar {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 3;
+  display: flex;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+h2 {
+  margin: 0;
+}
+
+h2 {
+  font-size: 16px;
+}
+
+.status-pill {
+  min-width: 148px;
+  border: 1px solid var(--line);
+  background: rgba(13, 17, 23, 0.78);
+  color: var(--muted);
+  padding: 9px 12px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  backdrop-filter: blur(10px);
+}
+
+.status-pill.active {
+  border-color: rgba(93, 214, 255, 0.45);
+  color: var(--accent-2);
+}
+
+.status-pill.paused {
+  border-color: rgba(255, 159, 93, 0.5);
+  color: var(--accent-3);
+}
+
+.status-pill.done {
+  border-color: rgba(247, 223, 30, 0.5);
+  color: var(--accent);
+}
+
+.status-pill.error {
+  border-color: rgba(255, 107, 107, 0.55);
+  color: var(--danger);
+}
+
+.canvas-frame {
+  position: relative;
+  display: grid;
+  width: 100%;
+  max-width: 100%;
+  align-self: center;
+  border: 1px solid #1f2731;
+  background: #050608;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.025);
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  image-rendering: auto;
+}
+
+.render-overlay {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  display: grid;
+  gap: 6px;
+  width: min(280px, calc(100% - 28px));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(5, 6, 8, 0.68);
+  padding: 9px 10px;
+  color: var(--muted);
+  font-size: 12px;
+  backdrop-filter: blur(10px);
+  pointer-events: none;
+}
+
+.render-overlay-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+
+.render-overlay strong {
+  color: var(--text);
+}
+
+.render-timing {
+  color: rgba(236, 242, 248, 0.72);
+  font-size: 11px;
+}
+
+.progress-track {
+  height: 3px;
+  overflow: hidden;
+  background: rgba(236, 242, 248, 0.16);
+}
+
+.progress-track span {
+  display: block;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), rgba(93, 214, 255, 0.9));
+  transition: width 0.18s ease;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.metrics-grid article {
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.025), transparent),
+    var(--panel-2);
+  padding: 9px 10px;
+}
+
+.metrics-grid span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.metrics-grid strong {
+  display: block;
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+.control-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 0;
+  padding: 12px;
+}
+
+.control-section {
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.018), transparent),
+    var(--panel-2);
+  padding: 12px;
+}
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+details.control-section > .section-title {
+  margin-bottom: 0;
+  cursor: pointer;
+  list-style: none;
+}
+
+details.control-section[open] > .section-title {
+  margin-bottom: 10px;
+}
+
+details.control-section > .section-title::-webkit-details-marker {
+  display: none;
+}
+
+details.control-section > .section-title::after {
+  content: '+';
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  border: 1px solid rgba(247, 223, 30, 0.35);
+  color: var(--accent);
+  font-size: 14px;
+  line-height: 1;
+}
+
+details.control-section[open] > .section-title::after {
+  content: '-';
+}
+
+.section-title span {
+  color: var(--muted);
+  font-size: 12px;
+  margin-left: auto;
+}
+
+label {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 6px 8px;
+  color: var(--muted);
+  font-size: 12.5px;
+  margin-top: 10px;
+}
+
+label:first-of-type {
+  margin-top: 0;
+}
+
+select,
+input[type="range"] {
+  grid-column: 1 / -1;
+}
+
+select {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: #0d1117;
+  color: var(--text);
+  padding: 8px 10px;
+  outline: none;
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--accent);
+}
+
+.inline-toggle {
+  grid-template-columns: 1fr auto;
+}
+
+.inline-toggle input {
+  grid-column: auto;
+  justify-self: end;
+}
+
+output {
+  min-width: 42px;
+  color: var(--text);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: auto;
+}
+
+button {
+  border: 1px solid var(--line);
+  background: #0d1117;
+  color: var(--text);
+  padding: 10px 11px;
+  cursor: pointer;
+  font-weight: 800;
+  transition: border-color 0.18s ease, background 0.18s ease, transform 0.18s ease, opacity 0.18s ease;
+}
+
+button:hover {
+  border-color: var(--accent);
+  background: #101722;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+button:disabled:hover {
+  border-color: var(--line);
+  background: #0d1117;
+}
+
+#pauseButton {
+  border-color: rgba(93, 214, 255, 0.35);
+}
+
+#exportButton,
+#metadataButton {
+  border-color: rgba(247, 223, 30, 0.32);
+}
+
+@media (min-width: 941px) {
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .studio-shell {
+    height: 100dvh;
+    min-height: 0;
+    align-items: stretch;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .viewport-panel {
+    position: relative;
+    top: auto;
+    justify-content: flex-start;
+    min-height: 0;
+    padding: 8px;
+  }
+
+  .topbar {
+    top: 16px;
+    right: 16px;
+  }
+
+  .control-panel {
+    max-height: calc(100dvh - 20px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-color: rgba(157, 170, 184, 0.65) rgba(13, 17, 23, 0.35);
+    scrollbar-width: thin;
+  }
+
+  .control-panel::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .control-panel::-webkit-scrollbar-track {
+    background: rgba(13, 17, 23, 0.35);
+  }
+
+  .control-panel::-webkit-scrollbar-thumb {
+    background: rgba(157, 170, 184, 0.65);
+    border: 2px solid rgba(13, 17, 23, 0.35);
+  }
+}
+
+@media (max-width: 940px) {
+  .studio-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .viewport-panel {
+    position: relative;
+    top: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .studio-shell {
+    padding: 10px;
+  }
+
+  .actions {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .status-pill {
+    min-width: 128px;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}

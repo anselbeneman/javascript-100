@@ -1,0 +1,15 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "001",
+  "name": "Ray Tracing Studio",
+  "description": "Vanilla JavaScript path tracing studio with Canvas 2D rendering, Web Worker tile rendering, pure JS render/canvas presenter cores, progressive sample accumulation, adaptive tile variance, ray-sphere and ray-plane intersections, diffuse, metal, glass, and emissive materials, checker surfaces, depth of field, ACES tone mapping, direct lighting, preview denoise, viewport-fit controls, quality profiles, live ETA/ray metrics, pause/resume, unit-tested math/render helpers, and PNG/JSON export.",
+  "category": "Rendering",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Web Workers",
+    "Path Tracing",
+    "Adaptive Sampling"
+  ]
+}

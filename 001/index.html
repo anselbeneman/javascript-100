@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Vanilla JavaScript path tracing studio using Canvas, Web Workers, depth of field, ACES tone mapping, quality profiles, materials, and progressive rendering."
+  >
+  <title>001 - Ray Tracing Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="studio-shell">
+    <section class="viewport-panel" aria-label="Path tracer viewport">
+      <header class="topbar">
+        <div class="status-pill" id="renderStatus">Preparing renderer</div>
+      </header>
+
+      <div class="canvas-frame">
+        <canvas id="renderCanvas" width="960" height="540"></canvas>
+        <div class="render-overlay" id="renderOverlay">
+          <div class="render-overlay-row">
+            <span>Progressive path tracing</span>
+            <strong id="sampleBadge">0 / 0 samples</strong>
+          </div>
+          <div class="progress-track" aria-hidden="true">
+            <span id="progressBar"></span>
+          </div>
+          <div class="render-overlay-row render-timing">
+            <span id="elapsedBadge">Elapsed 0s</span>
+            <span id="etaBadge">ETA --</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="control-panel" aria-label="Path tracer controls">
+      <section class="control-section">
+        <div class="section-title">
+          <h2>Technical panel</h2>
+          <span>Live render</span>
+        </div>
+        <div class="metrics-grid" aria-label="Render metrics">
+          <article>
+            <span>Rays / sec</span>
+            <strong id="raysPerSecondMetric">0</strong>
+          </article>
+          <article>
+            <span>Samples</span>
+            <strong id="samplesMetric">0</strong>
+          </article>
+          <article>
+            <span>Ray count</span>
+            <strong id="raysMetric">0</strong>
+          </article>
+          <article>
+            <span>Workers</span>
+            <strong id="workersMetric">0</strong>
+          </article>
+        </div>
+      </section>
+
+      <details class="control-section" open>
+        <summary class="section-title">
+          <h2>Scene</h2>
+          <span id="sceneLabel">Showcase Trio</span>
+        </summary>
+        <label>
+          Preset
+          <select id="scenePreset">
+            <option value="showcase" selected>Showcase Trio</option>
+            <option value="studio">Studio Spheres</option>
+            <option value="glass">Glass Lab</option>
+            <option value="metal">Metal Gallery</option>
+          </select>
+        </label>
+      </details>
+
+      <details class="control-section" open>
+        <summary class="section-title">
+          <h2>Quality</h2>
+          <span id="qualityLabel">Preview</span>
+        </summary>
+        <label>
+          Profile
+          <select id="qualityProfile">
+            <option value="preview" selected>Preview - fast</option>
+            <option value="final">Final - detailed</option>
+            <option value="cinematic">Cinematic - slow</option>
+          </select>
+        </label>
+        <label>
+          Resolution
+          <select id="resolutionSelect">
+            <option value="384x216" selected>384 x 216</option>
+            <option value="480x270">480 x 270</option>
+            <option value="640x360">640 x 360</option>
+            <option value="800x450">800 x 450</option>
+            <option value="960x540">960 x 540</option>
+          </select>
+        </label>
+        <label>
+          Bounces
+          <input id="bouncesInput" type="range" min="1" max="8" value="4">
+          <output id="bouncesValue">4</output>
+        </label>
+        <label>
+          Samples target
+          <input id="sampleTargetInput" type="range" min="16" max="512" step="16" value="96">
+          <output id="sampleTargetValue">96</output>
+        </label>
+      </details>
+
+      <details class="control-section">
+        <summary class="section-title">
+          <h2>Camera</h2>
+          <span>Orbital</span>
+        </summary>
+        <label>
+          Yaw
+          <input id="cameraYawInput" type="range" min="-60" max="60" value="0">
+          <output id="cameraYawValue">0</output>
+        </label>
+        <label>
+          Height
+          <input id="cameraHeightInput" type="range" min="1" max="4" step="0.1" value="1.5">
+          <output id="cameraHeightValue">1.5</output>
+        </label>
+        <label>
+          Field of view
+          <input id="fovInput" type="range" min="32" max="72" value="40">
+          <output id="fovValue">40</output>
+        </label>
+        <label>
+          Focus distance
+          <input id="focusDistanceInput" type="range" min="2.5" max="8" step="0.1" value="5.2">
+          <output id="focusDistanceValue">5.2</output>
+        </label>
+        <label>
+          Lens blur
+          <input id="apertureInput" type="range" min="0" max="0.16" step="0.01" value="0">
+          <output id="apertureValue">0.00</output>
+        </label>
+      </details>
+
+      <details class="control-section">
+        <summary class="section-title">
+          <h2>Light</h2>
+          <span>Area source</span>
+        </summary>
+        <label>
+          Intensity
+          <input id="lightInput" type="range" min="0.6" max="3.2" step="0.1" value="1.8">
+          <output id="lightValue">1.8</output>
+        </label>
+        <label>
+          Warmth
+          <input id="warmthInput" type="range" min="0" max="1" step="0.05" value="0.35">
+          <output id="warmthValue">0.35</output>
+        </label>
+      </details>
+
+      <details class="control-section">
+        <summary class="section-title">
+          <h2>Look</h2>
+          <span>ACES</span>
+        </summary>
+        <label>
+          Exposure
+          <input id="exposureInput" type="range" min="0.6" max="1.8" step="0.05" value="1.1">
+          <output id="exposureValue">1.10</output>
+        </label>
+        <label>
+          Contrast
+          <input id="contrastInput" type="range" min="0.8" max="1.35" step="0.05" value="1.05">
+          <output id="contrastValue">1.05</output>
+        </label>
+        <label class="inline-toggle">
+          Preview denoise
+          <input id="denoiseInput" type="checkbox" checked>
+        </label>
+      </details>
+
+      <section class="actions">
+        <button id="pauseButton" type="button">Pause render</button>
+        <button id="restartButton" type="button">Restart render</button>
+        <button id="exportButton" type="button">Export PNG</button>
+        <button id="metadataButton" type="button">Export JSON</button>
+      </section>
+    </aside>
+  </main>
+
+  <script src="studio-core.js"></script>
+  <script src="canvas-presenter.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
