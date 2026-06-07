@@ -90,7 +90,7 @@ Vanilla JavaScript path tracing studio with Canvas 2D rendering, Web Worker tile
 
 ## License
 
-MIT. See [LICENSE](LICENSE).
+Proprietary. All rights reserved. See [LICENSE](LICENSE).
 
 ## Add A Project
 
