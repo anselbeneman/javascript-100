@@ -6,6 +6,12 @@ package-lock.json
 build
 public/projects/
 
+# private planning
+ROADMAP.md
+NOTES.md
+TODO.md
+*.local.md
+
 # logs
 *.log
 npm-debug.log*
@@ -13,6 +19,14 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 tmp/
+
+# test and tooling output
+coverage/
+test-results/
+playwright-report/
+.nyc_output/
+.cache/
+.eslintcache
 
 # local tooling
 .vscode/*

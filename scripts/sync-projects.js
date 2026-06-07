@@ -34,6 +34,7 @@ function readProjectMetadata(projectId) {
     throw new Error(`Project ${projectId} has mismatched metadata id: ${metadata.id}`);
   }
 
+  delete metadata.$schema;
   return metadata;
 }
 

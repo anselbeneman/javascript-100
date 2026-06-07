@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://javascript-100-ansel.vercel.app/sitemap.xml

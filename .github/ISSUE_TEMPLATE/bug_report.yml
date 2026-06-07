@@ -1,0 +1,62 @@
+name: Bug report
+description: Report a broken project, route, layout, or browser behavior.
+title: "bug: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for reproducible problems in the hub or a numbered project.
+  - type: input
+    id: project
+    attributes:
+      label: Project or route
+      description: Use the project id, viewer route, or hub.
+      placeholder: "hub"
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened?
+      description: Describe the visible issue or runtime failure.
+      placeholder: "The canvas stays blank after..."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: Describe what should happen instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+      description: Keep this short and exact.
+      placeholder: |
+        1. Open the affected route
+        2. Change the relevant control
+        3. Observe the broken behavior
+    validations:
+      required: true
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options:
+        - Chrome
+        - Edge
+        - Firefox
+        - Safari
+        - Mobile browser
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation notes
+      description: Include console errors, screenshots, or whether `pnpm run validate` passes.

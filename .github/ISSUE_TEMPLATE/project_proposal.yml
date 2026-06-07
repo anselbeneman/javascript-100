@@ -1,0 +1,49 @@
+name: Project proposal
+description: Propose a new standalone JavaScript project for the 100-project roadmap.
+title: "project: "
+labels:
+  - project
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Project title
+      placeholder: "Project name"
+    validations:
+      required: true
+  - type: textarea
+    id: value
+    attributes:
+      label: Why this belongs in JavaScript 100
+      description: Focus on the technical skill, browser API, algorithm, or portfolio value.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Minimum viable scope
+      description: List the smallest complete version worth building.
+      placeholder: |
+        - Core browser interaction
+        - Several meaningful presets
+        - Performance metrics
+        - Export or shareable output
+    validations:
+      required: true
+  - type: dropdown
+    id: difficulty
+    attributes:
+      label: Difficulty
+      options:
+        - Intermediate
+        - Advanced
+        - Expert
+    validations:
+      required: true
+  - type: input
+    id: category
+    attributes:
+      label: Category
+      placeholder: "Category"
+    validations:
+      required: true

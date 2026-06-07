@@ -1,0 +1,18 @@
+name: Question
+description: Ask a focused question about the hub, project architecture, or validation flow.
+title: "question: "
+labels:
+  - question
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: Keep it specific enough to answer with a file, command, or project reference.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Link the relevant project, command, route, or file if possible.
