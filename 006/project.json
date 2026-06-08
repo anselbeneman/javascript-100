@@ -1,0 +1,17 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "006",
+  "name": "Fractal Explorer Studio",
+  "description": "Vanilla JavaScript fractal explorer with Canvas 2D rendering, Web Worker pixel generation, Mandelbrot and Julia sets, smooth coloring, deterministic presets, pointer zoom, palette controls, render diagnostics, benchmark timing, JSON export, shareable state, and PNG capture.",
+  "category": "Generative Systems",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Web Workers",
+    "Fractals",
+    "Typed Arrays",
+    "Pointer Events",
+    "Diagnostics"
+  ]
+}
