@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Vanilla JavaScript pathfinding algorithm laboratory using Canvas 2D, deterministic weighted grids, A Star, Dijkstra, BFS, Greedy search, pointer editing, diagnostics, JSON export, and PNG capture."
+  >
+  <title>004 - Pathfinding Algorithm Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="path-shell" aria-labelledby="project-title">
+    <h1 id="project-title" class="visually-hidden">Pathfinding Algorithm Lab</h1>
+
+    <section class="viewport-panel" aria-label="Pathfinding canvas">
+      <div class="canvas-frame" id="canvasFrame">
+        <canvas id="pathCanvas" width="1280" height="720" aria-label="Interactive pathfinding grid"></canvas>
+        <div class="canvas-readout" aria-hidden="true">
+          <span id="algorithmBadge">A Star</span>
+          <span id="presetBadge">Warehouse</span>
+          <span id="seedBadge">Seed 0</span>
+        </div>
+      </div>
+
+      <div class="metrics-bar" aria-label="Pathfinding metrics">
+        <div><span>Visited</span><strong id="visitedValue">0</strong></div>
+        <div><span>Frontier</span><strong id="frontierValue">0</strong></div>
+        <div><span>Path</span><strong id="pathValue">0</strong></div>
+        <div><span>Cost</span><strong id="costValue">0</strong></div>
+        <div><span>Turns</span><strong id="turnsValue">0</strong></div>
+        <div><span>Time</span><strong id="timeValue">0.00 ms</strong></div>
+        <div><span>Density</span><strong id="densityMetric">0%</strong></div>
+        <div><span>Status</span><strong id="statusValue" aria-live="polite">Ready</strong></div>
+      </div>
+    </section>
+
+    <aside class="control-panel" aria-label="Pathfinding controls">
+      <section class="control-group" aria-labelledby="scene-heading">
+        <h2 id="scene-heading">Scene</h2>
+        <label for="presetSelect">Preset</label>
+        <select id="presetSelect">
+          <option value="warehouse" selected>Warehouse</option>
+          <option value="cavern">Cavern</option>
+          <option value="city">City Blocks</option>
+          <option value="maze">Maze Lines</option>
+        </select>
+
+        <label for="algorithmSelect">Algorithm</label>
+        <select id="algorithmSelect">
+          <option value="astar" selected>A Star</option>
+          <option value="dijkstra">Dijkstra</option>
+          <option value="bfs">BFS</option>
+          <option value="greedy">Greedy</option>
+        </select>
+
+        <label for="drawModeSelect">Pointer Mode</label>
+        <select id="drawModeSelect">
+          <option value="wall" selected>Wall</option>
+          <option value="weight">Weight</option>
+          <option value="erase">Erase</option>
+          <option value="start">Start</option>
+          <option value="goal">Goal</option>
+        </select>
+
+        <div class="button-row">
+          <button id="playButton" type="button">Run</button>
+          <button id="stepButton" type="button">Step</button>
+          <button id="regenerateButton" type="button">Regenerate</button>
+        </div>
+      </section>
+
+      <section class="control-group" aria-labelledby="grid-heading">
+        <h2 id="grid-heading">Grid</h2>
+        <label for="columnsRange">
+          <span>Columns</span>
+          <output id="columnsValue" for="columnsRange">58</output>
+        </label>
+        <input id="columnsRange" type="range" min="28" max="88" step="2" value="58">
+
+        <label for="rowsRange">
+          <span>Rows</span>
+          <output id="rowsValue" for="rowsRange">36</output>
+        </label>
+        <input id="rowsRange" type="range" min="18" max="56" step="2" value="36">
+
+        <label for="densityRange">
+          <span>Obstacles</span>
+          <output id="densityValue" for="densityRange">27%</output>
+        </label>
+        <input id="densityRange" type="range" min="4" max="46" step="1" value="27">
+
+        <label for="weightRange">
+          <span>Weights</span>
+          <output id="weightValue" for="weightRange">34%</output>
+        </label>
+        <input id="weightRange" type="range" min="0" max="75" step="1" value="34">
+      </section>
+
+      <section class="control-group" aria-labelledby="solver-heading">
+        <h2 id="solver-heading">Solver</h2>
+        <label for="speedRange">
+          <span>Speed</span>
+          <output id="speedValue" for="speedRange">18x</output>
+        </label>
+        <input id="speedRange" type="range" min="1" max="60" step="1" value="18">
+
+        <label for="heuristicRange">
+          <span>Heuristic</span>
+          <output id="heuristicValue" for="heuristicRange">1.00</output>
+        </label>
+        <input id="heuristicRange" type="range" min="0" max="2" step="0.05" value="1">
+
+        <label class="toggle-row" for="diagonalToggle">
+          <span>Diagonal Movement</span>
+          <input id="diagonalToggle" type="checkbox">
+        </label>
+        <label class="toggle-row" for="weightsToggle">
+          <span>Show Weights</span>
+          <input id="weightsToggle" type="checkbox" checked>
+        </label>
+      </section>
+
+      <section class="control-group" aria-labelledby="evidence-heading">
+        <h2 id="evidence-heading">Evidence</h2>
+        <div class="button-row button-row-two">
+          <button id="pngButton" type="button">PNG</button>
+          <button id="jsonButton" type="button">JSON</button>
+        </div>
+        <button id="reportButton" type="button">Copy technical report</button>
+      </section>
+    </aside>
+  </main>
+  <script src="path-core.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

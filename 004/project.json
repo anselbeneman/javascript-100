@@ -1,0 +1,17 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "004",
+  "name": "Pathfinding Algorithm Lab",
+  "description": "Vanilla JavaScript pathfinding laboratory with Canvas 2D rendering, deterministic weighted grids, A Star, Dijkstra, BFS, and Greedy search modes, pointer editing, seeded map presets, animation controls, diagnostics, JSON export, technical reports, and PNG capture.",
+  "category": "Algorithms",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Graph Search",
+    "Priority Queue",
+    "Deterministic Maps",
+    "Pointer Events",
+    "Diagnostics"
+  ]
+}
