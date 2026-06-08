@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Vanilla JavaScript particle physics sandbox using Canvas 2D, spatial-grid collision detection, deterministic presets, pointer forces, import export tools, benchmarks, and live performance metrics."
+  >
+  <title>003 - Particle Physics Sandbox</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="sandbox-shell" aria-labelledby="project-title">
+    <h1 id="project-title" class="visually-hidden">Particle Physics Sandbox</h1>
+
+    <section class="viewport-panel" aria-label="Particle physics canvas">
+      <div class="canvas-frame" id="canvasFrame">
+        <canvas
+          id="particleCanvas"
+          width="1280"
+          height="720"
+          aria-label="Interactive particle physics simulation"
+        ></canvas>
+        <div class="canvas-readout" aria-hidden="true">
+          <span id="presetBadge">Orbit Field</span>
+          <span id="interactionBadge">Pointer attract</span>
+          <span id="seedValue">Seed 0</span>
+        </div>
+      </div>
+
+      <div class="metrics-bar" aria-label="Simulation metrics">
+        <div>
+          <span class="metric-label">FPS</span>
+          <strong id="fpsValue">0</strong>
+        </div>
+        <div>
+          <span class="metric-label">Particles</span>
+          <strong id="particlesValue">0</strong>
+        </div>
+        <div>
+          <span class="metric-label">Energy</span>
+          <strong id="energyValue">0</strong>
+        </div>
+        <div>
+          <span class="metric-label">Step</span>
+          <strong id="stepValue">0.0 ms</strong>
+        </div>
+        <div>
+          <span class="metric-label">Checks</span>
+          <strong id="checksValue">0</strong>
+        </div>
+        <div>
+          <span class="metric-label">Hits</span>
+          <strong id="collisionsValue">0</strong>
+        </div>
+        <div>
+          <span class="metric-label">Cells</span>
+          <strong id="cellsValue">0</strong>
+        </div>
+        <div>
+          <span class="metric-label">Spread</span>
+          <strong id="entropyValue">0.00</strong>
+        </div>
+        <div>
+          <span class="metric-label">Status</span>
+          <strong id="statusValue" aria-live="polite">Starting</strong>
+        </div>
+        <div>
+          <span class="metric-label">Bench</span>
+          <strong id="benchmarkValue">Not run</strong>
+        </div>
+      </div>
+    </section>
+
+    <aside class="control-panel" aria-label="Particle controls">
+      <section class="control-group" aria-labelledby="scene-heading">
+        <h2 id="scene-heading">Scene</h2>
+        <label for="presetSelect">Preset</label>
+        <select id="presetSelect">
+          <option value="orbit" selected>Orbit Field</option>
+          <option value="granular">Granular Fall</option>
+          <option value="fountain">Fountain Lab</option>
+          <option value="magnetic">Magnetic Swarm</option>
+        </select>
+
+        <label for="pointerModeSelect">Pointer Mode</label>
+        <select id="pointerModeSelect">
+          <option value="attract" selected>Attract</option>
+          <option value="repel">Repel</option>
+          <option value="stir">Stir</option>
+        </select>
+
+        <div class="button-row">
+          <button id="pauseButton" type="button">Pause</button>
+          <button id="resetButton" type="button">Reset</button>
+          <button id="randomizeButton" type="button">Randomize</button>
+        </div>
+      </section>
+
+      <section class="control-group" aria-labelledby="model-heading">
+        <h2 id="model-heading">Model</h2>
+        <label for="countRange">
+          <span>Particles</span>
+          <output id="countValue" for="countRange">240</output>
+        </label>
+        <input id="countRange" type="range" min="80" max="520" step="20" value="240">
+
+        <label for="radiusRange">
+          <span>Radius</span>
+          <output id="radiusValue" for="radiusRange">4.2 px</output>
+        </label>
+        <input id="radiusRange" type="range" min="2" max="8" step="0.2" value="4.2">
+
+        <label for="gravityRange">
+          <span>Gravity</span>
+          <output id="gravityValue" for="gravityRange">0.00</output>
+        </label>
+        <input id="gravityRange" type="range" min="-80" max="120" step="1" value="0">
+
+        <label for="dragRange">
+          <span>Drag</span>
+          <output id="dragValue" for="dragRange">0.995</output>
+        </label>
+        <input id="dragRange" type="range" min="970" max="999" step="1" value="995">
+
+        <label for="restitutionRange">
+          <span>Bounce</span>
+          <output id="restitutionValue" for="restitutionRange">0.82</output>
+        </label>
+        <input id="restitutionRange" type="range" min="25" max="95" step="1" value="82">
+
+        <label for="pointerForceRange">
+          <span>Pointer Force</span>
+          <output id="pointerForceValue" for="pointerForceRange">0.90</output>
+        </label>
+        <input id="pointerForceRange" type="range" min="0" max="180" step="1" value="90">
+      </section>
+
+      <section class="control-group" aria-labelledby="render-heading">
+        <h2 id="render-heading">Render</h2>
+        <label class="toggle-row" for="collisionToggle">
+          <span>Particle collisions</span>
+          <input id="collisionToggle" type="checkbox" checked>
+        </label>
+        <label class="toggle-row" for="trailToggle">
+          <span>Motion trails</span>
+          <input id="trailToggle" type="checkbox" checked>
+        </label>
+        <label class="toggle-row" for="gridToggle">
+          <span>Spatial grid</span>
+          <input id="gridToggle" type="checkbox">
+        </label>
+        <button id="spawnButton" type="button">Burst at center</button>
+      </section>
+
+      <section class="control-group" aria-labelledby="export-heading">
+        <h2 id="export-heading">Evidence</h2>
+        <div class="button-row button-row-two">
+          <button id="benchmarkButton" type="button">Benchmark</button>
+          <button id="shareButton" type="button">Copy link</button>
+        </div>
+        <div class="button-row button-row-two">
+          <button id="exportButton" type="button">Export JSON</button>
+          <button id="importButton" type="button">Import JSON</button>
+        </div>
+        <button id="reportButton" type="button">Copy technical report</button>
+        <input id="importFile" class="visually-hidden" type="file" accept="application/json">
+      </section>
+    </aside>
+  </main>
+  <script src="physics-core.js"></script>
+  <script src="analysis-tools.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

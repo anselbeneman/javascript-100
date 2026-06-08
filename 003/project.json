@@ -1,0 +1,17 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "003",
+  "name": "Particle Physics Sandbox",
+  "description": "Vanilla JavaScript particle physics sandbox with Canvas 2D rendering, deterministic presets, spatial-grid collision detection, pointer forces, pause reset randomize controls, responsive UI, import export tools, technical reports, share links, deterministic benchmarks, and live performance metrics.",
+  "category": "Simulation",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Particle Physics",
+    "Spatial Hashing",
+    "Pointer Events",
+    "Deterministic State",
+    "Performance Metrics"
+  ]
+}
