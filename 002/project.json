@@ -1,0 +1,17 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "002",
+  "name": "Fluid Simulation Studio",
+  "description": "Vanilla JavaScript fluid simulation with Canvas 2D rendering, a Web Worker solver, typed-array fields, pressure projection, vorticity controls, precomputed solid obstacle masks, deterministic scenario playback, replayable input traces with an inspector, fingerprint, integrity checks, and path overlay, diagnostic render modes, vector overlays, quality profiles, rolling percentile telemetry, budget-aware Auto Tune recommendations, percentile benchmark stability metrics, benchmark histograms, pure worker-core/worker-state/presenter/config/report/share-link helpers, reproducible JSON import/export, saved controls, and PNG export.",
+  "category": "Simulation",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "Web Workers",
+    "Fluid Simulation",
+    "Typed Arrays",
+    "Pointer Events",
+    "Diagnostics"
+  ]
+}

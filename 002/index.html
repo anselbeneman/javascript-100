@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Vanilla JavaScript fluid simulation studio using Canvas 2D, Web Workers, typed arrays, pressure projection, deterministic scenario playback, input trace recording, diagnostic views, solid obstacles, quality profiles, percentile telemetry, budget-aware Auto Tune, share links, and export tools."
+  >
+  <title>002 - Fluid Simulation Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="studio-shell" aria-labelledby="project-title">
+    <h1 id="project-title" class="visually-hidden">Fluid Simulation Studio</h1>
+
+    <section class="viewport-panel" aria-label="Interactive simulation canvas">
+        <div class="canvas-frame">
+          <canvas
+            id="fluidCanvas"
+            width="1280"
+            height="720"
+            aria-label="Interactive fluid simulation canvas"
+          ></canvas>
+          <div class="canvas-readout" aria-hidden="true">
+            <span id="modeBadge">Dye Field</span>
+            <span id="solverBadge">Projection 14</span>
+            <span id="scenarioBadge">Manual Input</span>
+            <span id="budgetBadge" data-state="idle">Budget --</span>
+          </div>
+        </div>
+        <div class="metrics-bar" aria-label="Simulation metrics">
+          <div>
+            <span class="metric-label">FPS</span>
+            <strong id="fpsValue">0</strong>
+          </div>
+          <div>
+            <span class="metric-label">Grid</span>
+            <strong id="cellsValue">80 x 80</strong>
+          </div>
+          <div>
+            <span class="metric-label">Frames</span>
+            <strong id="samplesValue">0</strong>
+          </div>
+          <div>
+            <span class="metric-label">Step</span>
+            <strong id="stepValue">0.0 ms</strong>
+          </div>
+          <div>
+            <span class="metric-label">P95</span>
+            <strong id="p95Value">0.0 ms</strong>
+          </div>
+          <div>
+            <span class="metric-label">Memory</span>
+            <strong id="memoryValue">0.00 MiB</strong>
+          </div>
+          <div>
+            <span class="metric-label">Density</span>
+            <strong id="densityValue">0.00</strong>
+          </div>
+          <div>
+            <span class="metric-label">Divergence</span>
+            <strong id="divergenceValue">0.000</strong>
+          </div>
+          <div>
+            <span class="metric-label">Bench</span>
+            <strong id="benchmarkValue">Not run</strong>
+          </div>
+          <div>
+            <span class="metric-label">Advice</span>
+            <strong id="adviceValue" data-state="collecting">Collect samples</strong>
+          </div>
+          <div>
+            <span class="metric-label">Trace</span>
+            <strong id="traceValue" data-state="idle">No trace</strong>
+          </div>
+          <div>
+            <span class="metric-label">Status</span>
+            <strong id="statusValue" aria-live="polite">Starting</strong>
+          </div>
+        </div>
+    </section>
+
+    <aside class="control-panel" aria-label="Fluid controls">
+        <section class="control-group" aria-labelledby="scene-heading">
+          <h2 id="scene-heading">Scene</h2>
+          <label for="profileSelect">Profile</label>
+          <select id="profileSelect">
+            <option value="performance">Performance</option>
+            <option value="balanced" selected>Balanced</option>
+            <option value="quality">Quality</option>
+            <option value="diagnostic">Diagnostic</option>
+            <option value="custom">Custom</option>
+          </select>
+
+          <label for="presetSelect">Preset</label>
+          <select id="presetSelect">
+            <option value="neon">Neon Ink</option>
+            <option value="smoke">Cold Smoke</option>
+            <option value="lava">Lava Lamp</option>
+            <option value="ocean">Ocean Wake</option>
+            <option value="aurora">Aurora Wake</option>
+          </select>
+
+          <label for="displaySelect">View</label>
+          <select id="displaySelect">
+            <option value="dye">Dye Field</option>
+            <option value="velocity">Velocity Field</option>
+            <option value="pressure">Pressure Map</option>
+            <option value="curl">Curl Map</option>
+          </select>
+
+          <label for="resolutionSelect">Simulation Grid</label>
+          <select id="resolutionSelect">
+            <option value="80" selected>80 x 80</option>
+            <option value="96">96 x 96</option>
+            <option value="128">128 x 128</option>
+            <option value="160">160 x 160</option>
+          </select>
+
+          <label for="scenarioSelect">Scenario</label>
+          <select id="scenarioSelect">
+            <option value="twin-vortex" selected>Twin Vortex</option>
+            <option value="shear-wake">Shear Wake</option>
+            <option value="spiral-bloom">Spiral Bloom</option>
+          </select>
+          <div class="scenario-actions">
+            <button id="scenarioButton" type="button">Run Scenario</button>
+            <button id="recordButton" type="button">Record Trace</button>
+            <button id="replayButton" type="button">Play Trace</button>
+            <button id="clearTraceButton" type="button">Clear Trace</button>
+          </div>
+        </section>
+
+        <section class="control-group" aria-labelledby="solver-heading">
+          <h2 id="solver-heading">Solver</h2>
+          <label for="forceRange">
+            Brush Force
+            <span id="forceValue">1150</span>
+          </label>
+          <input id="forceRange" type="range" min="300" max="2200" step="50" value="1150">
+
+          <label for="radiusRange">
+            Brush Radius
+            <span id="radiusValue">6.0%</span>
+          </label>
+          <input id="radiusRange" type="range" min="2" max="12" step="0.5" value="6">
+
+          <label for="dissipationRange">
+            Dye Hold
+            <span id="dissipationValue">98.5%</span>
+          </label>
+          <input id="dissipationRange" type="range" min="94" max="99.5" step="0.1" value="98.5">
+
+          <label for="velocityDecayRange">
+            Velocity Hold
+            <span id="velocityDecayValue">99.5%</span>
+          </label>
+          <input id="velocityDecayRange" type="range" min="96" max="99.9" step="0.1" value="99.5">
+
+          <label for="pressureRange">
+            Pressure Passes
+            <span id="pressureValue">14</span>
+          </label>
+          <input id="pressureRange" type="range" min="6" max="32" step="1" value="14">
+
+          <label for="swirlRange">
+            Vorticity
+            <span id="swirlValue">22</span>
+          </label>
+          <input id="swirlRange" type="range" min="0" max="50" step="1" value="22">
+
+          <label for="sourceRange">
+            Auto Sources
+            <span id="sourceValue">42%</span>
+          </label>
+          <input id="sourceRange" type="range" min="0" max="100" step="1" value="42">
+        </section>
+
+        <section class="control-group" aria-labelledby="trace-heading">
+          <h2 id="trace-heading">Trace Inspector</h2>
+          <div class="trace-grid">
+            <div>
+              <span>Events</span>
+              <strong id="traceEventsValue">0</strong>
+            </div>
+            <div>
+              <span>Duration</span>
+              <strong id="traceDurationValue">0.0 s</strong>
+            </div>
+            <div>
+              <span>Avg Gap</span>
+              <strong id="traceGapValue">0 ms</strong>
+            </div>
+            <div>
+              <span>Peak</span>
+              <strong id="tracePressureValue">0.00</strong>
+            </div>
+            <div>
+              <span>Travel</span>
+              <strong id="traceTravelValue">0.000</strong>
+            </div>
+            <div>
+              <span>Bounds</span>
+              <strong id="traceBoundsValue">--</strong>
+            </div>
+            <div>
+              <span>Hash</span>
+              <strong id="traceHashValue">--</strong>
+            </div>
+            <div>
+              <span>Check</span>
+              <strong id="traceIntegrityValue" data-state="missing">--</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="control-group" aria-labelledby="diagnostics-heading">
+          <h2 id="diagnostics-heading">Diagnostics</h2>
+          <label class="check-row" for="vectorToggle">
+            <span>Velocity Vectors</span>
+            <input id="vectorToggle" type="checkbox">
+          </label>
+          <label class="check-row" for="brushToggle">
+            <span>Brush Radius</span>
+            <input id="brushToggle" type="checkbox" checked>
+          </label>
+          <label class="check-row" for="obstacleToggle">
+            <span>Solid Obstacle</span>
+            <input id="obstacleToggle" type="checkbox" checked>
+          </label>
+          <label class="check-row" for="glowToggle">
+            <span>Render Glow</span>
+            <input id="glowToggle" type="checkbox" checked>
+          </label>
+          <label class="check-row" for="traceToggle">
+            <span>Trace Path</span>
+            <input id="traceToggle" type="checkbox" checked>
+          </label>
+        </section>
+
+        <section class="actions" aria-label="Simulation actions">
+          <button id="pauseButton" type="button">Pause</button>
+          <button id="resetButton" type="button">Reset</button>
+          <button id="defaultButton" type="button">Defaults</button>
+          <button id="benchmarkButton" type="button">Benchmark</button>
+          <button id="tuneButton" type="button">Auto Tune</button>
+          <button id="randomButton" type="button">Randomize</button>
+        </section>
+
+        <section class="control-group" aria-labelledby="export-heading">
+          <h2 id="export-heading">Export</h2>
+          <div class="export-actions">
+            <button id="exportImageButton" type="button">PNG</button>
+            <button id="exportConfigButton" type="button">JSON</button>
+            <button id="importConfigButton" type="button">Import</button>
+            <button id="copyLinkButton" type="button">Link</button>
+            <button id="copyReportButton" type="button">Report</button>
+          </div>
+          <input id="configFileInput" class="visually-hidden" type="file" accept="application/json,.json">
+        </section>
+    </aside>
+  </main>
+
+  <script src="config-tools.js"></script>
+  <script src="scenario-tools.js"></script>
+  <script src="telemetry-tools.js"></script>
+  <script src="replay-tools.js"></script>
+  <script src="fluid-presenter.js"></script>
+  <script src="browser-tools.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
