@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vanilla JavaScript cellular automata lab with Canvas 2D rendering, Web Worker simulation, editable life-like rules, deterministic seeded grids, pointer painting, live metrics, JSON export, and PNG capture.">
+  <title>007 - Cellular Automata Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="lab-shell" aria-labelledby="project-title">
+    <h1 id="project-title" class="visually-hidden">Cellular Automata Lab</h1>
+    <section class="viewport-panel" aria-label="Cellular automata canvas">
+      <div class="canvas-frame">
+        <canvas id="automataCanvas" width="180" height="110" aria-label="Cellular automata grid"></canvas>
+        <div class="readout" aria-hidden="true"><span id="presetBadge">Conway Life</span><span id="ruleBadge">B3/S23</span><span id="statusBadge">Ready</span></div>
+      </div>
+      <div class="metrics-bar" aria-label="Simulation metrics">
+        <div><span>Gen</span><strong id="generationValue">0</strong></div>
+        <div><span>Active</span><strong id="activeValue">0</strong></div>
+        <div><span>Coverage</span><strong id="coverageValue">0%</strong></div>
+        <div><span>Changed</span><strong id="changedValue">0</strong></div>
+        <div><span>Entropy</span><strong id="entropyValue">0.00</strong></div>
+        <div><span>Step</span><strong id="stepValue">0.00 ms</strong></div>
+      </div>
+    </section>
+    <aside class="control-panel" aria-label="Cellular automata controls">
+      <section class="control-group">
+        <h2>Model</h2>
+        <label for="presetSelect">Preset</label>
+        <select id="presetSelect"><option value="conway">Conway Life</option><option value="highlife">HighLife</option><option value="daynight">Day And Night</option><option value="brian">Brian's Brain</option><option value="cyclic">Cyclic Waves</option></select>
+        <label for="ruleInput">Rule</label>
+        <input id="ruleInput" type="text" value="B3/S23" spellcheck="false">
+        <label for="densityRange">Density <span id="densityValue">24%</span></label>
+        <input id="densityRange" type="range" min="0" max="100" value="24">
+        <label class="check-row" for="wrapToggle"><span>Wrap Edges</span><input id="wrapToggle" type="checkbox" checked></label>
+      </section>
+      <section class="control-group">
+        <h2>Paint</h2>
+        <label for="paintMode">Mode</label>
+        <select id="paintMode"><option value="draw">Draw</option><option value="erase">Erase</option><option value="toggle">Toggle</option><option value="cycle">Cycle</option></select>
+        <label for="brushRange">Brush <span id="brushValue">3</span></label>
+        <input id="brushRange" type="range" min="1" max="15" step="2" value="3">
+      </section>
+      <section class="control-group">
+        <h2>Run</h2>
+        <label for="speedRange">Speed <span id="speedValue">20/s</span></label>
+        <input id="speedRange" type="range" min="1" max="60" value="20">
+        <div class="actions"><button id="playButton" type="button">Pause</button><button id="stepButton" type="button">Step</button><button id="randomButton" type="button">Randomize</button><button id="clearButton" type="button">Clear</button></div>
+      </section>
+      <section class="control-group">
+        <h2>Export</h2>
+        <div class="actions"><button id="pngButton" type="button">PNG</button><button id="jsonButton" type="button">JSON</button></div>
+      </section>
+    </aside>
+  </main>
+  <script src="automata-core.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

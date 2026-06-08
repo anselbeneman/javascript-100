@@ -1,0 +1,10 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "007",
+  "name": "Cellular Automata Lab",
+  "description": "Vanilla JavaScript cellular automata lab with Canvas 2D rendering, a Web Worker simulation loop, editable life-like rules, Brian's Brain and cyclic automata presets, deterministic seeded grids, pointer painting, live metrics, PNG export, and compact JSON state export.",
+  "category": "Visual Systems",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": ["Canvas 2D", "Web Workers", "Cellular Automata", "Typed Arrays", "Pointer Events", "Export Tools"]
+}
