@@ -351,7 +351,9 @@ function smokePublishedProjects() {
     ['001', smokeRayTracer],
     ['002', smokeFluidSimulation],
     ['003', () => smokeStandaloneCanvasProject('003')],
+    ['004', () => smokeStandaloneCanvasProject('004')],
     ['005', () => smokeStandaloneCanvasProject('005')],
+    ['006', () => smokeStandaloneCanvasProject('006')],
     ['007', () => smokeStandaloneCanvasProject('007')],
     ['008', () => smokeStandaloneCanvasProject('008')],
   ]);

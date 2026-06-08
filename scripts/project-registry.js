@@ -8,7 +8,7 @@ function hasPublishMarker(rootDir, projectId) {
 }
 
 function readConfiguredProjectIds() {
-  return ['001', '002', '003', '005', '007', '008'];
+  return ['001', '002', '003', '004', '005', '006', '007', '008'];
 }
 
 function normalizeProjectIds(ids) {

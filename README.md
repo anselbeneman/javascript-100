@@ -14,7 +14,9 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for project rules, validation expectation
 001/                  Ray Tracing Studio
 002/                  Fluid Simulation Studio
 003/                  Particle Physics Sandbox
+004/                  Pathfinding Algorithm Lab
 005/                  Procedural Terrain Generator
+006/                  Fractal Explorer Studio
 007/                  Cellular Automata Lab
 008/                  Audio Spectrum Visualizer
 NNN/                  Additional standalone project folders when published
@@ -102,9 +104,17 @@ Vanilla JavaScript fluid simulation with Canvas 2D rendering, a Web Worker solve
 
 Vanilla JavaScript particle physics sandbox with Canvas 2D rendering, deterministic presets, spatial-grid collision detection, pointer forces, import/export tools, technical reports, share links, deterministic benchmarks, and live performance metrics.
 
+### 004 - Pathfinding Algorithm Lab
+
+Vanilla JavaScript pathfinding laboratory with Canvas 2D rendering, deterministic weighted grids, A Star, Dijkstra, BFS, and Greedy search modes, pointer editing, seeded map presets, animation controls, diagnostics, JSON export, technical reports, and PNG capture.
+
 ### 005 - Procedural Terrain Generator
 
 Vanilla JavaScript procedural terrain generator with Canvas 2D rendering, deterministic seed hashing, fractal value noise, domain warping, thermal erosion passes, biome classification, river and contour overlays, pointer sampling diagnostics, JSON configuration export, and PNG export.
+
+### 006 - Fractal Explorer Studio
+
+Vanilla JavaScript fractal explorer with Canvas 2D rendering, Web Worker pixel generation, Mandelbrot and Julia sets, smooth coloring, deterministic presets, pointer zoom, palette controls, benchmark timing, shareable state, JSON export, and PNG capture.
 
 ### 007 - Cellular Automata Lab
 

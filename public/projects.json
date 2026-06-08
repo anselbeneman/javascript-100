@@ -46,6 +46,22 @@
     ]
   },
   {
+    "id": "004",
+    "name": "Pathfinding Algorithm Lab",
+    "description": "Vanilla JavaScript pathfinding laboratory with Canvas 2D rendering, deterministic weighted grids, A Star, Dijkstra, BFS, and Greedy search modes, pointer editing, seeded map presets, animation controls, diagnostics, JSON export, technical reports, and PNG capture.",
+    "category": "Algorithms",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Graph Search",
+      "Priority Queue",
+      "Deterministic Maps",
+      "Pointer Events",
+      "Diagnostics"
+    ]
+  },
+  {
     "id": "005",
     "name": "Procedural Terrain Generator",
     "description": "Vanilla JavaScript procedural terrain generator with Canvas 2D rendering, Web Worker map generation, deterministic seed hashing, fractal value noise, domain warping, thermal erosion passes, biome classification, river and contour overlays, lighting from computed slopes, pointer sampling diagnostics, responsive controls, JSON configuration export, and PNG export.",
@@ -59,6 +75,22 @@
       "Noise Fields",
       "Typed Arrays",
       "Interactive Controls"
+    ]
+  },
+  {
+    "id": "006",
+    "name": "Fractal Explorer Studio",
+    "description": "Vanilla JavaScript fractal explorer with Canvas 2D rendering, Web Worker pixel generation, Mandelbrot and Julia sets, smooth coloring, deterministic presets, pointer zoom, palette controls, render diagnostics, benchmark timing, JSON export, shareable state, and PNG capture.",
+    "category": "Generative Systems",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Web Workers",
+      "Fractals",
+      "Typed Arrays",
+      "Pointer Events",
+      "Diagnostics"
     ]
   },
   {
