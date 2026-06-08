@@ -12,6 +12,11 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for project rules, validation expectation
 
 ```text
 001/                  Ray Tracing Studio
+002/                  Fluid Simulation Studio
+003/                  Particle Physics Sandbox
+005/                  Procedural Terrain Generator
+007/                  Cellular Automata Lab
+008/                  Audio Spectrum Visualizer
 NNN/                  Additional standalone project folders when published
 public/               Static shell assets
 public/projects/      Generated iframe copy, do not edit directly
@@ -47,6 +52,7 @@ pnpm run sync:projects
 pnpm run verify:github
 pnpm run verify:projects
 pnpm run test:001
+pnpm run test:002
 pnpm run smoke:projects
 pnpm run budget:build
 pnpm run preview
@@ -54,7 +60,7 @@ pnpm run preview:check
 pnpm run validate
 ```
 
-`sync:projects` reads every root folder with a three-digit project id. It copies the runnable files into `public/projects/` and rebuilds `public/projects.json`. The hub can run with zero published projects while a project is being built privately.
+`sync:projects` reads the published project ids from `scripts/project-registry.js`. It copies those runnable files into `public/projects/`, rebuilds `public/projects.json`, and regenerates `public/sitemap.xml`. Numeric folders can exist locally without appearing in the public hub until their id is added to that registry and the project has a `.published` marker.
 
 ## Quality Gate
 
@@ -88,6 +94,26 @@ Production responses use explicit security headers, including a self-hosted Cont
 
 Vanilla JavaScript path tracing studio with Canvas 2D rendering, Web Worker tile rendering, pure JS render/canvas presenter cores, progressive sample accumulation, adaptive tile variance, ray-sphere and ray-plane intersections, diffuse, metal, glass, and emissive materials, checker surfaces, depth of field, ACES tone mapping, direct lighting, preview denoise, viewport-fit controls, quality profiles, live ETA/ray metrics, pause/resume, unit-tested math/render helpers, and PNG/JSON export.
 
+### 002 - Fluid Simulation Studio
+
+Vanilla JavaScript fluid simulation with Canvas 2D rendering, a Web Worker solver, typed-array fields, pressure projection, vorticity controls, precomputed solid obstacle masks, deterministic scenario playback, replayable input traces, diagnostic render modes, vector and trace overlays, quality profiles, rolling percentile telemetry, benchmark histograms, pure worker-core/presenter/config/report/share-link helpers, reproducible JSON import/export, saved controls, and PNG export.
+
+### 003 - Particle Physics Sandbox
+
+Vanilla JavaScript particle physics sandbox with Canvas 2D rendering, deterministic presets, spatial-grid collision detection, pointer forces, import/export tools, technical reports, share links, deterministic benchmarks, and live performance metrics.
+
+### 005 - Procedural Terrain Generator
+
+Vanilla JavaScript procedural terrain generator with Canvas 2D rendering, deterministic seed hashing, fractal value noise, domain warping, thermal erosion passes, biome classification, river and contour overlays, pointer sampling diagnostics, JSON configuration export, and PNG export.
+
+### 007 - Cellular Automata Lab
+
+Vanilla JavaScript cellular automata lab with Canvas 2D rendering, a Web Worker simulation loop, editable life-like rules, deterministic seeded grids, pointer painting, live metrics, PNG export, and compact JSON state export.
+
+### 008 - Audio Spectrum Visualizer
+
+Vanilla JavaScript audio spectrum visualizer with Web Audio API FFT analysis, generated demo synthesis, decoded local audio files, Canvas rendering, spectrogram history, beat detection, live metrics, visual presets, and PNG export.
+
 ## License
 
 Proprietary. All rights reserved. See [LICENSE](LICENSE).
@@ -97,8 +123,9 @@ Proprietary. All rights reserved. See [LICENSE](LICENSE).
 1. Create a three-digit numbered folder.
 2. Add `index.html`.
 3. Add `project.json` with a matching `"id"`.
-4. Run `pnpm run sync:projects`.
-5. Run `pnpm run build`.
+4. Add a `.published` marker and add the id to `scripts/project-registry.js` when the project is ready to publish.
+5. Run `pnpm run sync:projects`.
+6. Run `pnpm run build`.
 
 Or scaffold the next project:
 

@@ -12,5 +12,85 @@
       "Path Tracing",
       "Adaptive Sampling"
     ]
+  },
+  {
+    "id": "002",
+    "name": "Fluid Simulation Studio",
+    "description": "Vanilla JavaScript fluid simulation with Canvas 2D rendering, a Web Worker solver, typed-array fields, pressure projection, vorticity controls, precomputed solid obstacle masks, deterministic scenario playback, replayable input traces with an inspector, fingerprint, integrity checks, and path overlay, diagnostic render modes, vector overlays, quality profiles, rolling percentile telemetry, budget-aware Auto Tune recommendations, percentile benchmark stability metrics, benchmark histograms, pure worker-core/worker-state/presenter/config/report/share-link helpers, reproducible JSON import/export, saved controls, and PNG export.",
+    "category": "Simulation",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "Web Workers",
+      "Fluid Simulation",
+      "Typed Arrays",
+      "Pointer Events",
+      "Diagnostics"
+    ]
+  },
+  {
+    "id": "003",
+    "name": "Particle Physics Sandbox",
+    "description": "Vanilla JavaScript particle physics sandbox with Canvas 2D rendering, deterministic presets, spatial-grid collision detection, pointer forces, pause reset randomize controls, responsive UI, import export tools, technical reports, share links, deterministic benchmarks, and live performance metrics.",
+    "category": "Simulation",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Particle Physics",
+      "Spatial Hashing",
+      "Pointer Events",
+      "Deterministic State",
+      "Performance Metrics"
+    ]
+  },
+  {
+    "id": "005",
+    "name": "Procedural Terrain Generator",
+    "description": "Vanilla JavaScript procedural terrain generator with Canvas 2D rendering, Web Worker map generation, deterministic seed hashing, fractal value noise, domain warping, thermal erosion passes, biome classification, river and contour overlays, lighting from computed slopes, pointer sampling diagnostics, responsive controls, JSON configuration export, and PNG export.",
+    "category": "Generative Systems",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Web Workers",
+      "Procedural Generation",
+      "Noise Fields",
+      "Typed Arrays",
+      "Interactive Controls"
+    ]
+  },
+  {
+    "id": "007",
+    "name": "Cellular Automata Lab",
+    "description": "Vanilla JavaScript cellular automata lab with Canvas 2D rendering, a Web Worker simulation loop, editable life-like rules, Brian's Brain and cyclic automata presets, deterministic seeded grids, pointer painting, live metrics, PNG export, and compact JSON state export.",
+    "category": "Visual Systems",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Web Workers",
+      "Cellular Automata",
+      "Typed Arrays",
+      "Pointer Events",
+      "Export Tools"
+    ]
+  },
+  {
+    "id": "008",
+    "name": "Audio Spectrum Visualizer",
+    "description": "Vanilla JavaScript audio spectrum visualizer using the Web Audio API, Canvas rendering, FFT analysis, generated demo synthesis, decoded local audio files, spectrogram history, beat detection, responsive controls, live metrics, visual presets, and PNG export.",
+    "category": "Audio Visualization",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Web Audio API",
+      "FFT Analysis",
+      "File API",
+      "Pointer Events",
+      "Diagnostics"
+    ]
   }
 ]

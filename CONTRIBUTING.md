@@ -8,6 +8,7 @@ JavaScript 100 is organized as a public portfolio of standalone browser projects
 - Do not add project-level package managers, bundlers, `node_modules`, or framework configs inside numbered project folders.
 - Edit source projects in their root numbered folders, not in `public/projects/`.
 - Treat `public/projects/` and `public/projects.json` as generated output from `scripts/sync-projects.js`.
+- Publish a project by adding its id to `scripts/project-registry.js` and adding a `.published` marker; local numbered folders are not public until both are present.
 - Each project needs `index.html`, `project.json`, and `README.md`.
 - Each `project.json` must include `"$schema": "../schemas/project.schema.json"`.
 - Each project `index.html` needs a responsive viewport, a JavaScript-focused meta description, and a title containing both the project id and project name.
@@ -17,8 +18,9 @@ JavaScript 100 is organized as a public portfolio of standalone browser projects
 1. Create the next numbered folder.
 2. Add `index.html`, `project.json`, and `README.md`.
 3. Keep all project-specific assets inside that same folder.
-4. Run `pnpm run sync:projects`.
-5. Run `pnpm run validate`.
+4. Add a `.published` marker and add the id to `scripts/project-registry.js` only when the project is ready to be public.
+5. Run `pnpm run sync:projects`.
+6. Run `pnpm run validate`.
 
 Run `pnpm run icons:generate` if the public app icon needs to be regenerated.
 

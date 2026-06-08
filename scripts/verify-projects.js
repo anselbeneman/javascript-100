@@ -1,6 +1,12 @@
 const fs = require('fs');
 const path = require('path');
 const { spawnSync } = require('child_process');
+const {
+  hasPublishMarker,
+  normalizeProjectIds,
+  readConfiguredProjectIds,
+  readPublishedProjectIds,
+} = require('./project-registry');
 
 const rootDir = process.cwd();
 const publicIndexPath = path.join(rootDir, 'public', 'index.html');
@@ -9,15 +15,16 @@ const publicProjectsDir = path.join(rootDir, 'public', 'projects');
 const publicRobotsPath = path.join(rootDir, 'public', 'robots.txt');
 const publicSitemapPath = path.join(rootDir, 'public', 'sitemap.xml');
 const publicManifestPath = path.join(rootDir, 'public', 'site.webmanifest');
+const projectConfigPath = path.join(rootDir, 'scripts', 'project-registry.js');
 const projectSchemaPath = path.join(rootDir, 'schemas', 'project.schema.json');
 const hubRouterPath = path.join(rootDir, 'src', 'hub', 'Router.jsx');
 const hubNotFoundPath = path.join(rootDir, 'src', 'hub', 'NotFound.jsx');
 const vercelConfigPath = path.join(rootDir, 'vercel.json');
-const numericProjectPattern = /^\d{3}$/;
 const requiredMetadataFields = ['id', 'name', 'description', 'category', 'status', 'difficulty'];
 const allowedMetadataFields = new Set(['$schema', 'id', 'name', 'description', 'category', 'status', 'difficulty', 'tech']);
 const allowedStatuses = new Set(['Planned', 'In Progress', 'Complete']);
 const allowedDifficulties = new Set(['Intermediate', 'Advanced', 'Expert']);
+const excludedProjectFiles = new Set(['project.json', '.published']);
 const forbiddenProjectEntries = [
   'node_modules',
   'package.json',
@@ -130,6 +137,27 @@ function assertProjectSchemaFile() {
 
   if (!Array.isArray(schema.required) || !schema.required.includes('tech')) {
     fail('schemas/project.schema.json must require project tech metadata');
+  }
+}
+
+function assertProjectRegistryConfig(projectIds) {
+  assertFile(projectConfigPath, 'published project registry');
+
+  const rawIds = readConfiguredProjectIds(rootDir);
+  const normalizedIds = normalizeProjectIds(rawIds);
+
+  if (normalizedIds.length !== rawIds.length) {
+    fail('scripts/project-registry.js must contain unique three-digit published project ids only');
+  }
+
+  const missingMarkers = normalizedIds.filter((projectId) => !hasPublishMarker(rootDir, projectId));
+
+  if (missingMarkers.length > 0) {
+    fail(`scripts/project-registry.js lists project ids without .published markers: ${missingMarkers.join(', ')}`);
+  }
+
+  if (normalizedIds.join('\n') !== projectIds.join('\n')) {
+    fail('scripts/project-registry.js must list only the projects currently published in the hub');
   }
 }
 
@@ -449,6 +477,14 @@ function assertPublicDiscoveryFiles(projectIds) {
     }
   });
 
+  const sitemapProjectIds = [...sitemap.matchAll(/\/project\/(\d{3})</g)]
+    .map((match) => match[1])
+    .sort();
+
+  if (sitemapProjectIds.join('\n') !== projectIds.join('\n')) {
+    fail('public/sitemap.xml must only include published project viewer routes');
+  }
+
   if (sitemap.includes('/projects/')) {
     fail('public/sitemap.xml must index viewer routes, not generated iframe asset routes');
   }
@@ -664,7 +700,7 @@ function assertJavaScriptSyntax(projectDir, projectId) {
 function assertGeneratedProjectCopy(projectDir, publicProjectDir, projectId) {
   assertFile(path.join(publicProjectDir, 'index.html'), `public index for project ${projectId}`);
 
-  const sourceFiles = listFiles(projectDir).filter((file) => file !== 'project.json');
+  const sourceFiles = listFiles(projectDir).filter((file) => !excludedProjectFiles.has(file));
   const generatedFiles = listFiles(publicProjectDir);
   const sourceFileList = sourceFiles.join('\n');
   const generatedFileList = generatedFiles.join('\n');
@@ -685,15 +721,12 @@ function assertGeneratedProjectCopy(projectDir, publicProjectDir, projectId) {
   });
 }
 
-const projectIds = fs
-  .readdirSync(rootDir, { withFileTypes: true })
-  .filter((entry) => entry.isDirectory() && numericProjectPattern.test(entry.name))
-  .map((entry) => entry.name)
-  .sort();
+const projectIds = readPublishedProjectIds(rootDir);
 
 assertPublicIndexMetadata();
 assertVercelRoutingConfig();
 assertPublicDiscoveryFiles(projectIds);
+assertProjectRegistryConfig(projectIds);
 assertProjectSchemaFile();
 assertHubRoutes();
 
@@ -706,6 +739,7 @@ const projects = projectIds.map((projectId) => {
   assertFile(indexPath, `index for project ${projectId}`);
   assertFile(metadataPath, `metadata for project ${projectId}`);
   assertFile(readmePath, `README for project ${projectId}`);
+  assertFile(path.join(projectDir, '.published'), `publish marker for project ${projectId}`);
   assertStandaloneProject(projectDir, projectId);
 
   const metadata = readJson(metadataPath);

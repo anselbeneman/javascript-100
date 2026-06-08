@@ -1,10 +1,13 @@
 const fs = require('fs');
 const path = require('path');
+const { readPublishedProjectIds } = require('./project-registry');
 
 const rootDir = process.cwd();
 const publicDir = path.join(rootDir, 'public');
 const publicProjectsDir = path.join(publicDir, 'projects');
-const numericProjectPattern = /^\d{3}$/;
+const publicIndexPath = path.join(publicDir, 'index.html');
+const publicSitemapPath = path.join(publicDir, 'sitemap.xml');
+const excludedProjectFiles = new Set(['project.json', '.published']);
 
 function assertInsideRoot(targetPath) {
   const resolvedRoot = path.resolve(rootDir);
@@ -38,6 +41,46 @@ function readProjectMetadata(projectId) {
   return metadata;
 }
 
+function readCanonicalUrl() {
+  const html = fs.readFileSync(publicIndexPath, 'utf8');
+  const match = html.match(/<link\b[^>]*\brel=["']canonical["'][^>]*\bhref=["']([^"']+)["'][^>]*>/i)
+    || html.match(/<link\b[^>]*\bhref=["']([^"']+)["'][^>]*\brel=["']canonical["'][^>]*>/i);
+
+  if (!match) {
+    throw new Error('public/index.html is missing a canonical URL');
+  }
+
+  return match[1].trim();
+}
+
+function renderSitemap(projectIds) {
+  const canonical = readCanonicalUrl();
+  const homeUrl = canonical.endsWith('/') ? canonical : `${canonical}/`;
+  const siteOrigin = new URL(homeUrl).origin;
+  const urls = [
+    { loc: homeUrl, priority: '1.0' },
+    ...projectIds.map((projectId) => ({
+      loc: `${siteOrigin}/project/${projectId}`,
+      priority: '0.9',
+    })),
+  ];
+
+  const urlEntries = urls.map(({ loc, priority }) => (
+    `  <url>\n`
+    + `    <loc>${loc}</loc>\n`
+    + `    <priority>${priority}</priority>\n`
+    + `  </url>`
+  ));
+
+  return [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ...urlEntries,
+    '</urlset>',
+    '',
+  ].join('\n');
+}
+
 function copyProject(projectId) {
   const sourceDir = path.join(rootDir, projectId);
   const targetDir = path.join(publicProjectsDir, projectId);
@@ -48,15 +91,11 @@ function copyProject(projectId) {
   fs.cpSync(sourceDir, targetDir, {
     recursive: true,
     force: true,
-    filter: (source) => path.basename(source) !== 'project.json',
+    filter: (source) => !excludedProjectFiles.has(path.basename(source)),
   });
 }
 
-const projectIds = fs
-  .readdirSync(rootDir, { withFileTypes: true })
-  .filter((entry) => entry.isDirectory() && numericProjectPattern.test(entry.name))
-  .map((entry) => entry.name)
-  .sort();
+const projectIds = readPublishedProjectIds(rootDir);
 
 assertInsideRoot(publicProjectsDir);
 fs.rmSync(publicProjectsDir, { recursive: true, force: true });
@@ -71,6 +110,8 @@ fs.writeFileSync(
   `${JSON.stringify(projects, null, 2)}\n`,
   'utf8'
 );
+
+fs.writeFileSync(publicSitemapPath, renderSitemap(projectIds), 'utf8');
 
 const projectList = projectIds.length > 0 ? projectIds.join(', ') : 'none';
 
