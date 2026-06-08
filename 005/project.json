@@ -1,0 +1,17 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "005",
+  "name": "Procedural Terrain Generator",
+  "description": "Vanilla JavaScript procedural terrain generator with Canvas 2D rendering, Web Worker map generation, deterministic seed hashing, fractal value noise, domain warping, thermal erosion passes, biome classification, river and contour overlays, lighting from computed slopes, pointer sampling diagnostics, responsive controls, JSON configuration export, and PNG export.",
+  "category": "Generative Systems",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Web Workers",
+    "Procedural Generation",
+    "Noise Fields",
+    "Typed Arrays",
+    "Interactive Controls"
+  ]
+}

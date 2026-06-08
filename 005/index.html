@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Vanilla JavaScript procedural terrain generator using Canvas 2D, Web Workers, deterministic noise, erosion passes, biome coloring, contour overlays, lighting, sampling diagnostics, and export tools."
+  >
+  <title>005 - Procedural Terrain Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="terrain-shell" aria-labelledby="project-title">
+    <h1 id="project-title" class="visually-hidden">Procedural Terrain Generator</h1>
+
+    <section class="viewport-panel" aria-label="Procedural terrain canvas">
+      <div class="topbar">
+        <strong id="statusValue" class="status-pill" aria-live="polite">Starting</strong>
+      </div>
+
+      <div class="canvas-frame">
+        <canvas
+          id="terrainCanvas"
+          width="384"
+          height="384"
+          aria-label="Generated procedural terrain map"
+        ></canvas>
+        <span id="sampleMarker" class="sample-marker" aria-hidden="true"></span>
+      </div>
+
+      <div class="metrics-grid" aria-label="Terrain metrics">
+        <article>
+          <span>Land</span>
+          <strong id="landMetric">0%</strong>
+        </article>
+        <article>
+          <span>Peaks</span>
+          <strong id="peakMetric">0</strong>
+        </article>
+        <article>
+          <span>Render</span>
+          <strong id="renderMetric">0 ms</strong>
+        </article>
+        <article>
+          <span>Grid</span>
+          <strong id="gridMetric">384</strong>
+        </article>
+        <article>
+          <span>Seed</span>
+          <strong id="seedMetric">--</strong>
+        </article>
+      </div>
+
+      <div class="sample-panel" aria-label="Pointer sample diagnostics">
+        <div>
+          <span>Pointer</span>
+          <strong id="pointerValue">Move over map</strong>
+        </div>
+        <div>
+          <span>Height</span>
+          <strong id="heightValue">--</strong>
+        </div>
+        <div>
+          <span>Moisture</span>
+          <strong id="moistureValue">--</strong>
+        </div>
+        <div>
+          <span>Slope</span>
+          <strong id="slopeValue">--</strong>
+        </div>
+        <div>
+          <span>Biome</span>
+          <strong id="biomeValue">--</strong>
+        </div>
+      </div>
+    </section>
+
+    <aside class="control-panel" aria-label="Terrain controls">
+      <section class="control-group" aria-labelledby="preset-heading">
+        <h2 id="preset-heading">World</h2>
+        <label for="presetSelect">Preset</label>
+        <select id="presetSelect">
+          <option value="alpine" selected>Alpine Ridge</option>
+          <option value="islands">Island Chain</option>
+          <option value="canyon">Red Canyon</option>
+          <option value="glacier">Glacial Fjord</option>
+        </select>
+
+        <label for="seedInput">Seed</label>
+        <div class="seed-row">
+          <input id="seedInput" type="text" value="recruiter-map-005" autocomplete="off" spellcheck="false">
+          <button id="seedButton" type="button">New</button>
+        </div>
+      </section>
+
+      <section class="control-group" aria-labelledby="terrain-heading">
+        <h2 id="terrain-heading">Terrain</h2>
+        <label for="sizeSelect">Grid Size</label>
+        <select id="sizeSelect">
+          <option value="256">256 x 256</option>
+          <option value="384" selected>384 x 384</option>
+          <option value="512">512 x 512</option>
+        </select>
+
+        <label for="scaleRange">
+          Scale
+          <span id="scaleValue">3.2</span>
+        </label>
+        <input id="scaleRange" type="range" min="1.4" max="6" step="0.1" value="3.2">
+
+        <label for="seaLevelRange">
+          Sea Level
+          <span id="seaLevelValue">0.44</span>
+        </label>
+        <input id="seaLevelRange" type="range" min="0.25" max="0.68" step="0.01" value="0.44">
+
+        <label for="reliefRange">
+          Relief
+          <span id="reliefValue">1.22</span>
+        </label>
+        <input id="reliefRange" type="range" min="0.7" max="1.8" step="0.02" value="1.22">
+
+        <label for="erosionRange">
+          Erosion
+          <span id="erosionValue">0.38</span>
+        </label>
+        <input id="erosionRange" type="range" min="0" max="1" step="0.02" value="0.38">
+
+        <label for="warpRange">
+          Warp
+          <span id="warpValue">0.42</span>
+        </label>
+        <input id="warpRange" type="range" min="0" max="1" step="0.02" value="0.42">
+
+        <label for="octavesRange">
+          Octaves
+          <span id="octavesValue">6</span>
+        </label>
+        <input id="octavesRange" type="range" min="3" max="8" step="1" value="6">
+
+        <label for="riverRange">
+          Rivers
+          <span id="riverValue">0.58</span>
+        </label>
+        <input id="riverRange" type="range" min="0" max="1" step="0.02" value="0.58">
+      </section>
+
+      <section class="control-group" aria-labelledby="render-heading">
+        <h2 id="render-heading">Render</h2>
+        <label class="check-row" for="shadeToggle">
+          <span>Hillshade</span>
+          <input id="shadeToggle" type="checkbox" checked>
+        </label>
+        <label class="check-row" for="contourToggle">
+          <span>Contours</span>
+          <input id="contourToggle" type="checkbox" checked>
+        </label>
+        <label class="check-row" for="autoToggle">
+          <span>Auto Generate</span>
+          <input id="autoToggle" type="checkbox" checked>
+        </label>
+      </section>
+
+      <section class="actions" aria-label="Terrain actions">
+        <button id="generateButton" type="button">Generate</button>
+        <button id="randomButton" type="button">Randomize</button>
+        <button id="exportButton" type="button">PNG</button>
+        <button id="copyButton" type="button">JSON</button>
+      </section>
+    </aside>
+  </main>
+
+  <script src="terrain-core.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
