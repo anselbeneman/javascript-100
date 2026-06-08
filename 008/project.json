@@ -1,0 +1,17 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "008",
+  "name": "Audio Spectrum Visualizer",
+  "description": "Vanilla JavaScript audio spectrum visualizer using the Web Audio API, Canvas rendering, FFT analysis, generated demo synthesis, decoded local audio files, spectrogram history, beat detection, responsive controls, live metrics, visual presets, and PNG export.",
+  "category": "Audio Visualization",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Web Audio API",
+    "FFT Analysis",
+    "File API",
+    "Pointer Events",
+    "Diagnostics"
+  ]
+}
