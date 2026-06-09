@@ -9,7 +9,7 @@ const Hub = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   useEffect(() => {
-    fetch('/projects.json')
+    fetch('/projects.json', { cache: 'no-store' })
       .then(res => {
         if (!res.ok) throw new Error('Could not load projects manifest');
         return res.json();
