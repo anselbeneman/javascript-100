@@ -1,0 +1,17 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "009",
+  "name": "Inverse Kinematics Studio",
+  "description": "Vanilla JavaScript inverse kinematics studio with Canvas 2D rendering, FABRIK and CCD solvers, articulated multi-chain rigs, joint limit controls, obstacle avoidance, pointer targets, deterministic presets, live diagnostics, benchmark timing, JSON export, technical report copy, and PNG capture.",
+  "category": "Algorithms",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "Inverse Kinematics",
+    "Constraint Solving",
+    "FABRIK",
+    "Pointer Events",
+    "Diagnostics"
+  ]
+}

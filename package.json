@@ -26,11 +26,12 @@
     "verify:github": "node scripts/verify-github-config.js",
     "test:001": "node scripts/test-project-001.js",
     "test:002": "node scripts/test-project-002.js",
+    "test:009": "node scripts/test-project-009.js",
     "smoke:projects": "node scripts/smoke-projects.js",
     "budget:build": "node scripts/check-build-budget.js",
     "preview": "node scripts/preview-build.js",
     "preview:check": "node scripts/preview-build.js --check",
-    "validate": "npm run sync:projects && npm run verify:github && npm run verify:projects && npm run test:001 && npm run test:002 && npm run smoke:projects && npm run build && npm run budget:build && npm run preview:check",
+    "validate": "npm run sync:projects && npm run verify:github && npm run verify:projects && npm run test:001 && npm run test:002 && npm run test:009 && npm run smoke:projects && npm run build && npm run budget:build && npm run preview:check",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

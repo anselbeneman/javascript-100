@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Vanilla JavaScript inverse kinematics studio using Canvas 2D, FABRIK and CCD solvers, articulated chains, joint limits, obstacle avoidance, pointer targets, diagnostics, benchmark timing, JSON export, and PNG capture."
+  >
+  <title>009 - Inverse Kinematics Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="ik-shell" aria-labelledby="project-title">
+    <h1 id="project-title" class="visually-hidden">Inverse Kinematics Studio</h1>
+
+    <section class="viewport-panel" aria-label="Inverse kinematics canvas">
+      <div class="canvas-frame" id="canvasFrame">
+        <canvas id="ikCanvas" width="1280" height="720" aria-label="Interactive inverse kinematics rig"></canvas>
+        <div class="canvas-readout" aria-hidden="true">
+          <span id="solverBadge">FABRIK</span>
+          <span id="presetBadge">Precision Rig</span>
+          <span id="targetBadge">Pointer Target</span>
+        </div>
+      </div>
+
+      <div class="metrics-bar" aria-label="Inverse kinematics metrics">
+        <div><span>FPS</span><strong id="fpsValue">0</strong></div>
+        <div><span>Error</span><strong id="errorValue">0.0 px</strong></div>
+        <div><span>Iterations</span><strong id="iterationsValue">0</strong></div>
+        <div><span>Chains</span><strong id="chainsValue">0</strong></div>
+        <div><span>Joints</span><strong id="jointsValue">0</strong></div>
+        <div><span>Reach</span><strong id="reachValue">0%</strong></div>
+        <div><span>Bench</span><strong id="benchmarkValue">Not run</strong></div>
+        <div><span>Status</span><strong id="statusValue" aria-live="polite">Ready</strong></div>
+      </div>
+    </section>
+
+    <aside class="control-panel" aria-label="Inverse kinematics controls">
+      <section class="control-group" aria-labelledby="scene-heading">
+        <h2 id="scene-heading">Scene</h2>
+        <label for="presetSelect">Preset</label>
+        <select id="presetSelect">
+          <option value="precision" selected>Precision Rig</option>
+          <option value="gantry">Industrial Gantry</option>
+          <option value="tentacle">Tentacle Array</option>
+          <option value="inspection">Inspection Arms</option>
+        </select>
+
+        <label for="solverSelect">Solver</label>
+        <select id="solverSelect">
+          <option value="fabrik" selected>FABRIK</option>
+          <option value="ccd">CCD</option>
+        </select>
+
+        <label for="targetSelect">Target</label>
+        <select id="targetSelect">
+          <option value="pointer" selected>Pointer Target</option>
+          <option value="orbit">Auto Orbit</option>
+          <option value="scan">Figure Eight</option>
+        </select>
+
+        <div class="button-row">
+          <button id="pauseButton" type="button">Pause</button>
+          <button id="resetButton" type="button">Reset</button>
+          <button id="randomizeButton" type="button">Randomize</button>
+        </div>
+      </section>
+
+      <section class="control-group" aria-labelledby="rig-heading">
+        <h2 id="rig-heading">Rig</h2>
+        <label for="segmentRange">
+          <span>Segments</span>
+          <output id="segmentValue" for="segmentRange">8</output>
+        </label>
+        <input id="segmentRange" type="range" min="4" max="13" step="1" value="8">
+
+        <label for="lengthRange">
+          <span>Segment Length</span>
+          <output id="lengthValue" for="lengthRange">58 px</output>
+        </label>
+        <input id="lengthRange" type="range" min="34" max="92" step="2" value="58">
+
+        <label for="iterationsRange">
+          <span>Solver Iterations</span>
+          <output id="iterationsControlValue" for="iterationsRange">14</output>
+        </label>
+        <input id="iterationsRange" type="range" min="2" max="36" step="1" value="14">
+
+        <label for="stiffnessRange">
+          <span>Joint Limit</span>
+          <output id="stiffnessValue" for="stiffnessRange">126 deg</output>
+        </label>
+        <input id="stiffnessRange" type="range" min="45" max="175" step="1" value="126">
+      </section>
+
+      <section class="control-group" aria-labelledby="constraints-heading">
+        <h2 id="constraints-heading">Constraints</h2>
+        <label class="toggle-row" for="limitToggle">
+          <span>Clamp Joints</span>
+          <input id="limitToggle" type="checkbox" checked>
+        </label>
+        <label class="toggle-row" for="obstacleToggle">
+          <span>Obstacle Avoidance</span>
+          <input id="obstacleToggle" type="checkbox" checked>
+        </label>
+        <label class="toggle-row" for="trailToggle">
+          <span>Target Trail</span>
+          <input id="trailToggle" type="checkbox" checked>
+        </label>
+        <button id="benchmarkButton" type="button">Benchmark Solver</button>
+      </section>
+
+      <section class="control-group" aria-labelledby="evidence-heading">
+        <h2 id="evidence-heading">Evidence</h2>
+        <div class="button-row button-row-two">
+          <button id="pngButton" type="button">PNG</button>
+          <button id="jsonButton" type="button">JSON</button>
+        </div>
+        <button id="reportButton" type="button">Copy technical report</button>
+      </section>
+    </aside>
+  </main>
+  <script src="ik-core.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

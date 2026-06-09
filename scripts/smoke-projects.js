@@ -6,6 +6,7 @@ const { readPublishedProjectIds } = require('./project-registry');
 const rootDir = process.cwd();
 const rayTracerWorkerPath = path.join(rootDir, '001', 'tracer-worker.js');
 const fluidWorkerPath = path.join(rootDir, '002', 'fluid-worker.js');
+const ikCorePath = path.join(rootDir, '009', 'ik-core.js');
 
 function fail(message) {
   throw new Error(message);
@@ -346,6 +347,75 @@ function smokeStandaloneCanvasProject(projectId) {
   console.log(`Smoke checked ${projectId} ${metadata.name}: ${references.length} local assets`);
 }
 
+function loadBrowserGlobal(scriptPath, globalName) {
+  const context = vm.createContext({
+    window: {},
+    Math,
+  });
+
+  vm.runInContext(fs.readFileSync(scriptPath, 'utf8'), context, {
+    filename: path.relative(rootDir, scriptPath),
+  });
+
+  const globalValue = context.window[globalName];
+  if (!globalValue) {
+    fail(`Expected ${globalName} to be exposed by ${path.relative(rootDir, scriptPath)}`);
+  }
+
+  return globalValue;
+}
+
+function smokeInverseKinematics() {
+  smokeStandaloneCanvasProject('009');
+
+  const IKCore = loadBrowserGlobal(ikCorePath, 'IKCore');
+  const sceneOptions = {
+    preset: 'precision',
+    width: 960,
+    height: 540,
+    segmentCount: 8,
+    segmentLength: 58,
+    seed: 9,
+  };
+  const scene = IKCore.createScene(sceneOptions);
+
+  if (!Array.isArray(scene.chains) || scene.chains.length !== 3) {
+    fail(`IK smoke expected 3 chains, received ${scene.chains && scene.chains.length}`);
+  }
+
+  if (!Array.isArray(scene.obstacles) || scene.obstacles.length < 1) {
+    fail('IK smoke expected deterministic obstacles');
+  }
+
+  ['fabrik', 'ccd'].forEach((solver) => {
+    const solverScene = IKCore.createScene(sceneOptions);
+    const result = IKCore.solveScene(solverScene.chains, { x: 640, y: 250 }, {
+      solver,
+      maxIterations: 16,
+      maxJointAngle: 126 * Math.PI / 180,
+      clampJoints: true,
+      avoidObstacles: true,
+      obstaclePadding: 12,
+      obstacles: solverScene.obstacles,
+      tolerance: 1.2,
+    });
+
+    assertFiniteNumber(result.metrics.averageError, `IK ${solver} average error`);
+    assertFiniteNumber(result.metrics.averageReachRatio, `IK ${solver} reach ratio`);
+    assertFiniteNumber(result.metrics.iterations, `IK ${solver} iterations`);
+
+    if (result.metrics.averageError < 0 || result.metrics.averageError > 260) {
+      fail(`IK ${solver} returned an implausible average error: ${result.metrics.averageError}`);
+    }
+
+    if (result.metrics.joints !== 27) {
+      fail(`IK ${solver} returned invalid joint count: ${result.metrics.joints}`);
+    }
+  });
+
+  console.log('Smoke solved 009 inverse kinematics scene with FABRIK and CCD');
+}
+
 function smokePublishedProjects() {
   const smokeHandlers = new Map([
     ['001', smokeRayTracer],
@@ -356,6 +426,7 @@ function smokePublishedProjects() {
     ['006', () => smokeStandaloneCanvasProject('006')],
     ['007', () => smokeStandaloneCanvasProject('007')],
     ['008', () => smokeStandaloneCanvasProject('008')],
+    ['009', smokeInverseKinematics],
   ]);
   const projectIds = readPublishedProjectIds(rootDir);
 
