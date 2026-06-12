@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "057",
+  "name": "Min-Heap Priority Queue",
+  "description": "Vanilla JavaScript min-heap priority queue with deterministic insertions, bubble-up and sink-down operations, sorted pop validation, Canvas 2D order rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Data Structures",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Vanilla JavaScript",
+    "Binary Heap",
+    "Priority Queue",
+    "Ordering Metrics"
+  ]
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Vanilla JavaScript spatial hash flocking laboratory using deterministic boids, spatial neighbor lookup, steering behaviors, Canvas 2D rendering, search diagnostics, benchmark timing, JSON export, and PNG capture."
+  >
+  <title>019 - Spatial Hash Flocking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="flock-shell" aria-labelledby="project-title">
+    <h1 id="project-title" class="visually-hidden">Spatial Hash Flocking</h1>
+
+    <section class="viewport-panel" aria-label="Spatial hash flocking canvas">
+      <div class="canvas-frame" id="canvasFrame">
+        <canvas id="flockCanvas" width="1280" height="720" aria-label="Flocking simulation visualization"></canvas>
+        <div class="canvas-readout" aria-hidden="true">
+          <span id="modeBadge">Spatial hash</span>
+          <span id="agentBadge">0 agents</span>
+          <span id="seedBadge">Seed 19</span>
+        </div>
+      </div>
+
+      <div class="metrics-bar" aria-label="Flocking metrics">
+        <div><span>Agents</span><strong id="agentValue">0</strong></div>
+        <div><span>Neighbors</span><strong id="neighborValue">0.0</strong></div>
+        <div><span>Checks</span><strong id="checkValue">0</strong></div>
+        <div><span>Reduction</span><strong id="reductionValue">0%</strong></div>
+        <div><span>Polarization</span><strong id="polarValue">0.00</strong></div>
+        <div><span>Spread</span><strong id="spreadValue">0.00</strong></div>
+        <div><span>Bench</span><strong id="benchmarkValue">Not run</strong></div>
+        <div><span>Status</span><strong id="statusValue" aria-live="polite">Ready</strong></div>
+      </div>
+    </section>
+
+    <aside class="control-panel" aria-label="Flocking controls">
+      <section class="control-group" aria-labelledby="scene-heading">
+        <h2 id="scene-heading">Scene</h2>
+        <label for="presetSelect">Preset</label>
+        <select id="presetSelect">
+          <option value="vortex" selected>Vortex Field</option>
+          <option value="swarm">Dense Swarm</option>
+          <option value="lanes">Traffic Lanes</option>
+          <option value="split">Split Merge</option>
+        </select>
+
+        <div class="button-row">
+          <button id="runButton" type="button">Run</button>
+          <button id="benchmarkButton" type="button">Benchmark</button>
+          <button id="randomizeButton" type="button">Seed</button>
+        </div>
+      </section>
+
+      <section class="control-group" aria-labelledby="model-heading">
+        <h2 id="model-heading">Model</h2>
+        <label for="agentRange">
+          <span>Agents</span>
+          <output id="agentControlValue" for="agentRange">180</output>
+        </label>
+        <input id="agentRange" type="range" min="48" max="420" step="4" value="180">
+
+        <label for="frameRange">
+          <span>Frames</span>
+          <output id="frameValue" for="frameRange">180</output>
+        </label>
+        <input id="frameRange" type="range" min="30" max="520" step="5" value="180">
+
+        <label for="perceptionRange">
+          <span>Perception</span>
+          <output id="perceptionValue" for="perceptionRange">10.5%</output>
+        </label>
+        <input id="perceptionRange" type="range" min="4" max="20" step="0.5" value="10.5">
+
+        <label for="speedRange">
+          <span>Max Speed</span>
+          <output id="speedValue" for="speedRange">0.34</output>
+        </label>
+        <input id="speedRange" type="range" min="10" max="62" step="1" value="34">
+      </section>
+
+      <section class="control-group" aria-labelledby="view-heading">
+        <h2 id="view-heading">View</h2>
+        <label class="switch-row" for="gridToggle">
+          <span>Grid</span>
+          <input id="gridToggle" type="checkbox" checked>
+        </label>
+        <label class="switch-row" for="trailToggle">
+          <span>Trace</span>
+          <input id="trailToggle" type="checkbox" checked>
+        </label>
+      </section>
+
+      <section class="control-group" aria-labelledby="evidence-heading">
+        <h2 id="evidence-heading">Evidence</h2>
+        <div class="button-row button-row-two">
+          <button id="pngButton" type="button">PNG</button>
+          <button id="jsonButton" type="button">JSON</button>
+        </div>
+        <button id="reportButton" type="button">Copy technical report</button>
+      </section>
+    </aside>
+  </main>
+  <script src="flock-core.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

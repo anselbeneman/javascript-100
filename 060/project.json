@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "060",
+  "name": "KMP String Search Lab",
+  "description": "Vanilla JavaScript KMP string search lab with prefix-function construction, linear scanning, brute-force match verification, Canvas 2D prefix rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "String Algorithms",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Vanilla JavaScript",
+    "KMP Search",
+    "Prefix Function",
+    "String Metrics"
+  ]
+}

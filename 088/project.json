@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "088",
+  "name": "Wave Function Tiles",
+  "description": "Vanilla JavaScript wave-function tile lab with deterministic constraint-compatible grids, edge-matching rules, adjacency validation, Canvas 2D tile rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Constraint Solving",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "Constraint Solving",
+    "Wave Function Collapse",
+    "Tile Rules",
+    "JSON Export"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "020",
+  "name": "Verlet Cloth Solver",
+  "description": "Vanilla JavaScript cloth simulation studio with position-based Verlet integration, pinned particles, structural constraints, iterative relaxation, wind and gravity forces, obstacle collision, Canvas 2D mesh rendering, stretch diagnostics, benchmark timing, JSON export, technical report copy, and PNG capture.",
+  "category": "Physics Engine",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "Verlet Integration",
+    "Constraint Solver",
+    "Cloth Simulation",
+    "Position Based Dynamics",
+    "Export Tools"
+  ]
+}

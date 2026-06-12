@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "055",
+  "name": "Stable Matching Solver",
+  "description": "Vanilla JavaScript stable matching solver with deterministic preference tables, Gale-Shapley proposals, blocking-pair validation, Canvas 2D matching rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Matching Algorithms",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Vanilla JavaScript",
+    "Gale-Shapley",
+    "Matching",
+    "Stability Metrics"
+  ]
+}

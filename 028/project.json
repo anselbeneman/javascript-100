@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "028",
+  "name": "L-System Garden",
+  "description": "Vanilla JavaScript L-system generator with deterministic rewriting, turtle graphics, bracketed branching, Canvas 2D rendering, structural metrics, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Generative Algorithms",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Vanilla JavaScript",
+    "Formal Grammars",
+    "Procedural Geometry",
+    "Deterministic Metrics"
+  ]
+}

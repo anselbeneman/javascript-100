@@ -1,0 +1,10 @@
+(function () {
+  'use strict';
+  const patterns = ['java', 'script', 'canvas', 'worker', 'graph', 'route', 'tree', 'index'];
+  function build(patterns) { const root = { next: new Map(), fail: null, out: [] }; patterns.forEach((word) => { let node = root; for (const ch of word) { if (!node.next.has(ch)) node.next.set(ch, { next: new Map(), fail: root, out: [] }); node = node.next.get(ch); } node.out.push(word); }); const queue = [...root.next.values()]; queue.forEach((node) => { node.fail = root; }); while (queue.length) { const current = queue.shift(); current.next.forEach((child, ch) => { let fail = current.fail; while (fail && !fail.next.has(ch)) fail = fail.fail; child.fail = fail ? fail.next.get(ch) : root; child.out = child.out.concat(child.fail.out); queue.push(child); }); } return root; }
+  function search(root, text) { let node = root; const hits = []; for (let i = 0; i < text.length; i += 1) { const ch = text[i]; while (node && !node.next.has(ch)) node = node.fail; node = node ? node.next.get(ch) || root : root; node.out.forEach((word) => hits.push({ word, index: i - word.length + 1 })); } return hits; }
+  function count(root) { let total = 1; root.next.forEach((child) => { total += count(child); }); return total; }
+  function analyze(options) { const text = Array(Math.ceil((options.size || 100) / 20)).fill('javascript canvas worker graph route tree index ').join(''); const root = build(patterns); const hits = search(root, text); const brute = patterns.flatMap((word) => [...text.matchAll(new RegExp(word, 'g'))].map((m) => word + ':' + m.index)); return { series: patterns.map((word) => hits.filter((hit) => hit.word === word).length), metrics: { items: patterns.length, score: hits.length, extra: count(root), verified: hits.length === brute.length } }; }
+  function benchmark(options) { const runs = options.runs || 8; const start = performance.now(); for (let i = 0; i < runs; i += 1) analyze(options); return { runs, avgMs: (performance.now() - start) / runs }; }
+  window.ProjectCore = { analyze, benchmark, build, search };
+}());

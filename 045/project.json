@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "045",
+  "name": "Simulated Annealing Route Lab",
+  "description": "Vanilla JavaScript simulated annealing route optimizer with deterministic cities, temperature schedules, 2-opt neighbor swaps, acceptance probability telemetry, Canvas 2D route rendering, benchmark mode, and JSON export.",
+  "category": "Optimization",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Vanilla JavaScript",
+    "Simulated Annealing",
+    "Route Optimization",
+    "Convergence Metrics"
+  ]
+}

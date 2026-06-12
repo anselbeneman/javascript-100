@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "040",
+  "name": "AVL Tree Balancer",
+  "description": "Vanilla JavaScript AVL tree balancer with deterministic key insertion, left and right rotations, height tracking, balance-factor validation, Canvas 2D tree rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Data Structures",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Vanilla JavaScript",
+    "AVL Tree",
+    "Tree Rotations",
+    "Balance Metrics"
+  ]
+}

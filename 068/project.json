@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "068",
+  "name": "RANSAC Line Fitter",
+  "description": "Vanilla JavaScript RANSAC line-fitting lab with deterministic noisy samples, outlier rejection, least-squares refinement, residual validation, Canvas 2D scatter rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Statistical Modeling",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "RANSAC",
+    "Least Squares",
+    "Robust Statistics",
+    "JSON Export"
+  ]
+}

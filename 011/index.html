@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Vanilla JavaScript bytecode virtual machine studio using Canvas 2D, a handwritten tokenizer, Pratt parser, AST compiler, stack VM, deterministic sample execution, diagnostics, benchmark timing, JSON export, and PNG capture."
+  >
+  <title>011 - Bytecode VM Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="vm-shell" aria-labelledby="project-title">
+    <h1 id="project-title" class="visually-hidden">Bytecode VM Studio</h1>
+
+    <section class="viewport-panel" aria-label="Bytecode virtual machine canvas">
+      <div class="canvas-frame" id="canvasFrame">
+        <canvas id="vmCanvas" width="1280" height="720" aria-label="Bytecode virtual machine visualization"></canvas>
+        <div class="canvas-readout" aria-hidden="true">
+          <span id="presetBadge">Parametric Rose</span>
+          <span id="phaseBadge">Phase 0.00</span>
+          <span id="runtimeBadge">Stack VM</span>
+        </div>
+      </div>
+
+      <div class="metrics-bar" aria-label="Compiler and virtual machine metrics">
+        <div><span>Tokens</span><strong id="tokensValue">0</strong></div>
+        <div><span>Bytecode</span><strong id="bytecodeValue">0</strong></div>
+        <div><span>Samples</span><strong id="samplesMetricValue">0</strong></div>
+        <div><span>Plots</span><strong id="plotsValue">0</strong></div>
+        <div><span>Steps</span><strong id="stepsValue">0</strong></div>
+        <div><span>Stack</span><strong id="stackValue">0</strong></div>
+        <div><span>Bench</span><strong id="benchmarkValue">Not run</strong></div>
+        <div><span>Status</span><strong id="statusValue" aria-live="polite">Ready</strong></div>
+      </div>
+    </section>
+
+    <aside class="control-panel" aria-label="Compiler controls">
+      <section class="control-group" aria-labelledby="source-heading">
+        <h2 id="source-heading">Source</h2>
+        <label for="presetSelect">Preset</label>
+        <select id="presetSelect">
+          <option value="rose" selected>Parametric Rose</option>
+          <option value="lissajous">Lissajous Curve</option>
+          <option value="orbit">Orbital Flower</option>
+          <option value="signal">Signal Modulation</option>
+        </select>
+
+        <textarea id="sourceEditor" spellcheck="false" aria-label="Source code editor"></textarea>
+
+        <div class="button-row">
+          <button id="runButton" type="button">Run</button>
+          <button id="animateButton" type="button">Pause</button>
+          <button id="resetButton" type="button">Reset</button>
+        </div>
+      </section>
+
+      <section class="control-group" aria-labelledby="runtime-heading">
+        <h2 id="runtime-heading">Runtime</h2>
+        <label for="samplesRange">
+          <span>Samples</span>
+          <output id="samplesValue" for="samplesRange">360</output>
+        </label>
+        <input id="samplesRange" type="range" min="80" max="720" step="20" value="360">
+
+        <label for="speedRange">
+          <span>Animation Speed</span>
+          <output id="speedValue" for="speedRange">0.25</output>
+        </label>
+        <input id="speedRange" type="range" min="0" max="100" step="1" value="25">
+
+        <label class="toggle-row" for="traceToggle">
+          <span>Trace Overlay</span>
+          <input id="traceToggle" type="checkbox" checked>
+        </label>
+        <label class="toggle-row" for="bytecodeToggle">
+          <span>Bytecode Overlay</span>
+          <input id="bytecodeToggle" type="checkbox" checked>
+        </label>
+      </section>
+
+      <section class="control-group" aria-labelledby="diagnostics-heading">
+        <h2 id="diagnostics-heading">Diagnostics</h2>
+        <button id="benchmarkButton" type="button">Benchmark VM</button>
+        <button id="formatButton" type="button">Load Preset Source</button>
+      </section>
+
+      <section class="control-group" aria-labelledby="evidence-heading">
+        <h2 id="evidence-heading">Evidence</h2>
+        <div class="button-row button-row-two">
+          <button id="pngButton" type="button">PNG</button>
+          <button id="jsonButton" type="button">JSON</button>
+        </div>
+        <button id="reportButton" type="button">Copy technical report</button>
+      </section>
+    </aside>
+  </main>
+  <script src="compiler-core.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

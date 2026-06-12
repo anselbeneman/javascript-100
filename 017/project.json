@@ -1,0 +1,17 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "017",
+  "name": "SAT Collision Engine",
+  "description": "Vanilla JavaScript collision detection studio with convex polygon bodies, separating axis theorem overlap tests, collision normals, penetration depth, impulse-style resolution, deterministic scenarios, Canvas 2D contact rendering, benchmark timing, JSON export, technical report copy, and PNG capture.",
+  "category": "Physics Engine",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "Separating Axis Theorem",
+    "Collision Detection",
+    "Rigid Body Physics",
+    "Deterministic Simulation",
+    "Export Tools"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "015",
+  "name": "Genetic Route Optimizer",
+  "description": "Vanilla JavaScript evolutionary optimization studio with deterministic city generation, traveling-salesperson route scoring, tournament selection, ordered crossover, mutation operators, convergence history, Canvas 2D route rendering, benchmark timing, JSON export, technical report copy, and PNG capture.",
+  "category": "Optimization",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "Genetic Algorithms",
+    "Route Optimization",
+    "Deterministic Seeds",
+    "Benchmarking",
+    "Export Tools"
+  ]
+}

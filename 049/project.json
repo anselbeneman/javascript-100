@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "049",
+  "name": "KD-Tree Nearest Neighbor",
+  "description": "Vanilla JavaScript KD-tree nearest-neighbor lab with deterministic point clouds, median-split construction, branch pruning, brute-force verification, Canvas 2D spatial rendering, benchmark mode, and JSON export.",
+  "category": "Data Structures",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Vanilla JavaScript",
+    "KD-Tree",
+    "Nearest Neighbor",
+    "Spatial Metrics"
+  ]
+}

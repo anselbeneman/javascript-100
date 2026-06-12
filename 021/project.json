@@ -1,0 +1,17 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "021",
+  "name": "SDF Ray Marcher",
+  "description": "Vanilla JavaScript signed-distance-field rendering studio with CPU ray marching, procedural SDF primitives, smooth union blending, finite-difference normals, soft shadow sampling, Canvas 2D pixel rendering, hit and step diagnostics, benchmark timing, JSON export, technical report copy, and PNG capture.",
+  "category": "Rendering",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "Ray Marching",
+    "Signed Distance Fields",
+    "Procedural Rendering",
+    "Soft Shadows",
+    "Export Tools"
+  ]
+}

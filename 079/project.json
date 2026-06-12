@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "079",
+  "name": "DPLL SAT Solver",
+  "description": "Vanilla JavaScript DPLL SAT solver with deterministic satisfiable CNF generation, unit propagation, recursive branching, model validation, Canvas 2D variable rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Constraint Solving",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "DPLL",
+    "SAT Solving",
+    "Backtracking",
+    "JSON Export"
+  ]
+}

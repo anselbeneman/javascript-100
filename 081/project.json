@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "081",
+  "name": "Hamming Code Corrector",
+  "description": "Vanilla JavaScript Hamming code corrector with 7-4 encoding, single-bit error injection, syndrome decoding, exhaustive validation, Canvas 2D bit rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Error Correction",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Hamming Code",
+    "Error Correction",
+    "Bitwise Logic",
+    "JSON Export"
+  ]
+}

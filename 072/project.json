@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "072",
+  "name": "Hough Line Transform",
+  "description": "Vanilla JavaScript Hough line transform lab with deterministic noisy point clouds, theta-rho accumulator voting, peak detection, Canvas 2D scatter rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Computer Vision",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "Hough Transform",
+    "Computer Vision",
+    "Accumulators",
+    "JSON Export"
+  ]
+}

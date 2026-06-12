@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Vanilla JavaScript Verlet cloth solver using position-based integration, pinned particles, structural constraints, iterative relaxation, wind and gravity controls, obstacle collision, Canvas 2D mesh rendering, diagnostics, JSON export, and PNG capture."
+  >
+  <title>020 - Verlet Cloth Solver</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="cloth-shell" aria-labelledby="project-title">
+    <h1 id="project-title" class="visually-hidden">Verlet Cloth Solver</h1>
+
+    <section class="viewport-panel" aria-label="Verlet cloth canvas">
+      <div class="canvas-frame" id="canvasFrame">
+        <canvas id="clothCanvas" width="1280" height="720" aria-label="Verlet cloth simulation visualization"></canvas>
+        <div class="canvas-readout" aria-hidden="true">
+          <span id="modeBadge">Position constraints</span>
+          <span id="particleBadge">0 particles</span>
+          <span id="seedBadge">Seed 20</span>
+        </div>
+      </div>
+
+      <div class="metrics-bar" aria-label="Cloth metrics">
+        <div><span>Particles</span><strong id="particleValue">0</strong></div>
+        <div><span>Constraints</span><strong id="constraintValue">0</strong></div>
+        <div><span>Pinned</span><strong id="pinnedValue">0</strong></div>
+        <div><span>Avg Stretch</span><strong id="averageStretchValue">0.000</strong></div>
+        <div><span>Max Stretch</span><strong id="maxStretchValue">0.000</strong></div>
+        <div><span>Kinetic</span><strong id="kineticValue">0.000</strong></div>
+        <div><span>Bench</span><strong id="benchmarkValue">Not run</strong></div>
+        <div><span>Status</span><strong id="statusValue" aria-live="polite">Ready</strong></div>
+      </div>
+    </section>
+
+    <aside class="control-panel" aria-label="Cloth solver controls">
+      <section class="control-group" aria-labelledby="cloth-heading">
+        <h2 id="cloth-heading">Cloth</h2>
+        <label for="pinSelect">Pin Mode</label>
+        <select id="pinSelect">
+          <option value="top" selected>Top Edge</option>
+          <option value="tabs">Tabs</option>
+          <option value="corners">Corners</option>
+        </select>
+
+        <div class="button-row">
+          <button id="runButton" type="button">Run</button>
+          <button id="benchmarkButton" type="button">Benchmark</button>
+          <button id="randomizeButton" type="button">Seed</button>
+        </div>
+      </section>
+
+      <section class="control-group" aria-labelledby="solver-heading">
+        <h2 id="solver-heading">Solver</h2>
+        <label for="colsRange">
+          <span>Columns</span>
+          <output id="colsValue" for="colsRange">22</output>
+        </label>
+        <input id="colsRange" type="range" min="8" max="38" step="1" value="22">
+
+        <label for="rowsRange">
+          <span>Rows</span>
+          <output id="rowsValue" for="rowsRange">15</output>
+        </label>
+        <input id="rowsRange" type="range" min="6" max="28" step="1" value="15">
+
+        <label for="stepRange">
+          <span>Steps</span>
+          <output id="stepValue" for="stepRange">180</output>
+        </label>
+        <input id="stepRange" type="range" min="30" max="520" step="5" value="180">
+
+        <label for="iterationRange">
+          <span>Iterations</span>
+          <output id="iterationValue" for="iterationRange">8</output>
+        </label>
+        <input id="iterationRange" type="range" min="2" max="24" step="1" value="8">
+
+        <label for="windRange">
+          <span>Wind</span>
+          <output id="windValue" for="windRange">0.10</output>
+        </label>
+        <input id="windRange" type="range" min="-40" max="40" step="1" value="10">
+      </section>
+
+      <section class="control-group" aria-labelledby="view-heading">
+        <h2 id="view-heading">View</h2>
+        <label class="switch-row" for="pointsToggle">
+          <span>Particles</span>
+          <input id="pointsToggle" type="checkbox" checked>
+        </label>
+        <label class="switch-row" for="stressToggle">
+          <span>Stress Color</span>
+          <input id="stressToggle" type="checkbox" checked>
+        </label>
+      </section>
+
+      <section class="control-group" aria-labelledby="evidence-heading">
+        <h2 id="evidence-heading">Evidence</h2>
+        <div class="button-row button-row-two">
+          <button id="pngButton" type="button">PNG</button>
+          <button id="jsonButton" type="button">JSON</button>
+        </div>
+        <button id="reportButton" type="button">Copy technical report</button>
+      </section>
+    </aside>
+  </main>
+  <script src="cloth-core.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

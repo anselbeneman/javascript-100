@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "069",
+  "name": "PageRank Graph Studio",
+  "description": "Vanilla JavaScript PageRank graph studio with deterministic directed networks, damping-factor iteration, rank normalization checks, Canvas 2D graph rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Graph Algorithms",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "PageRank",
+    "Graph Theory",
+    "Iterative Solvers",
+    "JSON Export"
+  ]
+}

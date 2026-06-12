@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "030",
+  "name": "Marching Squares Lab",
+  "description": "Vanilla JavaScript Marching Squares lab with procedural scalar fields, interpolated contour extraction, ambiguous-cell handling, Canvas 2D visualization, topology metrics, benchmark mode, and JSON export.",
+  "category": "Computational Geometry",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Vanilla JavaScript",
+    "Marching Squares",
+    "Scalar Fields",
+    "Geometry Metrics"
+  ]
+}

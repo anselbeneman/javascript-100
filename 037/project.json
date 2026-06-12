@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "037",
+  "name": "Ear Clipping Triangulator",
+  "description": "Vanilla JavaScript ear clipping triangulator with deterministic concave polygons, orientation correction, point-in-triangle tests, area preservation checks, Canvas 2D mesh rendering, benchmark mode, and JSON export.",
+  "category": "Computational Geometry",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Vanilla JavaScript",
+    "Ear Clipping",
+    "Triangulation",
+    "Geometry Metrics"
+  ]
+}

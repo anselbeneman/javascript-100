@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "066",
+  "name": "Max Flow Network Lab",
+  "description": "Vanilla JavaScript max-flow network lab with deterministic directed graphs, Edmonds-Karp augmenting paths, residual capacity checks, min-cut extraction, Canvas 2D rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Graph Algorithms",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "Graph Theory",
+    "Residual Networks",
+    "BFS",
+    "JSON Export"
+  ]
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Vanilla JavaScript Fourier epicycle studio using deterministic path generation, discrete Fourier transform coefficients, harmonic reconstruction, Canvas 2D plotting, error metrics, benchmark timing, JSON export, and PNG capture."
+  >
+  <title>016 - Fourier Epicycle Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="fourier-shell" aria-labelledby="project-title">
+    <h1 id="project-title" class="visually-hidden">Fourier Epicycle Studio</h1>
+
+    <section class="viewport-panel" aria-label="Fourier epicycle canvas">
+      <div class="canvas-frame" id="canvasFrame">
+        <canvas id="fourierCanvas" width="1280" height="720" aria-label="Fourier epicycle reconstruction visualization"></canvas>
+        <div class="canvas-readout" aria-hidden="true">
+          <span id="modeBadge">DFT</span>
+          <span id="harmonicBadge">0 harmonics</span>
+          <span id="seedBadge">Seed 16</span>
+        </div>
+      </div>
+
+      <div class="metrics-bar" aria-label="Fourier metrics">
+        <div><span>Samples</span><strong id="sampleValue">0</strong></div>
+        <div><span>Harmonics</span><strong id="harmonicValue">0</strong></div>
+        <div><span>Error</span><strong id="errorValue">0.000</strong></div>
+        <div><span>Low Error</span><strong id="lowErrorValue">0.000</strong></div>
+        <div><span>Dominant</span><strong id="dominantValue">0</strong></div>
+        <div><span>Compression</span><strong id="compressionValue">0%</strong></div>
+        <div><span>Bench</span><strong id="benchmarkValue">Not run</strong></div>
+        <div><span>Status</span><strong id="statusValue" aria-live="polite">Ready</strong></div>
+      </div>
+    </section>
+
+    <aside class="control-panel" aria-label="Fourier controls">
+      <section class="control-group" aria-labelledby="signal-heading">
+        <h2 id="signal-heading">Signal</h2>
+        <label for="presetSelect">Preset</label>
+        <select id="presetSelect">
+          <option value="orbit" selected>Orbital Glyph</option>
+          <option value="rose">Rose Curve</option>
+          <option value="lissajous">Lissajous</option>
+          <option value="gear">Gear Profile</option>
+        </select>
+
+        <div class="button-row">
+          <button id="renderButton" type="button">Render</button>
+          <button id="benchmarkButton" type="button">Benchmark</button>
+          <button id="randomizeButton" type="button">Seed</button>
+        </div>
+      </section>
+
+      <section class="control-group" aria-labelledby="transform-heading">
+        <h2 id="transform-heading">Transform</h2>
+        <label for="sampleRange">
+          <span>Samples</span>
+          <output id="sampleControlValue" for="sampleRange">192</output>
+        </label>
+        <input id="sampleRange" type="range" min="64" max="320" step="8" value="192">
+
+        <label for="harmonicRange">
+          <span>Harmonics</span>
+          <output id="harmonicControlValue" for="harmonicRange">28</output>
+        </label>
+        <input id="harmonicRange" type="range" min="3" max="120" step="1" value="28">
+
+        <label for="phaseRange">
+          <span>Phase</span>
+          <output id="phaseValue" for="phaseRange">38%</output>
+        </label>
+        <input id="phaseRange" type="range" min="0" max="100" step="1" value="38">
+      </section>
+
+      <section class="control-group" aria-labelledby="view-heading">
+        <h2 id="view-heading">View</h2>
+        <label class="switch-row" for="sourceToggle">
+          <span>Source</span>
+          <input id="sourceToggle" type="checkbox" checked>
+        </label>
+        <label class="switch-row" for="epicycleToggle">
+          <span>Epicycles</span>
+          <input id="epicycleToggle" type="checkbox" checked>
+        </label>
+        <label class="switch-row" for="spectrumToggle">
+          <span>Spectrum</span>
+          <input id="spectrumToggle" type="checkbox" checked>
+        </label>
+      </section>
+
+      <section class="control-group" aria-labelledby="evidence-heading">
+        <h2 id="evidence-heading">Evidence</h2>
+        <div class="button-row button-row-two">
+          <button id="pngButton" type="button">PNG</button>
+          <button id="jsonButton" type="button">JSON</button>
+        </div>
+        <button id="reportButton" type="button">Copy technical report</button>
+      </section>
+    </aside>
+  </main>
+  <script src="fourier-core.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

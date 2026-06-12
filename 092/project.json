@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "092",
+  "name": "SimHash Duplicate Detector",
+  "description": "Vanilla JavaScript SimHash duplicate detector with token hashing, 32-bit fingerprints, Hamming-distance comparison, near-duplicate validation, Canvas 2D rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Similarity Search",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "SimHash",
+    "Similarity Search",
+    "Hamming Distance",
+    "JSON Export"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "029",
+  "name": "A-Star Pathfinding Lab",
+  "description": "Vanilla JavaScript A-star pathfinding lab with deterministic obstacle fields, binary-heap frontier, Manhattan and diagonal heuristics, Canvas 2D route rendering, telemetry, benchmark mode, and JSON export.",
+  "category": "Graph Algorithms",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Vanilla JavaScript",
+    "A-Star Search",
+    "Binary Heap",
+    "Graph Metrics"
+  ]
+}

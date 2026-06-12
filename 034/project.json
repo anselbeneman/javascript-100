@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "034",
+  "name": "Decision Tree Lab",
+  "description": "Vanilla JavaScript decision tree lab with deterministic synthetic data, Gini impurity scoring, recursive feature splits, classifier evaluation, Canvas 2D tree rendering, benchmark mode, and JSON export.",
+  "category": "Machine Learning",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Vanilla JavaScript",
+    "Decision Trees",
+    "Gini Impurity",
+    "Classifier Metrics"
+  ]
+}

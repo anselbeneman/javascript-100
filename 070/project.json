@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "070",
+  "name": "Bellman-Ford Route Lab",
+  "description": "Vanilla JavaScript Bellman-Ford route lab with deterministic directed acyclic graphs, negative edge weights, relaxation stability checks, path reconstruction, Canvas 2D rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Graph Algorithms",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "Bellman-Ford",
+    "Graph Theory",
+    "Negative Edges",
+    "JSON Export"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "078",
+  "name": "Mandelbrot Orbit Studio",
+  "description": "Vanilla JavaScript Mandelbrot orbit studio with deterministic viewport sampling, escape-time iteration, bounded-set checks, Canvas 2D field rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Fractals",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Mandelbrot",
+    "Complex Dynamics",
+    "Iteration",
+    "JSON Export"
+  ]
+}

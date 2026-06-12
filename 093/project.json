@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "093",
+  "name": "FFT Convolution Studio",
+  "description": "Vanilla JavaScript FFT convolution studio with radix-2 complex transforms, frequency-domain multiplication, direct convolution validation, Canvas 2D signal rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Signal Processing",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "FFT",
+    "Convolution",
+    "Signal Processing",
+    "JSON Export"
+  ]
+}

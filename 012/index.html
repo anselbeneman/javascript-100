@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Vanilla JavaScript granular synthesis laboratory using Canvas 2D, Web Audio API playback, deterministic wavetable generation, grain scheduling, signal analysis, benchmark timing, JSON export, and PNG capture."
+  >
+  <title>012 - Granular Synth Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="synth-shell" aria-labelledby="project-title">
+    <h1 id="project-title" class="visually-hidden">Granular Synth Lab</h1>
+
+    <section class="viewport-panel" aria-label="Granular synthesis canvas">
+      <div class="canvas-frame" id="canvasFrame">
+        <canvas id="synthCanvas" width="1280" height="720" aria-label="Granular synthesis waveform and spectrum"></canvas>
+        <div class="canvas-readout" aria-hidden="true">
+          <span id="presetBadge">Glass Cloud</span>
+          <span id="grainBadge">0 grains</span>
+          <span id="audioBadge">Offline</span>
+        </div>
+      </div>
+
+      <div class="metrics-bar" aria-label="Granular synthesis metrics">
+        <div><span>RMS</span><strong id="rmsValue">0.000</strong></div>
+        <div><span>Peak</span><strong id="peakValue">0.000</strong></div>
+        <div><span>Crest</span><strong id="crestValue">0.00</strong></div>
+        <div><span>ZCR</span><strong id="zcrValue">0.000</strong></div>
+        <div><span>Grains</span><strong id="grainValue">0</strong></div>
+        <div><span>Duration</span><strong id="durationValue">0.0s</strong></div>
+        <div><span>Bench</span><strong id="benchmarkValue">Not run</strong></div>
+        <div><span>Status</span><strong id="statusValue" aria-live="polite">Ready</strong></div>
+      </div>
+    </section>
+
+    <aside class="control-panel" aria-label="Granular synthesis controls">
+      <section class="control-group" aria-labelledby="sound-heading">
+        <h2 id="sound-heading">Sound</h2>
+        <label for="presetSelect">Preset</label>
+        <select id="presetSelect">
+          <option value="glass" selected>Glass Cloud</option>
+          <option value="bass">Subharmonic Bloom</option>
+          <option value="shimmer">Spectral Shimmer</option>
+          <option value="pulse">Pulse Stream</option>
+        </select>
+
+        <div class="button-row">
+          <button id="renderButton" type="button">Render</button>
+          <button id="playButton" type="button">Play</button>
+          <button id="stopButton" type="button">Stop</button>
+        </div>
+      </section>
+
+      <section class="control-group" aria-labelledby="grain-heading">
+        <h2 id="grain-heading">Grains</h2>
+        <label for="frequencyRange">
+          <span>Base Frequency</span>
+          <output id="frequencyValue" for="frequencyRange">220 Hz</output>
+        </label>
+        <input id="frequencyRange" type="range" min="48" max="620" step="1" value="220">
+
+        <label for="densityRange">
+          <span>Density</span>
+          <output id="densityValue" for="densityRange">38 / s</output>
+        </label>
+        <input id="densityRange" type="range" min="8" max="72" step="1" value="38">
+
+        <label for="grainRange">
+          <span>Grain Size</span>
+          <output id="grainSizeValue" for="grainRange">86 ms</output>
+        </label>
+        <input id="grainRange" type="range" min="24" max="180" step="1" value="86">
+
+        <label for="spreadRange">
+          <span>Pitch Spread</span>
+          <output id="spreadValue" for="spreadRange">52%</output>
+        </label>
+        <input id="spreadRange" type="range" min="0" max="100" step="1" value="52">
+      </section>
+
+      <section class="control-group" aria-labelledby="texture-heading">
+        <h2 id="texture-heading">Texture</h2>
+        <label for="textureRange">
+          <span>Wavetable Fold</span>
+          <output id="textureValue" for="textureRange">42%</output>
+        </label>
+        <input id="textureRange" type="range" min="0" max="100" step="1" value="42">
+
+        <label for="durationRange">
+          <span>Duration</span>
+          <output id="durationControlValue" for="durationRange">2.0s</output>
+        </label>
+        <input id="durationRange" type="range" min="8" max="40" step="1" value="20">
+
+        <button id="randomizeButton" type="button">Randomize Seed</button>
+        <button id="benchmarkButton" type="button">Benchmark Render</button>
+      </section>
+
+      <section class="control-group" aria-labelledby="evidence-heading">
+        <h2 id="evidence-heading">Evidence</h2>
+        <div class="button-row button-row-two">
+          <button id="pngButton" type="button">PNG</button>
+          <button id="jsonButton" type="button">JSON</button>
+        </div>
+        <button id="reportButton" type="button">Copy technical report</button>
+      </section>
+    </aside>
+  </main>
+  <script src="synth-core.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

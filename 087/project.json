@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "087",
+  "name": "Count-Min Sketch Lab",
+  "description": "Vanilla JavaScript count-min sketch lab with deterministic event streams, independent hash rows, exact-count comparison, overestimate validation, Canvas 2D counter rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Streaming Algorithms",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "Count-Min Sketch",
+    "Streaming Data",
+    "Hashing",
+    "JSON Export"
+  ]
+}

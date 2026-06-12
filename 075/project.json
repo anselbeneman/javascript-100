@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "075",
+  "name": "Genetic Algorithm Evolver",
+  "description": "Vanilla JavaScript genetic algorithm evolver with deterministic bitstring targets, elitism, crossover, mutation, fitness history validation, Canvas 2D genome rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Optimization",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Genetic Algorithms",
+    "Optimization",
+    "Mutation",
+    "JSON Export"
+  ]
+}

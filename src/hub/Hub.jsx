@@ -67,18 +67,29 @@ const Hub = () => {
             />
           </div>
 
-          <div className="category-filters" role="toolbar" aria-label="Filter projects by category">
-            {categories.map(cat => (
+          <div className="category-select-wrapper">
+            <label htmlFor="categorySelect">Category</label>
+            <select
+              id="categorySelect"
+              className="category-select"
+              value={selectedCategory}
+              onChange={(event) => setSelectedCategory(event.target.value)}
+            >
+              {categories.map(cat => (
+                <option key={cat} value={cat}>
+                  {cat === 'All' ? 'All categories' : cat}
+                </option>
+              ))}
+            </select>
+            {selectedCategory !== 'All' && (
               <button
                 type="button"
-                key={cat}
-                className={`category-btn ${selectedCategory === cat ? 'active' : ''}`}
-                aria-pressed={selectedCategory === cat}
-                onClick={() => setSelectedCategory(cat)}
+                className="clear-filter-btn"
+                onClick={() => setSelectedCategory('All')}
               >
-                {cat}
+                Clear
               </button>
-            ))}
+            )}
           </div>
         </div>
         <p className="project-count" aria-live="polite">{projectCountLabel}</p>

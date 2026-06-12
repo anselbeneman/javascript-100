@@ -1,0 +1,17 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "010",
+  "name": "Neural Network Playground",
+  "description": "Vanilla JavaScript neural network playground with Canvas 2D decision-boundary rendering, a from-scratch multilayer perceptron, deterministic synthetic datasets, backpropagation training, live loss and accuracy diagnostics, benchmark timing, JSON export, technical report copy, and PNG capture.",
+  "category": "Machine Learning",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "Neural Networks",
+    "Backpropagation",
+    "Deterministic Data",
+    "Diagnostics",
+    "Export Tools"
+  ]
+}

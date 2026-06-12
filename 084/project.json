@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "084",
+  "name": "Merkle Tree Integrity Lab",
+  "description": "Vanilla JavaScript Merkle tree integrity lab with deterministic block leaves, proof path extraction, tamper rejection checks, Canvas 2D tree rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Cryptographic Structures",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Merkle Trees",
+    "Integrity Proofs",
+    "Hashing",
+    "JSON Export"
+  ]
+}

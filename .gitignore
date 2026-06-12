@@ -6,30 +6,6 @@ package-lock.json
 build
 public/projects/
 
-# unpublished local project drafts
-/[0-9][0-9][0-9]/
-!/001/
-!/001/**
-!/002/
-!/002/**
-!/003/
-!/003/**
-!/004/
-!/004/**
-!/005/
-!/005/**
-!/006/
-!/006/**
-!/007/
-!/007/**
-!/008/
-!/008/**
-!/009/
-!/009/**
-/scripts/test-project-[0-9][0-9][0-9].js
-!/scripts/test-project-001.js
-!/scripts/test-project-002.js
-!/scripts/test-project-009.js
 /scripts/published-projects.js
 
 # private planning

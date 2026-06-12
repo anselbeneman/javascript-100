@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "051",
+  "name": "Aho-Corasick Matcher",
+  "description": "Vanilla JavaScript Aho-Corasick matcher with trie automata, failure links, multi-pattern scanning, brute-force verification, Canvas 2D match-count rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "String Algorithms",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "Vanilla JavaScript",
+    "Aho-Corasick",
+    "Automata",
+    "Pattern Matching"
+  ]
+}

@@ -1,0 +1,7 @@
+(function () {
+  'use strict';
+  function heap() { return { data: [], swaps: 0, push(v) { this.data.push(v); let i = this.data.length - 1; while (i > 0) { const p = (i - 1) >> 1; if (this.data[p] <= this.data[i]) break; [this.data[p], this.data[i]] = [this.data[i], this.data[p]]; this.swaps += 1; i = p; } }, pop() { if (!this.data.length) return null; const top = this.data[0]; const last = this.data.pop(); if (this.data.length) { this.data[0] = last; let i = 0; for (;;) { let b = i; const l = i * 2 + 1; const r = l + 1; if (l < this.data.length && this.data[l] < this.data[b]) b = l; if (r < this.data.length && this.data[r] < this.data[b]) b = r; if (b === i) break; [this.data[b], this.data[i]] = [this.data[i], this.data[b]]; this.swaps += 1; i = b; } } return top; } }; }
+  function analyze(options) { const size = Math.max(24, Math.floor(options.size || 120)); const h = heap(); const values = Array.from({ length: size }, (_, i) => (i * 73 + 19) % 997); values.forEach((v) => h.push(v)); const out = []; while (h.data.length) out.push(h.pop()); const sorted = out.every((v, i) => i === 0 || out[i - 1] <= v); return { series: out.slice(0, 48), metrics: { items: size, score: out[0], extra: h.swaps, verified: sorted && out.length === size } }; }
+  function benchmark(options) { const runs = options.runs || 8; const start = performance.now(); for (let i = 0; i < runs; i += 1) analyze(options); return { runs, avgMs: (performance.now() - start) / runs }; }
+  window.ProjectCore = { analyze, benchmark, heap };
+}());

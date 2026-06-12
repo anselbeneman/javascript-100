@@ -140,5 +140,1388 @@
       "Pointer Events",
       "Diagnostics"
     ]
+  },
+  {
+    "id": "010",
+    "name": "Neural Network Playground",
+    "description": "Vanilla JavaScript neural network playground with Canvas 2D decision-boundary rendering, a from-scratch multilayer perceptron, deterministic synthetic datasets, backpropagation training, live loss and accuracy diagnostics, benchmark timing, JSON export, technical report copy, and PNG capture.",
+    "category": "Machine Learning",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "Neural Networks",
+      "Backpropagation",
+      "Deterministic Data",
+      "Diagnostics",
+      "Export Tools"
+    ]
+  },
+  {
+    "id": "011",
+    "name": "Bytecode VM Studio",
+    "description": "Vanilla JavaScript bytecode virtual machine studio with Canvas 2D visualization, a handwritten tokenizer, Pratt parser, AST compiler, stack-based bytecode VM, deterministic sample execution, source presets, live diagnostics, benchmark timing, JSON export, technical report copy, and PNG capture.",
+    "category": "Language Systems",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "Parser",
+      "Bytecode VM",
+      "Compiler",
+      "Diagnostics",
+      "Export Tools"
+    ]
+  },
+  {
+    "id": "012",
+    "name": "Granular Synth Lab",
+    "description": "Vanilla JavaScript granular synthesis laboratory with Canvas 2D waveform and spectrum rendering, Web Audio API playback, deterministic wavetable generation, grain scheduling, ADSR-style envelopes, modulation controls, offline analysis metrics, benchmark timing, JSON export, technical report copy, and PNG capture.",
+    "category": "Audio Synthesis",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "Web Audio API",
+      "Granular Synthesis",
+      "Signal Analysis",
+      "Deterministic DSP",
+      "Export Tools"
+    ]
+  },
+  {
+    "id": "013",
+    "name": "Delaunay Mesh Lab",
+    "description": "Vanilla JavaScript computational geometry studio with Bowyer-Watson Delaunay triangulation, deterministic point fields, Canvas 2D mesh rendering, circumcircle inspection, topology metrics, minimum-angle analysis, benchmark timing, JSON export, technical report copy, and PNG capture.",
+    "category": "Computational Geometry",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "Delaunay Triangulation",
+      "Geometry Algorithms",
+      "Deterministic Seeds",
+      "Mesh Metrics",
+      "Export Tools"
+    ]
+  },
+  {
+    "id": "014",
+    "name": "Kalman Filter Lab",
+    "description": "Vanilla JavaScript sensor fusion studio with deterministic motion simulation, noisy measurements, constant-velocity Kalman filtering, covariance tracking, Canvas 2D trajectory rendering, RMSE comparison, residual diagnostics, benchmark timing, JSON export, technical report copy, and PNG capture.",
+    "category": "Signal Processing",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "Kalman Filter",
+      "Sensor Fusion",
+      "Signal Processing",
+      "Deterministic Simulation",
+      "Export Tools"
+    ]
+  },
+  {
+    "id": "015",
+    "name": "Genetic Route Optimizer",
+    "description": "Vanilla JavaScript evolutionary optimization studio with deterministic city generation, traveling-salesperson route scoring, tournament selection, ordered crossover, mutation operators, convergence history, Canvas 2D route rendering, benchmark timing, JSON export, technical report copy, and PNG capture.",
+    "category": "Optimization",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "Genetic Algorithms",
+      "Route Optimization",
+      "Deterministic Seeds",
+      "Benchmarking",
+      "Export Tools"
+    ]
+  },
+  {
+    "id": "016",
+    "name": "Fourier Epicycle Studio",
+    "description": "Vanilla JavaScript Fourier analysis studio with deterministic path generation, discrete Fourier transform coefficients, harmonic reconstruction, epicycle chain rendering, reconstruction error metrics, Canvas 2D plotting, benchmark timing, JSON export, technical report copy, and PNG capture.",
+    "category": "Signal Processing",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "Discrete Fourier Transform",
+      "Complex Numbers",
+      "Signal Reconstruction",
+      "Deterministic Seeds",
+      "Export Tools"
+    ]
+  },
+  {
+    "id": "017",
+    "name": "SAT Collision Engine",
+    "description": "Vanilla JavaScript collision detection studio with convex polygon bodies, separating axis theorem overlap tests, collision normals, penetration depth, impulse-style resolution, deterministic scenarios, Canvas 2D contact rendering, benchmark timing, JSON export, technical report copy, and PNG capture.",
+    "category": "Physics Engine",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "Separating Axis Theorem",
+      "Collision Detection",
+      "Rigid Body Physics",
+      "Deterministic Simulation",
+      "Export Tools"
+    ]
+  },
+  {
+    "id": "018",
+    "name": "Wave Equation Lab",
+    "description": "Vanilla JavaScript numerical simulation studio with a finite-difference 2D wave equation solver, typed-array buffers, deterministic pulse fields, obstacle masks, stability controls, Canvas 2D heatmap rendering, energy diagnostics, benchmark timing, JSON export, technical report copy, and PNG capture.",
+    "category": "Numerical Simulation",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "Finite Difference Solver",
+      "Wave Equation",
+      "Typed Arrays",
+      "Numerical Stability",
+      "Export Tools"
+    ]
+  },
+  {
+    "id": "019",
+    "name": "Spatial Hash Flocking",
+    "description": "Vanilla JavaScript flocking simulation studio with deterministic boid fields, spatial hash neighbor lookup, separation-alignment-cohesion steering, boundary wrapping, Canvas 2D rendering, neighbor search diagnostics, benchmark timing, JSON export, technical report copy, and PNG capture.",
+    "category": "Simulation",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "Spatial Hashing",
+      "Flocking Simulation",
+      "Steering Behaviors",
+      "Deterministic Seeds",
+      "Export Tools"
+    ]
+  },
+  {
+    "id": "020",
+    "name": "Verlet Cloth Solver",
+    "description": "Vanilla JavaScript cloth simulation studio with position-based Verlet integration, pinned particles, structural constraints, iterative relaxation, wind and gravity forces, obstacle collision, Canvas 2D mesh rendering, stretch diagnostics, benchmark timing, JSON export, technical report copy, and PNG capture.",
+    "category": "Physics Engine",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "Verlet Integration",
+      "Constraint Solver",
+      "Cloth Simulation",
+      "Position Based Dynamics",
+      "Export Tools"
+    ]
+  },
+  {
+    "id": "021",
+    "name": "SDF Ray Marcher",
+    "description": "Vanilla JavaScript signed-distance-field rendering studio with CPU ray marching, procedural SDF primitives, smooth union blending, finite-difference normals, soft shadow sampling, Canvas 2D pixel rendering, hit and step diagnostics, benchmark timing, JSON export, technical report copy, and PNG capture.",
+    "category": "Rendering",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "Ray Marching",
+      "Signed Distance Fields",
+      "Procedural Rendering",
+      "Soft Shadows",
+      "Export Tools"
+    ]
+  },
+  {
+    "id": "022",
+    "name": "MCTS Strategy Lab",
+    "description": "Vanilla JavaScript Monte Carlo Tree Search laboratory with deterministic game states, UCB1 selection, node expansion, random rollout simulation, win-rate backpropagation, Canvas 2D game-tree rendering, search diagnostics, benchmark timing, JSON export, technical report copy, and PNG capture.",
+    "category": "Game AI",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "Monte Carlo Tree Search",
+      "UCB1 Selection",
+      "Game AI",
+      "Deterministic Simulation",
+      "Export Tools"
+    ]
+  },
+  {
+    "id": "023",
+    "name": "Probabilistic Data Lab",
+    "description": "Vanilla JavaScript probabilistic data structure studio with deterministic streams, Bloom filter membership tests, HyperLogLog cardinality estimation, hash diagnostics, false-positive analysis, Canvas 2D register rendering, benchmark timing, JSON export, technical report copy, and PNG capture.",
+    "category": "Data Structures",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "Bloom Filter",
+      "HyperLogLog",
+      "Hashing",
+      "Probabilistic Algorithms",
+      "Export Tools"
+    ]
+  },
+  {
+    "id": "024",
+    "name": "Exact Cover Sudoku",
+    "description": "Vanilla JavaScript exact-cover solver studio with deterministic Sudoku presets, Algorithm X constraint search, row-column-box coverage modeling, backtracking diagnostics, Canvas 2D board rendering, search-depth metrics, benchmark timing, JSON export, technical report copy, and PNG capture.",
+    "category": "Algorithms",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "Exact Cover",
+      "Algorithm X",
+      "Backtracking",
+      "Constraint Solving",
+      "Export Tools"
+    ]
+  },
+  {
+    "id": "025",
+    "name": "Regex NFA Engine",
+    "description": "Vanilla JavaScript regular-expression engine studio with deterministic parser, Thompson-style NFA construction, epsilon-closure simulation, match tracing, automaton diagnostics, Canvas 2D graph rendering, benchmark timing, JSON export, technical report copy, and PNG capture.",
+    "category": "Language Tools",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "Regex Parser",
+      "NFA Simulation",
+      "Automata Theory",
+      "Compiler Techniques",
+      "Export Tools"
+    ]
+  },
+  {
+    "id": "026",
+    "name": "BM25 Search Lab",
+    "description": "Vanilla JavaScript search-ranking studio with deterministic document corpora, tokenization, inverted index construction, BM25 scoring, query explanation, top-k ranking, Canvas 2D score visualization, benchmark timing, JSON export, technical report copy, and PNG capture.",
+    "category": "Search",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "BM25 Ranking",
+      "Inverted Index",
+      "Tokenization",
+      "Search Algorithms",
+      "Export Tools"
+    ]
+  },
+  {
+    "id": "027",
+    "name": "Pratt Parser Studio",
+    "description": "Vanilla JavaScript expression parser studio with deterministic tokenization, Pratt parsing, operator precedence, prefix and infix binding powers, AST evaluation, parse diagnostics, Canvas 2D syntax-tree rendering, benchmark timing, JSON export, technical report copy, and PNG capture.",
+    "category": "Language Tools",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "Pratt Parser",
+      "AST Evaluation",
+      "Tokenization",
+      "Compiler Techniques",
+      "Export Tools"
+    ]
+  },
+  {
+    "id": "028",
+    "name": "L-System Garden",
+    "description": "Vanilla JavaScript L-system generator with deterministic rewriting, turtle graphics, bracketed branching, Canvas 2D rendering, structural metrics, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Generative Algorithms",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "Formal Grammars",
+      "Procedural Geometry",
+      "Deterministic Metrics"
+    ]
+  },
+  {
+    "id": "029",
+    "name": "A-Star Pathfinding Lab",
+    "description": "Vanilla JavaScript A-star pathfinding lab with deterministic obstacle fields, binary-heap frontier, Manhattan and diagonal heuristics, Canvas 2D route rendering, telemetry, benchmark mode, and JSON export.",
+    "category": "Graph Algorithms",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "A-Star Search",
+      "Binary Heap",
+      "Graph Metrics"
+    ]
+  },
+  {
+    "id": "030",
+    "name": "Marching Squares Lab",
+    "description": "Vanilla JavaScript Marching Squares lab with procedural scalar fields, interpolated contour extraction, ambiguous-cell handling, Canvas 2D visualization, topology metrics, benchmark mode, and JSON export.",
+    "category": "Computational Geometry",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "Marching Squares",
+      "Scalar Fields",
+      "Geometry Metrics"
+    ]
+  },
+  {
+    "id": "031",
+    "name": "Polygon Clipping Studio",
+    "description": "Vanilla JavaScript polygon clipping studio using Sutherland-Hodgman half-plane clipping, convex clip windows, polygon area metrics, Canvas 2D visualization, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Computational Geometry",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "Polygon Clipping",
+      "Half-Plane Geometry",
+      "Area Metrics"
+    ]
+  },
+  {
+    "id": "032",
+    "name": "FFT Spectrum Analyzer",
+    "description": "Vanilla JavaScript FFT spectrum analyzer with generated audio signals, iterative Cooley-Tukey transform, windowing, dominant-frequency detection, Canvas 2D waveform and spectrum rendering, benchmark mode, and JSON export.",
+    "category": "Signal Processing",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "Fast Fourier Transform",
+      "Signal Processing",
+      "Spectrum Metrics"
+    ]
+  },
+  {
+    "id": "033",
+    "name": "Huffman Compression Lab",
+    "description": "Vanilla JavaScript Huffman compression lab with frequency analysis, deterministic priority queue tree building, prefix-code encoding and decoding, Canvas 2D code visualization, benchmark mode, and JSON export.",
+    "category": "Data Structures",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "Huffman Coding",
+      "Priority Queue",
+      "Compression Metrics"
+    ]
+  },
+  {
+    "id": "034",
+    "name": "Decision Tree Lab",
+    "description": "Vanilla JavaScript decision tree lab with deterministic synthetic data, Gini impurity scoring, recursive feature splits, classifier evaluation, Canvas 2D tree rendering, benchmark mode, and JSON export.",
+    "category": "Machine Learning",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "Decision Trees",
+      "Gini Impurity",
+      "Classifier Metrics"
+    ]
+  },
+  {
+    "id": "035",
+    "name": "K-Means Color Quantizer",
+    "description": "Vanilla JavaScript K-means color quantizer with deterministic RGB sample clouds, centroid updates, inertia tracking, palette extraction, Canvas 2D cluster rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Machine Learning",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "K-Means Clustering",
+      "Color Quantization",
+      "Cluster Metrics"
+    ]
+  },
+  {
+    "id": "036",
+    "name": "Minimax Game Solver",
+    "description": "Vanilla JavaScript minimax game solver with tic-tac-toe state evaluation, alpha-beta pruning, optimal move search, node telemetry, Canvas 2D board rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Game Algorithms",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "Minimax Search",
+      "Alpha-Beta Pruning",
+      "Game Tree Metrics"
+    ]
+  },
+  {
+    "id": "037",
+    "name": "Ear Clipping Triangulator",
+    "description": "Vanilla JavaScript ear clipping triangulator with deterministic concave polygons, orientation correction, point-in-triangle tests, area preservation checks, Canvas 2D mesh rendering, benchmark mode, and JSON export.",
+    "category": "Computational Geometry",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "Ear Clipping",
+      "Triangulation",
+      "Geometry Metrics"
+    ]
+  },
+  {
+    "id": "038",
+    "name": "Topological Scheduler",
+    "description": "Vanilla JavaScript topological scheduler with deterministic DAG generation, Kahn ordering, cycle checks, critical-path timing, Canvas 2D dependency rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Graph Algorithms",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "Topological Sort",
+      "DAG Scheduling",
+      "Critical Path Metrics"
+    ]
+  },
+  {
+    "id": "039",
+    "name": "B-Tree Index Visualizer",
+    "description": "Vanilla JavaScript B-tree index visualizer with deterministic key insertion, node splitting, logarithmic search, height and occupancy metrics, Canvas 2D tree rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Data Structures",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "B-Tree",
+      "Index Structures",
+      "Search Metrics"
+    ]
+  },
+  {
+    "id": "040",
+    "name": "AVL Tree Balancer",
+    "description": "Vanilla JavaScript AVL tree balancer with deterministic key insertion, left and right rotations, height tracking, balance-factor validation, Canvas 2D tree rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Data Structures",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "AVL Tree",
+      "Tree Rotations",
+      "Balance Metrics"
+    ]
+  },
+  {
+    "id": "041",
+    "name": "Convex Hull Workbench",
+    "description": "Vanilla JavaScript convex hull workbench with deterministic point clouds, monotonic-chain hull construction, orientation tests, area and perimeter metrics, Canvas 2D geometry rendering, benchmark mode, and JSON export.",
+    "category": "Computational Geometry",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "Convex Hull",
+      "Orientation Tests",
+      "Geometry Metrics"
+    ]
+  },
+  {
+    "id": "042",
+    "name": "Particle Swarm Optimizer",
+    "description": "Vanilla JavaScript particle swarm optimizer with deterministic particles, Rosenbrock and Rastrigin objective functions, velocity updates, convergence tracking, Canvas 2D search rendering, benchmark mode, and JSON export.",
+    "category": "Optimization",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "Particle Swarm",
+      "Optimization",
+      "Convergence Metrics"
+    ]
+  },
+  {
+    "id": "043",
+    "name": "Logistic Regression Trainer",
+    "description": "Vanilla JavaScript logistic regression trainer with deterministic binary datasets, sigmoid scoring, gradient descent, loss and accuracy telemetry, Canvas 2D decision-boundary rendering, benchmark mode, and JSON export.",
+    "category": "Machine Learning",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "Logistic Regression",
+      "Gradient Descent",
+      "Classifier Metrics"
+    ]
+  },
+  {
+    "id": "044",
+    "name": "Quadtree Range Query",
+    "description": "Vanilla JavaScript quadtree range-query engine with deterministic spatial points, subdivision, rectangular queries, brute-force verification, Canvas 2D index rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Data Structures",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "Quadtree",
+      "Spatial Indexing",
+      "Range Query Metrics"
+    ]
+  },
+  {
+    "id": "045",
+    "name": "Simulated Annealing Route Lab",
+    "description": "Vanilla JavaScript simulated annealing route optimizer with deterministic cities, temperature schedules, 2-opt neighbor swaps, acceptance probability telemetry, Canvas 2D route rendering, benchmark mode, and JSON export.",
+    "category": "Optimization",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "Simulated Annealing",
+      "Route Optimization",
+      "Convergence Metrics"
+    ]
+  },
+  {
+    "id": "046",
+    "name": "Markov Text Chain Lab",
+    "description": "Vanilla JavaScript Markov text chain lab with tokenization, transition tables, deterministic corpus analysis, entropy metrics, Canvas 2D distribution rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Text Algorithms",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "Markov Chains",
+      "Text Metrics",
+      "Entropy"
+    ]
+  },
+  {
+    "id": "047",
+    "name": "Trie Autocomplete Index",
+    "description": "Vanilla JavaScript trie autocomplete index with deterministic vocabulary insertion, prefix lookup, scored suggestions, node-count telemetry, Canvas 2D ranking rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Data Structures",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "Trie",
+      "Autocomplete",
+      "Prefix Search"
+    ]
+  },
+  {
+    "id": "048",
+    "name": "Dijkstra Routing Grid",
+    "description": "Vanilla JavaScript Dijkstra routing grid with deterministic weighted graphs, shortest-path reconstruction, visited-node telemetry, Canvas 2D route rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Graph Algorithms",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "Dijkstra Search",
+      "Weighted Graphs",
+      "Route Metrics"
+    ]
+  },
+  {
+    "id": "049",
+    "name": "KD-Tree Nearest Neighbor",
+    "description": "Vanilla JavaScript KD-tree nearest-neighbor lab with deterministic point clouds, median-split construction, branch pruning, brute-force verification, Canvas 2D spatial rendering, benchmark mode, and JSON export.",
+    "category": "Data Structures",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "KD-Tree",
+      "Nearest Neighbor",
+      "Spatial Metrics"
+    ]
+  },
+  {
+    "id": "050",
+    "name": "LRU Cache Simulator",
+    "description": "Vanilla JavaScript LRU cache simulator with deterministic access traces, recency updates, eviction telemetry, hit-rate metrics, Canvas 2D cache-size rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Data Structures",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "LRU Cache",
+      "Map Ordering",
+      "Cache Metrics"
+    ]
+  },
+  {
+    "id": "051",
+    "name": "Aho-Corasick Matcher",
+    "description": "Vanilla JavaScript Aho-Corasick matcher with trie automata, failure links, multi-pattern scanning, brute-force verification, Canvas 2D match-count rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "String Algorithms",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "Aho-Corasick",
+      "Automata",
+      "Pattern Matching"
+    ]
+  },
+  {
+    "id": "052",
+    "name": "Fenwick Range Sum Lab",
+    "description": "Vanilla JavaScript Fenwick range-sum lab with deterministic numeric arrays, point updates, prefix queries, brute-force validation, Canvas 2D query rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Data Structures",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "Fenwick Tree",
+      "Range Queries",
+      "Prefix Sums"
+    ]
+  },
+  {
+    "id": "053",
+    "name": "Tarjan SCC Explorer",
+    "description": "Vanilla JavaScript Tarjan strongly-connected-components explorer with deterministic directed graphs, low-link tracking, component extraction, Canvas 2D graph rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Graph Algorithms",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "Tarjan Algorithm",
+      "Directed Graphs",
+      "SCC Metrics"
+    ]
+  },
+  {
+    "id": "054",
+    "name": "CRC32 Checksum Lab",
+    "description": "Vanilla JavaScript CRC32 checksum lab with lookup-table generation, incremental chunk hashing, full-message verification, Canvas 2D checksum rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Data Integrity",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "CRC32",
+      "Checksums",
+      "Integrity Metrics"
+    ]
+  },
+  {
+    "id": "055",
+    "name": "Stable Matching Solver",
+    "description": "Vanilla JavaScript stable matching solver with deterministic preference tables, Gale-Shapley proposals, blocking-pair validation, Canvas 2D matching rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Matching Algorithms",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "Gale-Shapley",
+      "Matching",
+      "Stability Metrics"
+    ]
+  },
+  {
+    "id": "056",
+    "name": "Union-Find Network Lab",
+    "description": "Vanilla JavaScript union-find network lab with deterministic edge streams, path compression, union by rank, component counting, Canvas 2D connectivity rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Data Structures",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "Union-Find",
+      "Disjoint Sets",
+      "Connectivity Metrics"
+    ]
+  },
+  {
+    "id": "057",
+    "name": "Min-Heap Priority Queue",
+    "description": "Vanilla JavaScript min-heap priority queue with deterministic insertions, bubble-up and sink-down operations, sorted pop validation, Canvas 2D order rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Data Structures",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "Binary Heap",
+      "Priority Queue",
+      "Ordering Metrics"
+    ]
+  },
+  {
+    "id": "058",
+    "name": "Segment Tree Range Min",
+    "description": "Vanilla JavaScript segment tree range-min lab with deterministic arrays, recursive tree construction, range queries, brute-force validation, Canvas 2D query rendering, benchmark mode, and JSON export.",
+    "category": "Data Structures",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "Segment Tree",
+      "Range Minimum",
+      "Query Metrics"
+    ]
+  },
+  {
+    "id": "059",
+    "name": "Edit Distance Matrix",
+    "description": "Vanilla JavaScript edit distance matrix with dynamic-programming table construction, substitution and insertion costs, final-row telemetry, Canvas 2D matrix rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Dynamic Programming",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "Edit Distance",
+      "Dynamic Programming",
+      "Matrix Metrics"
+    ]
+  },
+  {
+    "id": "060",
+    "name": "KMP String Search Lab",
+    "description": "Vanilla JavaScript KMP string search lab with prefix-function construction, linear scanning, brute-force match verification, Canvas 2D prefix rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "String Algorithms",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "KMP Search",
+      "Prefix Function",
+      "String Metrics"
+    ]
+  },
+  {
+    "id": "061",
+    "name": "Quickselect Median Lab",
+    "description": "Vanilla JavaScript quickselect median lab with deterministic arrays, in-place partitioning, kth-order selection, sorted-array verification, Canvas 2D rank rendering, benchmark mode, and JSON export.",
+    "category": "Selection Algorithms",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "Quickselect",
+      "Median",
+      "Selection Metrics"
+    ]
+  },
+  {
+    "id": "062",
+    "name": "Reservoir Sampling Lab",
+    "description": "Vanilla JavaScript reservoir sampling lab with deterministic streams, fixed-size sample replacement, uniqueness checks, Canvas 2D sample rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Streaming Algorithms",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "Reservoir Sampling",
+      "Streaming",
+      "Sampling Metrics"
+    ]
+  },
+  {
+    "id": "063",
+    "name": "Bezier Subdivision Studio",
+    "description": "Vanilla JavaScript Bezier subdivision studio with De Casteljau evaluation, deterministic control points, curve-length telemetry, Canvas 2D curve rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Computational Geometry",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "Bezier Curves",
+      "De Casteljau",
+      "Curve Metrics"
+    ]
+  },
+  {
+    "id": "064",
+    "name": "Online Perceptron Trainer",
+    "description": "Vanilla JavaScript online perceptron trainer with deterministic separable data, mistake-driven updates, accuracy verification, Canvas 2D classifier rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Machine Learning",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "Perceptron",
+      "Online Learning",
+      "Classifier Metrics"
+    ]
+  },
+  {
+    "id": "065",
+    "name": "Streaming Heavy Hitters",
+    "description": "Vanilla JavaScript streaming heavy-hitters lab with deterministic event streams, Misra-Gries counters, exact-count comparison, Canvas 2D counter rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Streaming Algorithms",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "Vanilla JavaScript",
+      "Misra-Gries",
+      "Heavy Hitters",
+      "Stream Metrics"
+    ]
+  },
+  {
+    "id": "066",
+    "name": "Max Flow Network Lab",
+    "description": "Vanilla JavaScript max-flow network lab with deterministic directed graphs, Edmonds-Karp augmenting paths, residual capacity checks, min-cut extraction, Canvas 2D rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Graph Algorithms",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "Graph Theory",
+      "Residual Networks",
+      "BFS",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "067",
+    "name": "Knapsack DP Optimizer",
+    "description": "Vanilla JavaScript 0/1 knapsack optimizer with deterministic item generation, dynamic-programming table construction, chosen-item backtracking, greedy baseline comparison, Canvas 2D rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Dynamic Programming",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Dynamic Programming",
+      "Optimization",
+      "Backtracking",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "068",
+    "name": "RANSAC Line Fitter",
+    "description": "Vanilla JavaScript RANSAC line-fitting lab with deterministic noisy samples, outlier rejection, least-squares refinement, residual validation, Canvas 2D scatter rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Statistical Modeling",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "RANSAC",
+      "Least Squares",
+      "Robust Statistics",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "069",
+    "name": "PageRank Graph Studio",
+    "description": "Vanilla JavaScript PageRank graph studio with deterministic directed networks, damping-factor iteration, rank normalization checks, Canvas 2D graph rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Graph Algorithms",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "PageRank",
+      "Graph Theory",
+      "Iterative Solvers",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "070",
+    "name": "Bellman-Ford Route Lab",
+    "description": "Vanilla JavaScript Bellman-Ford route lab with deterministic directed acyclic graphs, negative edge weights, relaxation stability checks, path reconstruction, Canvas 2D rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Graph Algorithms",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "Bellman-Ford",
+      "Graph Theory",
+      "Negative Edges",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "071",
+    "name": "LZW Compression Workbench",
+    "description": "Vanilla JavaScript LZW compression workbench with deterministic text streams, dictionary growth tracking, decompression validation, Canvas 2D frequency rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Compression",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "LZW",
+      "Compression",
+      "Dictionary Coding",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "072",
+    "name": "Hough Line Transform",
+    "description": "Vanilla JavaScript Hough line transform lab with deterministic noisy point clouds, theta-rho accumulator voting, peak detection, Canvas 2D scatter rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Computer Vision",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "Hough Transform",
+      "Computer Vision",
+      "Accumulators",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "073",
+    "name": "Naive Bayes Text Lab",
+    "description": "Vanilla JavaScript Naive Bayes text classification lab with token frequency models, Laplace smoothing, deterministic validation samples, Canvas 2D class rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Machine Learning",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Naive Bayes",
+      "Text Classification",
+      "Tokenization",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "074",
+    "name": "Kalman Signal Tracker",
+    "description": "Vanilla JavaScript Kalman signal tracker with deterministic noisy measurements, recursive covariance updates, RMSE improvement checks, Canvas 2D signal rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Signal Processing",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "Kalman Filter",
+      "Signal Processing",
+      "Noise Reduction",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "075",
+    "name": "Genetic Algorithm Evolver",
+    "description": "Vanilla JavaScript genetic algorithm evolver with deterministic bitstring targets, elitism, crossover, mutation, fitness history validation, Canvas 2D genome rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Optimization",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Genetic Algorithms",
+      "Optimization",
+      "Mutation",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "076",
+    "name": "DBSCAN Cluster Explorer",
+    "description": "Vanilla JavaScript DBSCAN cluster explorer with deterministic clustered samples, epsilon-neighborhood expansion, noise detection, Canvas 2D scatter rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Machine Learning",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "DBSCAN",
+      "Clustering",
+      "Spatial Search",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "077",
+    "name": "Cubic Spline Interpolator",
+    "description": "Vanilla JavaScript cubic spline interpolator with natural boundary conditions, tridiagonal coefficient solving, anchor validation, Canvas 2D curve rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Numerical Methods",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "Cubic Splines",
+      "Tridiagonal Solvers",
+      "Interpolation",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "078",
+    "name": "Mandelbrot Orbit Studio",
+    "description": "Vanilla JavaScript Mandelbrot orbit studio with deterministic viewport sampling, escape-time iteration, bounded-set checks, Canvas 2D field rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Fractals",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Mandelbrot",
+      "Complex Dynamics",
+      "Iteration",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "079",
+    "name": "DPLL SAT Solver",
+    "description": "Vanilla JavaScript DPLL SAT solver with deterministic satisfiable CNF generation, unit propagation, recursive branching, model validation, Canvas 2D variable rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Constraint Solving",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "DPLL",
+      "SAT Solving",
+      "Backtracking",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "080",
+    "name": "Cuckoo Hash Table Lab",
+    "description": "Vanilla JavaScript cuckoo hash table lab with two independent hash functions, bounded kick insertion, lookup validation, Canvas 2D table rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Data Structures",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Cuckoo Hashing",
+      "Hash Tables",
+      "Collision Handling",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "081",
+    "name": "Hamming Code Corrector",
+    "description": "Vanilla JavaScript Hamming code corrector with 7-4 encoding, single-bit error injection, syndrome decoding, exhaustive validation, Canvas 2D bit rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Error Correction",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Hamming Code",
+      "Error Correction",
+      "Bitwise Logic",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "082",
+    "name": "LCS Diff Engine",
+    "description": "Vanilla JavaScript LCS diff engine with deterministic token streams, dynamic-programming edit planning, patch reconstruction checks, Canvas 2D edit rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Text Algorithms",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "LCS",
+      "Diff Algorithms",
+      "Dynamic Programming",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "083",
+    "name": "PID Control Tuner",
+    "description": "Vanilla JavaScript PID control tuner with deterministic plant simulation, proportional-integral-derivative feedback, overshoot checks, Canvas 2D response rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Simulation",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "PID Control",
+      "Simulation",
+      "Feedback Loops",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "084",
+    "name": "Merkle Tree Integrity Lab",
+    "description": "Vanilla JavaScript Merkle tree integrity lab with deterministic block leaves, proof path extraction, tamper rejection checks, Canvas 2D tree rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Cryptographic Structures",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Merkle Trees",
+      "Integrity Proofs",
+      "Hashing",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "085",
+    "name": "Radix Sort Pipeline",
+    "description": "Vanilla JavaScript radix sort pipeline with deterministic unsigned integer streams, byte-pass counting buckets, sorted-order validation, Canvas 2D bar rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Sorting Algorithms",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Radix Sort",
+      "Typed Logic",
+      "Sorting",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "086",
+    "name": "BK-Tree Fuzzy Search",
+    "description": "Vanilla JavaScript BK-tree fuzzy search lab with Levenshtein distance indexing, bounded metric search, result validation, Canvas 2D node rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Search Structures",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "BK-Tree",
+      "Edit Distance",
+      "Fuzzy Search",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "087",
+    "name": "Count-Min Sketch Lab",
+    "description": "Vanilla JavaScript count-min sketch lab with deterministic event streams, independent hash rows, exact-count comparison, overestimate validation, Canvas 2D counter rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Streaming Algorithms",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "Count-Min Sketch",
+      "Streaming Data",
+      "Hashing",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "088",
+    "name": "Wave Function Tiles",
+    "description": "Vanilla JavaScript wave-function tile lab with deterministic constraint-compatible grids, edge-matching rules, adjacency validation, Canvas 2D tile rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Constraint Solving",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "Constraint Solving",
+      "Wave Function Collapse",
+      "Tile Rules",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "089",
+    "name": "Visibility Polygon Raycaster",
+    "description": "Vanilla JavaScript visibility polygon raycaster with deterministic wall segments, angular ray sampling, nearest-intersection tests, Canvas 2D visibility rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Computational Geometry",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "Ray Casting",
+      "Visibility Polygons",
+      "Geometry",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "090",
+    "name": "Barycentric Rasterizer",
+    "description": "Vanilla JavaScript barycentric rasterizer with deterministic triangle coverage, barycentric coordinate tests, area-error validation, Canvas 2D pixel rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Graphics Algorithms",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Rasterization",
+      "Barycentric Coordinates",
+      "Graphics",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "091",
+    "name": "Rope Constraint Solver",
+    "description": "Vanilla JavaScript rope constraint solver with Verlet integration, iterative distance constraints, anchor handling, stretch-error validation, Canvas 2D rope rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Physics Simulation",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Verlet Integration",
+      "Constraints",
+      "Physics",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "092",
+    "name": "SimHash Duplicate Detector",
+    "description": "Vanilla JavaScript SimHash duplicate detector with token hashing, 32-bit fingerprints, Hamming-distance comparison, near-duplicate validation, Canvas 2D rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Similarity Search",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "SimHash",
+      "Similarity Search",
+      "Hamming Distance",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "093",
+    "name": "FFT Convolution Studio",
+    "description": "Vanilla JavaScript FFT convolution studio with radix-2 complex transforms, frequency-domain multiplication, direct convolution validation, Canvas 2D signal rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Signal Processing",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "FFT",
+      "Convolution",
+      "Signal Processing",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "094",
+    "name": "Kruskal MST Workbench",
+    "description": "Vanilla JavaScript Kruskal minimum-spanning-tree workbench with deterministic geometric graphs, union-find cycle checks, tree-size validation, Canvas 2D graph rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Graph Algorithms",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Kruskal",
+      "Minimum Spanning Tree",
+      "Union Find",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "095",
+    "name": "Suffix Array Search Lab",
+    "description": "Vanilla JavaScript suffix array search lab with deterministic text corpora, lexicographic suffix sorting, substring lookup validation, Canvas 2D hit rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Text Algorithms",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Suffix Array",
+      "String Search",
+      "Indexing",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "096",
+    "name": "Interval Tree Query Lab",
+    "description": "Vanilla JavaScript interval tree query lab with deterministic interval sets, centered recursive partitioning, brute-force validation, Canvas 2D interval rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Data Structures",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Interval Tree",
+      "Range Queries",
+      "Recursion",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "097",
+    "name": "Cellular Automata Rule Lab",
+    "description": "Vanilla JavaScript cellular automata rule lab with Rule 110 evolution, deterministic binary generations, activity validation, Canvas 2D grid rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Cellular Automata",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Cellular Automata",
+      "Rule 110",
+      "Bit Logic",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "098",
+    "name": "Poisson Disk Sampler",
+    "description": "Vanilla JavaScript Poisson disk sampler with deterministic rejection sampling, minimum-distance validation, Canvas 2D point-field rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Sampling Algorithms",
+    "status": "Complete",
+    "difficulty": "Advanced",
+    "tech": [
+      "Canvas 2D",
+      "Poisson Disk",
+      "Sampling",
+      "Spatial Validation",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "099",
+    "name": "Neural XOR Trainer",
+    "description": "Vanilla JavaScript neural XOR trainer with a small multilayer perceptron, sigmoid activations, backpropagation updates, output validation, Canvas 2D network rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Machine Learning",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "Neural Networks",
+      "Backpropagation",
+      "XOR",
+      "JSON Export"
+    ]
+  },
+  {
+    "id": "100",
+    "name": "Ray Marching SDF Studio",
+    "description": "Vanilla JavaScript ray marching SDF studio with deterministic signed-distance circles, iterative sphere tracing, hit-rate validation, Canvas 2D march rendering, benchmark mode, PNG export, and JSON evidence.",
+    "category": "Graphics Algorithms",
+    "status": "Complete",
+    "difficulty": "Expert",
+    "tech": [
+      "Canvas 2D",
+      "Ray Marching",
+      "Signed Distance Fields",
+      "Graphics",
+      "JSON Export"
+    ]
   }
 ]

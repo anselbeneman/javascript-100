@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "094",
+  "name": "Kruskal MST Workbench",
+  "description": "Vanilla JavaScript Kruskal minimum-spanning-tree workbench with deterministic geometric graphs, union-find cycle checks, tree-size validation, Canvas 2D graph rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Graph Algorithms",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Kruskal",
+    "Minimum Spanning Tree",
+    "Union Find",
+    "JSON Export"
+  ]
+}

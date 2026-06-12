@@ -1,0 +1,8 @@
+(function () {
+  'use strict';
+  function graph(size) { const edges = []; for (let i = 0; i < size; i += 1) { edges.push([i, (i + 1) % size]); if (i % 4 === 0) edges.push([i + 1, i]); if (i + 5 < size) edges.push([i, i + 5]); } return edges.filter(([a, b]) => a < size && b < size); }
+  function tarjan(size, edges) { const adj = Array.from({ length: size }, () => []); edges.forEach(([a, b]) => adj[a].push(b)); let index = 0; const stack = []; const on = new Set(); const ids = Array(size).fill(-1); const low = Array(size).fill(0); const comps = []; function dfs(v) { ids[v] = low[v] = index++; stack.push(v); on.add(v); adj[v].forEach((to) => { if (ids[to] < 0) { dfs(to); low[v] = Math.min(low[v], low[to]); } else if (on.has(to)) low[v] = Math.min(low[v], ids[to]); }); if (low[v] === ids[v]) { const comp = []; let w; do { w = stack.pop(); on.delete(w); comp.push(w); } while (w !== v); comps.push(comp); } } for (let i = 0; i < size; i += 1) if (ids[i] < 0) dfs(i); return comps; }
+  function analyze(options) { const size = Math.max(12, Math.floor(options.size || 42)); const links = graph(size); const comps = tarjan(size, links); const points = Array.from({ length: size }, (_, i) => ({ x: 0.5 + Math.cos(i / size * Math.PI * 2) * 0.42, y: 0.5 + Math.sin(i / size * Math.PI * 2) * 0.42 })); return { points, links, series: comps.map((comp) => comp.length), metrics: { items: size, score: comps.length, extra: links.length, verified: comps.flat().length === size } }; }
+  function benchmark(options) { const runs = options.runs || 8; const start = performance.now(); for (let i = 0; i < runs; i += 1) analyze(options); return { runs, avgMs: (performance.now() - start) / runs }; }
+  window.ProjectCore = { analyze, benchmark, graph, tarjan };
+}());

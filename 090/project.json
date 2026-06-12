@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "090",
+  "name": "Barycentric Rasterizer",
+  "description": "Vanilla JavaScript barycentric rasterizer with deterministic triangle coverage, barycentric coordinate tests, area-error validation, Canvas 2D pixel rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Graphics Algorithms",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Rasterization",
+    "Barycentric Coordinates",
+    "Graphics",
+    "JSON Export"
+  ]
+}

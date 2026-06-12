@@ -1,0 +1,17 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "024",
+  "name": "Exact Cover Sudoku",
+  "description": "Vanilla JavaScript exact-cover solver studio with deterministic Sudoku presets, Algorithm X constraint search, row-column-box coverage modeling, backtracking diagnostics, Canvas 2D board rendering, search-depth metrics, benchmark timing, JSON export, technical report copy, and PNG capture.",
+  "category": "Algorithms",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "Exact Cover",
+    "Algorithm X",
+    "Backtracking",
+    "Constraint Solving",
+    "Export Tools"
+  ]
+}

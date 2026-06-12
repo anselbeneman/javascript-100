@@ -1,0 +1,17 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "013",
+  "name": "Delaunay Mesh Lab",
+  "description": "Vanilla JavaScript computational geometry studio with Bowyer-Watson Delaunay triangulation, deterministic point fields, Canvas 2D mesh rendering, circumcircle inspection, topology metrics, minimum-angle analysis, benchmark timing, JSON export, technical report copy, and PNG capture.",
+  "category": "Computational Geometry",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "Delaunay Triangulation",
+    "Geometry Algorithms",
+    "Deterministic Seeds",
+    "Mesh Metrics",
+    "Export Tools"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "059",
+  "name": "Edit Distance Matrix",
+  "description": "Vanilla JavaScript edit distance matrix with dynamic-programming table construction, substitution and insertion costs, final-row telemetry, Canvas 2D matrix rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Dynamic Programming",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Vanilla JavaScript",
+    "Edit Distance",
+    "Dynamic Programming",
+    "Matrix Metrics"
+  ]
+}

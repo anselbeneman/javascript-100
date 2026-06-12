@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "089",
+  "name": "Visibility Polygon Raycaster",
+  "description": "Vanilla JavaScript visibility polygon raycaster with deterministic wall segments, angular ray sampling, nearest-intersection tests, Canvas 2D visibility rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Computational Geometry",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "Ray Casting",
+    "Visibility Polygons",
+    "Geometry",
+    "JSON Export"
+  ]
+}

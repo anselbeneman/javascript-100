@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Vanilla JavaScript SDF ray marching studio using CPU rendering, procedural signed distance primitives, smooth blending, finite-difference normals, soft shadows, Canvas 2D pixel output, diagnostics, JSON export, and PNG capture."
+  >
+  <title>021 - SDF Ray Marcher</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="sdf-shell" aria-labelledby="project-title">
+    <h1 id="project-title" class="visually-hidden">SDF Ray Marcher</h1>
+
+    <section class="viewport-panel" aria-label="SDF ray marching canvas">
+      <div class="canvas-frame" id="canvasFrame">
+        <canvas id="sdfCanvas" width="1280" height="720" aria-label="Signed distance field ray marched render"></canvas>
+        <div class="canvas-readout" aria-hidden="true">
+          <span id="modeBadge">CPU ray marching</span>
+          <span id="pixelBadge">0 pixels</span>
+          <span id="presetBadge">Fusion</span>
+        </div>
+      </div>
+
+      <div class="metrics-bar" aria-label="SDF ray marching metrics">
+        <div><span>Pixels</span><strong id="pixelValue">0</strong></div>
+        <div><span>Hit Ratio</span><strong id="hitValue">0%</strong></div>
+        <div><span>Avg Steps</span><strong id="stepValue">0.0</strong></div>
+        <div><span>Max Steps</span><strong id="maxStepValue">0</strong></div>
+        <div><span>Energy</span><strong id="energyValue">0.0</strong></div>
+        <div><span>Size</span><strong id="sizeValue">0 x 0</strong></div>
+        <div><span>Bench</span><strong id="benchmarkValue">Not run</strong></div>
+        <div><span>Status</span><strong id="statusValue" aria-live="polite">Ready</strong></div>
+      </div>
+    </section>
+
+    <aside class="control-panel" aria-label="SDF ray marching controls">
+      <section class="control-group" aria-labelledby="scene-heading">
+        <h2 id="scene-heading">Scene</h2>
+        <label for="presetSelect">Preset</label>
+        <select id="presetSelect">
+          <option value="fusion" selected>Smooth Fusion</option>
+          <option value="box">Box Blend</option>
+          <option value="torus">Torus Core</option>
+          <option value="columns">Column Study</option>
+        </select>
+
+        <div class="button-row">
+          <button id="renderButton" type="button">Render</button>
+          <button id="benchmarkButton" type="button">Benchmark</button>
+          <button id="animateButton" type="button">Phase</button>
+        </div>
+      </section>
+
+      <section class="control-group" aria-labelledby="render-heading">
+        <h2 id="render-heading">Render</h2>
+        <label for="widthRange">
+          <span>Width</span>
+          <output id="widthValue" for="widthRange">192</output>
+        </label>
+        <input id="widthRange" type="range" min="80" max="320" step="8" value="192">
+
+        <label for="heightRange">
+          <span>Height</span>
+          <output id="heightValue" for="heightRange">108</output>
+        </label>
+        <input id="heightRange" type="range" min="48" max="180" step="6" value="108">
+
+        <label for="stepRange">
+          <span>Max Steps</span>
+          <output id="stepControlValue" for="stepRange">86</output>
+        </label>
+        <input id="stepRange" type="range" min="24" max="144" step="2" value="86">
+
+        <label for="timeRange">
+          <span>Phase</span>
+          <output id="timeValue" for="timeRange">0.00</output>
+        </label>
+        <input id="timeRange" type="range" min="0" max="628" step="1" value="0">
+      </section>
+
+      <section class="control-group" aria-labelledby="evidence-heading">
+        <h2 id="evidence-heading">Evidence</h2>
+        <div class="button-row button-row-two">
+          <button id="pngButton" type="button">PNG</button>
+          <button id="jsonButton" type="button">JSON</button>
+        </div>
+        <button id="reportButton" type="button">Copy technical report</button>
+      </section>
+    </aside>
+  </main>
+  <script src="sdf-core.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

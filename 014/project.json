@@ -1,0 +1,17 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "014",
+  "name": "Kalman Filter Lab",
+  "description": "Vanilla JavaScript sensor fusion studio with deterministic motion simulation, noisy measurements, constant-velocity Kalman filtering, covariance tracking, Canvas 2D trajectory rendering, RMSE comparison, residual diagnostics, benchmark timing, JSON export, technical report copy, and PNG capture.",
+  "category": "Signal Processing",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "Kalman Filter",
+    "Sensor Fusion",
+    "Signal Processing",
+    "Deterministic Simulation",
+    "Export Tools"
+  ]
+}

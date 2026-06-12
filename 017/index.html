@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Vanilla JavaScript SAT collision engine using convex polygon bodies, separating axis theorem overlap tests, contact normals, penetration depth, impulse-style resolution, Canvas 2D rendering, benchmark timing, JSON export, and PNG capture."
+  >
+  <title>017 - SAT Collision Engine</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="collision-shell" aria-labelledby="project-title">
+    <h1 id="project-title" class="visually-hidden">SAT Collision Engine</h1>
+
+    <section class="viewport-panel" aria-label="SAT collision canvas">
+      <div class="canvas-frame" id="canvasFrame">
+        <canvas id="collisionCanvas" width="1280" height="720" aria-label="SAT collision simulation visualization"></canvas>
+        <div class="canvas-readout" aria-hidden="true">
+          <span id="modeBadge">Separating Axis Theorem</span>
+          <span id="contactBadge">0 contacts</span>
+          <span id="seedBadge">Seed 17</span>
+        </div>
+      </div>
+
+      <div class="metrics-bar" aria-label="SAT collision metrics">
+        <div><span>Bodies</span><strong id="bodyValue">0</strong></div>
+        <div><span>Pairs</span><strong id="pairValue">0</strong></div>
+        <div><span>Contacts</span><strong id="contactValue">0</strong></div>
+        <div><span>Max Contact</span><strong id="maxContactValue">0</strong></div>
+        <div><span>Penetration</span><strong id="penetrationValue">0.000</strong></div>
+        <div><span>Energy</span><strong id="energyValue">0.000</strong></div>
+        <div><span>Bench</span><strong id="benchmarkValue">Not run</strong></div>
+        <div><span>Status</span><strong id="statusValue" aria-live="polite">Ready</strong></div>
+      </div>
+    </section>
+
+    <aside class="control-panel" aria-label="SAT collision controls">
+      <section class="control-group" aria-labelledby="scene-heading">
+        <h2 id="scene-heading">Scene</h2>
+        <label for="presetSelect">Preset</label>
+        <select id="presetSelect">
+          <option value="orbit" selected>Orbit Stress</option>
+          <option value="crowded">Crowded Hulls</option>
+          <option value="sparse">Sparse Contacts</option>
+          <option value="fast">Fast Sweep</option>
+        </select>
+
+        <div class="button-row">
+          <button id="runButton" type="button">Run</button>
+          <button id="benchmarkButton" type="button">Benchmark</button>
+          <button id="randomizeButton" type="button">Seed</button>
+        </div>
+      </section>
+
+      <section class="control-group" aria-labelledby="physics-heading">
+        <h2 id="physics-heading">Physics</h2>
+        <label for="bodyRange">
+          <span>Bodies</span>
+          <output id="bodyControlValue" for="bodyRange">7</output>
+        </label>
+        <input id="bodyRange" type="range" min="3" max="16" step="1" value="7">
+
+        <label for="frameRange">
+          <span>Frames</span>
+          <output id="frameValue" for="frameRange">120</output>
+        </label>
+        <input id="frameRange" type="range" min="20" max="320" step="1" value="120">
+
+        <label for="restitutionRange">
+          <span>Restitution</span>
+          <output id="restitutionValue" for="restitutionRange">64%</output>
+        </label>
+        <input id="restitutionRange" type="range" min="20" max="92" step="1" value="64">
+      </section>
+
+      <section class="control-group" aria-labelledby="view-heading">
+        <h2 id="view-heading">View</h2>
+        <label class="switch-row" for="normalToggle">
+          <span>Normals</span>
+          <input id="normalToggle" type="checkbox" checked>
+        </label>
+        <label class="switch-row" for="boundsToggle">
+          <span>Bounds</span>
+          <input id="boundsToggle" type="checkbox" checked>
+        </label>
+        <label class="switch-row" for="velocityToggle">
+          <span>Velocity</span>
+          <input id="velocityToggle" type="checkbox" checked>
+        </label>
+      </section>
+
+      <section class="control-group" aria-labelledby="evidence-heading">
+        <h2 id="evidence-heading">Evidence</h2>
+        <div class="button-row button-row-two">
+          <button id="pngButton" type="button">PNG</button>
+          <button id="jsonButton" type="button">JSON</button>
+        </div>
+        <button id="reportButton" type="button">Copy technical report</button>
+      </section>
+    </aside>
+  </main>
+  <script src="collision-core.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

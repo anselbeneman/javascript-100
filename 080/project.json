@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "080",
+  "name": "Cuckoo Hash Table Lab",
+  "description": "Vanilla JavaScript cuckoo hash table lab with two independent hash functions, bounded kick insertion, lookup validation, Canvas 2D table rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Data Structures",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Cuckoo Hashing",
+    "Hash Tables",
+    "Collision Handling",
+    "JSON Export"
+  ]
+}

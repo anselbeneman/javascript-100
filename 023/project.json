@@ -1,0 +1,17 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "023",
+  "name": "Probabilistic Data Lab",
+  "description": "Vanilla JavaScript probabilistic data structure studio with deterministic streams, Bloom filter membership tests, HyperLogLog cardinality estimation, hash diagnostics, false-positive analysis, Canvas 2D register rendering, benchmark timing, JSON export, technical report copy, and PNG capture.",
+  "category": "Data Structures",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "Bloom Filter",
+    "HyperLogLog",
+    "Hashing",
+    "Probabilistic Algorithms",
+    "Export Tools"
+  ]
+}

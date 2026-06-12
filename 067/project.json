@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "067",
+  "name": "Knapsack DP Optimizer",
+  "description": "Vanilla JavaScript 0/1 knapsack optimizer with deterministic item generation, dynamic-programming table construction, chosen-item backtracking, greedy baseline comparison, Canvas 2D rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Dynamic Programming",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Dynamic Programming",
+    "Optimization",
+    "Backtracking",
+    "JSON Export"
+  ]
+}

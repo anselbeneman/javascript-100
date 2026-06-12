@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "061",
+  "name": "Quickselect Median Lab",
+  "description": "Vanilla JavaScript quickselect median lab with deterministic arrays, in-place partitioning, kth-order selection, sorted-array verification, Canvas 2D rank rendering, benchmark mode, and JSON export.",
+  "category": "Selection Algorithms",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Vanilla JavaScript",
+    "Quickselect",
+    "Median",
+    "Selection Metrics"
+  ]
+}

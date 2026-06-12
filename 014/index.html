@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Vanilla JavaScript Kalman filter laboratory using deterministic motion simulation, noisy measurements, sensor fusion, covariance tracking, Canvas 2D trajectory rendering, RMSE diagnostics, JSON export, and PNG capture."
+  >
+  <title>014 - Kalman Filter Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="kalman-shell" aria-labelledby="project-title">
+    <h1 id="project-title" class="visually-hidden">Kalman Filter Lab</h1>
+
+    <section class="viewport-panel" aria-label="Kalman filter canvas">
+      <div class="canvas-frame" id="canvasFrame">
+        <canvas id="kalmanCanvas" width="1280" height="720" aria-label="Kalman filter trajectory visualization"></canvas>
+        <div class="canvas-readout" aria-hidden="true">
+          <span id="modeBadge">Constant velocity</span>
+          <span id="stepBadge">0 steps</span>
+          <span id="seedBadge">Seed 14</span>
+        </div>
+      </div>
+
+      <div class="metrics-bar" aria-label="Kalman filter metrics">
+        <div><span>Raw RMSE</span><strong id="rawValue">0.000</strong></div>
+        <div><span>Filtered</span><strong id="filteredValue">0.000</strong></div>
+        <div><span>Improve</span><strong id="improvementValue">0%</strong></div>
+        <div><span>Residual</span><strong id="residualValue">0.000</strong></div>
+        <div><span>Gain</span><strong id="gainValue">0.00</strong></div>
+        <div><span>Steps</span><strong id="stepsValue">0</strong></div>
+        <div><span>Bench</span><strong id="benchmarkValue">Not run</strong></div>
+        <div><span>Status</span><strong id="statusValue" aria-live="polite">Ready</strong></div>
+      </div>
+    </section>
+
+    <aside class="control-panel" aria-label="Kalman filter controls">
+      <section class="control-group" aria-labelledby="filter-heading">
+        <h2 id="filter-heading">Filter</h2>
+        <label for="presetSelect">Preset</label>
+        <select id="presetSelect">
+          <option value="balanced" selected>Balanced Sensor</option>
+          <option value="noisy">Noisy Tracker</option>
+          <option value="smooth">Smooth Motion</option>
+          <option value="agile">Agile Target</option>
+        </select>
+
+        <div class="button-row">
+          <button id="runButton" type="button">Run</button>
+          <button id="benchmarkButton" type="button">Benchmark</button>
+          <button id="randomizeButton" type="button">Seed</button>
+        </div>
+      </section>
+
+      <section class="control-group" aria-labelledby="signal-heading">
+        <h2 id="signal-heading">Signal</h2>
+        <label for="stepRange">
+          <span>Steps</span>
+          <output id="stepControlValue" for="stepRange">180</output>
+        </label>
+        <input id="stepRange" type="range" min="60" max="420" step="1" value="180">
+
+        <label for="noiseRange">
+          <span>Measurement Noise</span>
+          <output id="noiseValue" for="noiseRange">7%</output>
+        </label>
+        <input id="noiseRange" type="range" min="1" max="18" step="1" value="7">
+
+        <label for="processRange">
+          <span>Process Trust</span>
+          <output id="processValue" for="processRange">18</output>
+        </label>
+        <input id="processRange" type="range" min="2" max="80" step="1" value="18">
+      </section>
+
+      <section class="control-group" aria-labelledby="view-heading">
+        <h2 id="view-heading">View</h2>
+        <label class="switch-row" for="truthToggle">
+          <span>Truth</span>
+          <input id="truthToggle" type="checkbox" checked>
+        </label>
+        <label class="switch-row" for="measurementToggle">
+          <span>Measurements</span>
+          <input id="measurementToggle" type="checkbox" checked>
+        </label>
+        <label class="switch-row" for="covarianceToggle">
+          <span>Covariance</span>
+          <input id="covarianceToggle" type="checkbox" checked>
+        </label>
+      </section>
+
+      <section class="control-group" aria-labelledby="evidence-heading">
+        <h2 id="evidence-heading">Evidence</h2>
+        <div class="button-row button-row-two">
+          <button id="pngButton" type="button">PNG</button>
+          <button id="jsonButton" type="button">JSON</button>
+        </div>
+        <button id="reportButton" type="button">Copy technical report</button>
+      </section>
+    </aside>
+  </main>
+  <script src="kalman-core.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

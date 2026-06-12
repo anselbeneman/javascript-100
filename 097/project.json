@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "097",
+  "name": "Cellular Automata Rule Lab",
+  "description": "Vanilla JavaScript cellular automata rule lab with Rule 110 evolution, deterministic binary generations, activity validation, Canvas 2D grid rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Cellular Automata",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Cellular Automata",
+    "Rule 110",
+    "Bit Logic",
+    "JSON Export"
+  ]
+}

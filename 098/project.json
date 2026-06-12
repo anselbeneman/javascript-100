@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "098",
+  "name": "Poisson Disk Sampler",
+  "description": "Vanilla JavaScript Poisson disk sampler with deterministic rejection sampling, minimum-distance validation, Canvas 2D point-field rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Sampling Algorithms",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Poisson Disk",
+    "Sampling",
+    "Spatial Validation",
+    "JSON Export"
+  ]
+}

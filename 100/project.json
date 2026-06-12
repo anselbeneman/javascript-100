@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "100",
+  "name": "Ray Marching SDF Studio",
+  "description": "Vanilla JavaScript ray marching SDF studio with deterministic signed-distance circles, iterative sphere tracing, hit-rate validation, Canvas 2D march rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Graphics Algorithms",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "Ray Marching",
+    "Signed Distance Fields",
+    "Graphics",
+    "JSON Export"
+  ]
+}

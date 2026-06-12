@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "052",
+  "name": "Fenwick Range Sum Lab",
+  "description": "Vanilla JavaScript Fenwick range-sum lab with deterministic numeric arrays, point updates, prefix queries, brute-force validation, Canvas 2D query rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Data Structures",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Vanilla JavaScript",
+    "Fenwick Tree",
+    "Range Queries",
+    "Prefix Sums"
+  ]
+}

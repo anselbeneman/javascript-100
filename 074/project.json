@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "074",
+  "name": "Kalman Signal Tracker",
+  "description": "Vanilla JavaScript Kalman signal tracker with deterministic noisy measurements, recursive covariance updates, RMSE improvement checks, Canvas 2D signal rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Signal Processing",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "Kalman Filter",
+    "Signal Processing",
+    "Noise Reduction",
+    "JSON Export"
+  ]
+}

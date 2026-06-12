@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "064",
+  "name": "Online Perceptron Trainer",
+  "description": "Vanilla JavaScript online perceptron trainer with deterministic separable data, mistake-driven updates, accuracy verification, Canvas 2D classifier rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Machine Learning",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Vanilla JavaScript",
+    "Perceptron",
+    "Online Learning",
+    "Classifier Metrics"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "022",
+  "name": "MCTS Strategy Lab",
+  "description": "Vanilla JavaScript Monte Carlo Tree Search laboratory with deterministic game states, UCB1 selection, node expansion, random rollout simulation, win-rate backpropagation, Canvas 2D game-tree rendering, search diagnostics, benchmark timing, JSON export, technical report copy, and PNG capture.",
+  "category": "Game AI",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "Monte Carlo Tree Search",
+    "UCB1 Selection",
+    "Game AI",
+    "Deterministic Simulation",
+    "Export Tools"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "027",
+  "name": "Pratt Parser Studio",
+  "description": "Vanilla JavaScript expression parser studio with deterministic tokenization, Pratt parsing, operator precedence, prefix and infix binding powers, AST evaluation, parse diagnostics, Canvas 2D syntax-tree rendering, benchmark timing, JSON export, technical report copy, and PNG capture.",
+  "category": "Language Tools",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "Pratt Parser",
+    "AST Evaluation",
+    "Tokenization",
+    "Compiler Techniques",
+    "Export Tools"
+  ]
+}

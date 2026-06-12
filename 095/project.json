@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "095",
+  "name": "Suffix Array Search Lab",
+  "description": "Vanilla JavaScript suffix array search lab with deterministic text corpora, lexicographic suffix sorting, substring lookup validation, Canvas 2D hit rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Text Algorithms",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Suffix Array",
+    "String Search",
+    "Indexing",
+    "JSON Export"
+  ]
+}

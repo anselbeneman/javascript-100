@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "031",
+  "name": "Polygon Clipping Studio",
+  "description": "Vanilla JavaScript polygon clipping studio using Sutherland-Hodgman half-plane clipping, convex clip windows, polygon area metrics, Canvas 2D visualization, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Computational Geometry",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Vanilla JavaScript",
+    "Polygon Clipping",
+    "Half-Plane Geometry",
+    "Area Metrics"
+  ]
+}

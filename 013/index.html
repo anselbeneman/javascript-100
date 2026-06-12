@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Vanilla JavaScript Delaunay mesh laboratory using Bowyer-Watson triangulation, deterministic point fields, Canvas 2D rendering, topology metrics, benchmark timing, JSON export, and PNG capture."
+  >
+  <title>013 - Delaunay Mesh Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="mesh-shell" aria-labelledby="project-title">
+    <h1 id="project-title" class="visually-hidden">Delaunay Mesh Lab</h1>
+
+    <section class="viewport-panel" aria-label="Delaunay mesh canvas">
+      <div class="canvas-frame" id="canvasFrame">
+        <canvas id="meshCanvas" width="1280" height="720" aria-label="Delaunay triangulation visualization"></canvas>
+        <div class="canvas-readout" aria-hidden="true">
+          <span id="modeBadge">Bowyer-Watson</span>
+          <span id="pointsBadge">0 points</span>
+          <span id="seedBadge">Seed 13</span>
+        </div>
+      </div>
+
+      <div class="metrics-bar" aria-label="Mesh metrics">
+        <div><span>Points</span><strong id="pointValue">0</strong></div>
+        <div><span>Triangles</span><strong id="triangleValue">0</strong></div>
+        <div><span>Edges</span><strong id="edgeValue">0</strong></div>
+        <div><span>Min Angle</span><strong id="angleValue">0 deg</strong></div>
+        <div><span>Coverage</span><strong id="coverageValue">0.000</strong></div>
+        <div><span>Euler</span><strong id="eulerValue">0</strong></div>
+        <div><span>Bench</span><strong id="benchmarkValue">Not run</strong></div>
+        <div><span>Status</span><strong id="statusValue" aria-live="polite">Ready</strong></div>
+      </div>
+    </section>
+
+    <aside class="control-panel" aria-label="Delaunay mesh controls">
+      <section class="control-group" aria-labelledby="mesh-heading">
+        <h2 id="mesh-heading">Mesh</h2>
+        <label for="presetSelect">Preset</label>
+        <select id="presetSelect">
+          <option value="balanced" selected>Balanced Field</option>
+          <option value="dense">Dense Survey</option>
+          <option value="sparse">Sparse Blueprint</option>
+          <option value="jagged">Jagged Stress Test</option>
+        </select>
+
+        <div class="button-row">
+          <button id="generateButton" type="button">Generate</button>
+          <button id="benchmarkButton" type="button">Benchmark</button>
+          <button id="randomizeButton" type="button">Seed</button>
+        </div>
+      </section>
+
+      <section class="control-group" aria-labelledby="field-heading">
+        <h2 id="field-heading">Point Field</h2>
+        <label for="pointRange">
+          <span>Points</span>
+          <output id="pointControlValue" for="pointRange">54</output>
+        </label>
+        <input id="pointRange" type="range" min="12" max="160" step="1" value="54">
+
+        <label for="spreadRange">
+          <span>Spread</span>
+          <output id="spreadValue" for="spreadRange">84%</output>
+        </label>
+        <input id="spreadRange" type="range" min="42" max="100" step="1" value="84">
+
+        <label for="jitterRange">
+          <span>Jitter</span>
+          <output id="jitterValue" for="jitterRange">24%</output>
+        </label>
+        <input id="jitterRange" type="range" min="0" max="70" step="1" value="24">
+      </section>
+
+      <section class="control-group" aria-labelledby="view-heading">
+        <h2 id="view-heading">View</h2>
+        <label class="switch-row" for="triangleToggle">
+          <span>Triangles</span>
+          <input id="triangleToggle" type="checkbox" checked>
+        </label>
+        <label class="switch-row" for="circleToggle">
+          <span>Circumcircles</span>
+          <input id="circleToggle" type="checkbox">
+        </label>
+        <label class="switch-row" for="pointToggle">
+          <span>Points</span>
+          <input id="pointToggle" type="checkbox" checked>
+        </label>
+      </section>
+
+      <section class="control-group" aria-labelledby="evidence-heading">
+        <h2 id="evidence-heading">Evidence</h2>
+        <div class="button-row button-row-two">
+          <button id="pngButton" type="button">PNG</button>
+          <button id="jsonButton" type="button">JSON</button>
+        </div>
+        <button id="reportButton" type="button">Copy technical report</button>
+      </section>
+    </aside>
+  </main>
+  <script src="mesh-core.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

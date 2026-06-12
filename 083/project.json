@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "083",
+  "name": "PID Control Tuner",
+  "description": "Vanilla JavaScript PID control tuner with deterministic plant simulation, proportional-integral-derivative feedback, overshoot checks, Canvas 2D response rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Simulation",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "PID Control",
+    "Simulation",
+    "Feedback Loops",
+    "JSON Export"
+  ]
+}

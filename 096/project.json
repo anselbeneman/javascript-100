@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "096",
+  "name": "Interval Tree Query Lab",
+  "description": "Vanilla JavaScript interval tree query lab with deterministic interval sets, centered recursive partitioning, brute-force validation, Canvas 2D interval rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Data Structures",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Interval Tree",
+    "Range Queries",
+    "Recursion",
+    "JSON Export"
+  ]
+}

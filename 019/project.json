@@ -1,0 +1,17 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "019",
+  "name": "Spatial Hash Flocking",
+  "description": "Vanilla JavaScript flocking simulation studio with deterministic boid fields, spatial hash neighbor lookup, separation-alignment-cohesion steering, boundary wrapping, Canvas 2D rendering, neighbor search diagnostics, benchmark timing, JSON export, technical report copy, and PNG capture.",
+  "category": "Simulation",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "Spatial Hashing",
+    "Flocking Simulation",
+    "Steering Behaviors",
+    "Deterministic Seeds",
+    "Export Tools"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "042",
+  "name": "Particle Swarm Optimizer",
+  "description": "Vanilla JavaScript particle swarm optimizer with deterministic particles, Rosenbrock and Rastrigin objective functions, velocity updates, convergence tracking, Canvas 2D search rendering, benchmark mode, and JSON export.",
+  "category": "Optimization",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Vanilla JavaScript",
+    "Particle Swarm",
+    "Optimization",
+    "Convergence Metrics"
+  ]
+}

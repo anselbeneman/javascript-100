@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "091",
+  "name": "Rope Constraint Solver",
+  "description": "Vanilla JavaScript rope constraint solver with Verlet integration, iterative distance constraints, anchor handling, stretch-error validation, Canvas 2D rope rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Physics Simulation",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Verlet Integration",
+    "Constraints",
+    "Physics",
+    "JSON Export"
+  ]
+}

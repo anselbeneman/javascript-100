@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
 const Viewer = () => {
@@ -10,6 +10,7 @@ const Viewer = () => {
   const [manifestStatus, setManifestStatus] = useState('loading');
   const [iframeStatus, setIframeStatus] = useState('loading');
   const [iframeKey, setIframeKey] = useState(0);
+  const iframeRef = useRef(null);
 
   useEffect(() => {
     let active = true;
@@ -44,6 +45,40 @@ const Viewer = () => {
       active = false;
     };
   }, [id]);
+
+  useEffect(() => {
+    if (iframeStatus !== 'loading') return undefined;
+
+    const startedAt = Date.now();
+    const timer = window.setInterval(() => {
+      const iframe = iframeRef.current;
+
+      if (!iframe) return;
+
+      try {
+        const doc = iframe.contentDocument;
+        const isProjectDocument = doc
+          && doc.location
+          && doc.location.pathname.endsWith(`/projects/${id}/index.html`);
+        const isReady = isProjectDocument
+          && doc.readyState === 'complete'
+          && doc.body;
+
+        if (isReady) {
+          setIframeStatus('ready');
+          window.clearInterval(timer);
+        }
+      } catch (error) {
+        window.clearInterval(timer);
+      }
+
+      if (Date.now() - startedAt > 8000) {
+        window.clearInterval(timer);
+      }
+    }, 150);
+
+    return () => window.clearInterval(timer);
+  }, [id, iframeKey, iframeStatus]);
 
   if (!projectExists || manifestStatus === 'error') {
     return (
@@ -110,6 +145,7 @@ const Viewer = () => {
         )}
 
         <iframe
+          ref={iframeRef}
           key={iframeKey}
           src={`/projects/${id}/index.html`}
           title={`${id} - ${projectName}`}

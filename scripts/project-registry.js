@@ -7,8 +7,12 @@ function hasPublishMarker(rootDir, projectId) {
   return fs.existsSync(path.join(rootDir, projectId, '.published'));
 }
 
-function readConfiguredProjectIds() {
-  return ['001', '002', '003', '004', '005', '006', '007', '008', '009'];
+function readConfiguredProjectIds(rootDir = process.cwd()) {
+  return fs
+    .readdirSync(rootDir, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory() && numericProjectPattern.test(entry.name))
+    .map((entry) => entry.name)
+    .filter((projectId) => hasPublishMarker(rootDir, projectId));
 }
 
 function normalizeProjectIds(ids) {

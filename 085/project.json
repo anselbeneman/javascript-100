@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "085",
+  "name": "Radix Sort Pipeline",
+  "description": "Vanilla JavaScript radix sort pipeline with deterministic unsigned integer streams, byte-pass counting buckets, sorted-order validation, Canvas 2D bar rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Sorting Algorithms",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Radix Sort",
+    "Typed Logic",
+    "Sorting",
+    "JSON Export"
+  ]
+}

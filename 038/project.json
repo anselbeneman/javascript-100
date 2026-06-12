@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "038",
+  "name": "Topological Scheduler",
+  "description": "Vanilla JavaScript topological scheduler with deterministic DAG generation, Kahn ordering, cycle checks, critical-path timing, Canvas 2D dependency rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Graph Algorithms",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Vanilla JavaScript",
+    "Topological Sort",
+    "DAG Scheduling",
+    "Critical Path Metrics"
+  ]
+}

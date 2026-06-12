@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "065",
+  "name": "Streaming Heavy Hitters",
+  "description": "Vanilla JavaScript streaming heavy-hitters lab with deterministic event streams, Misra-Gries counters, exact-count comparison, Canvas 2D counter rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Streaming Algorithms",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "Vanilla JavaScript",
+    "Misra-Gries",
+    "Heavy Hitters",
+    "Stream Metrics"
+  ]
+}

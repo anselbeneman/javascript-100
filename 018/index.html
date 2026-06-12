@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Vanilla JavaScript wave equation laboratory using a finite-difference 2D solver, typed-array buffers, deterministic pulse fields, obstacle masks, stability controls, Canvas 2D heatmap rendering, energy diagnostics, JSON export, and PNG capture."
+  >
+  <title>018 - Wave Equation Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wave-shell" aria-labelledby="project-title">
+    <h1 id="project-title" class="visually-hidden">Wave Equation Lab</h1>
+
+    <section class="viewport-panel" aria-label="Wave equation canvas">
+      <div class="canvas-frame" id="canvasFrame">
+        <canvas id="waveCanvas" width="1280" height="720" aria-label="Wave equation heatmap visualization"></canvas>
+        <div class="canvas-readout" aria-hidden="true">
+          <span id="modeBadge">Finite difference</span>
+          <span id="gridBadge">0 x 0</span>
+          <span id="seedBadge">Seed 18</span>
+        </div>
+      </div>
+
+      <div class="metrics-bar" aria-label="Wave equation metrics">
+        <div><span>Grid</span><strong id="gridValue">0</strong></div>
+        <div><span>Steps</span><strong id="stepValue">0</strong></div>
+        <div><span>Energy</span><strong id="energyValue">0.000</strong></div>
+        <div><span>Amplitude</span><strong id="amplitudeValue">0.000</strong></div>
+        <div><span>Active</span><strong id="activeValue">0%</strong></div>
+        <div><span>Blocked</span><strong id="blockedValue">0</strong></div>
+        <div><span>Bench</span><strong id="benchmarkValue">Not run</strong></div>
+        <div><span>Status</span><strong id="statusValue" aria-live="polite">Ready</strong></div>
+      </div>
+    </section>
+
+    <aside class="control-panel" aria-label="Wave equation controls">
+      <section class="control-group" aria-labelledby="field-heading">
+        <h2 id="field-heading">Field</h2>
+        <label for="presetSelect">Preset</label>
+        <select id="presetSelect">
+          <option value="lens" selected>Acoustic Lens</option>
+          <option value="split">Double Slit</option>
+          <option value="rings">Ring Barrier</option>
+          <option value="maze">Maze Scatter</option>
+        </select>
+
+        <div class="button-row">
+          <button id="runButton" type="button">Run</button>
+          <button id="benchmarkButton" type="button">Benchmark</button>
+          <button id="randomizeButton" type="button">Seed</button>
+        </div>
+      </section>
+
+      <section class="control-group" aria-labelledby="solver-heading">
+        <h2 id="solver-heading">Solver</h2>
+        <label for="gridRange">
+          <span>Grid</span>
+          <output id="gridControlValue" for="gridRange">96</output>
+        </label>
+        <input id="gridRange" type="range" min="48" max="160" step="4" value="96">
+
+        <label for="stepRange">
+          <span>Steps</span>
+          <output id="stepControlValue" for="stepRange">160</output>
+        </label>
+        <input id="stepRange" type="range" min="40" max="420" step="5" value="160">
+
+        <label for="speedRange">
+          <span>Wave Speed</span>
+          <output id="speedValue" for="speedRange">0.46</output>
+        </label>
+        <input id="speedRange" type="range" min="10" max="64" step="1" value="46">
+
+        <label for="dampingRange">
+          <span>Damping</span>
+          <output id="dampingValue" for="dampingRange">0.006</output>
+        </label>
+        <input id="dampingRange" type="range" min="0" max="35" step="1" value="6">
+      </section>
+
+      <section class="control-group" aria-labelledby="view-heading">
+        <h2 id="view-heading">View</h2>
+        <label class="switch-row" for="obstacleToggle">
+          <span>Obstacles</span>
+          <input id="obstacleToggle" type="checkbox" checked>
+        </label>
+        <label class="switch-row" for="historyToggle">
+          <span>Energy Trace</span>
+          <input id="historyToggle" type="checkbox" checked>
+        </label>
+      </section>
+
+      <section class="control-group" aria-labelledby="evidence-heading">
+        <h2 id="evidence-heading">Evidence</h2>
+        <div class="button-row button-row-two">
+          <button id="pngButton" type="button">PNG</button>
+          <button id="jsonButton" type="button">JSON</button>
+        </div>
+        <button id="reportButton" type="button">Copy technical report</button>
+      </section>
+    </aside>
+  </main>
+  <script src="wave-core.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

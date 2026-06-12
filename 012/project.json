@@ -1,0 +1,17 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "012",
+  "name": "Granular Synth Lab",
+  "description": "Vanilla JavaScript granular synthesis laboratory with Canvas 2D waveform and spectrum rendering, Web Audio API playback, deterministic wavetable generation, grain scheduling, ADSR-style envelopes, modulation controls, offline analysis metrics, benchmark timing, JSON export, technical report copy, and PNG capture.",
+  "category": "Audio Synthesis",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "Web Audio API",
+    "Granular Synthesis",
+    "Signal Analysis",
+    "Deterministic DSP",
+    "Export Tools"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "099",
+  "name": "Neural XOR Trainer",
+  "description": "Vanilla JavaScript neural XOR trainer with a small multilayer perceptron, sigmoid activations, backpropagation updates, output validation, Canvas 2D network rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Machine Learning",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "Neural Networks",
+    "Backpropagation",
+    "XOR",
+    "JSON Export"
+  ]
+}

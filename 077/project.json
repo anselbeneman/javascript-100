@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "077",
+  "name": "Cubic Spline Interpolator",
+  "description": "Vanilla JavaScript cubic spline interpolator with natural boundary conditions, tridiagonal coefficient solving, anchor validation, Canvas 2D curve rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Numerical Methods",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "Cubic Splines",
+    "Tridiagonal Solvers",
+    "Interpolation",
+    "JSON Export"
+  ]
+}

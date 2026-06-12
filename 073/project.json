@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "073",
+  "name": "Naive Bayes Text Lab",
+  "description": "Vanilla JavaScript Naive Bayes text classification lab with token frequency models, Laplace smoothing, deterministic validation samples, Canvas 2D class rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Machine Learning",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Naive Bayes",
+    "Text Classification",
+    "Tokenization",
+    "JSON Export"
+  ]
+}

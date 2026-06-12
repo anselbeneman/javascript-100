@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "033",
+  "name": "Huffman Compression Lab",
+  "description": "Vanilla JavaScript Huffman compression lab with frequency analysis, deterministic priority queue tree building, prefix-code encoding and decoding, Canvas 2D code visualization, benchmark mode, and JSON export.",
+  "category": "Data Structures",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Vanilla JavaScript",
+    "Huffman Coding",
+    "Priority Queue",
+    "Compression Metrics"
+  ]
+}

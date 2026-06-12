@@ -1,0 +1,17 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "018",
+  "name": "Wave Equation Lab",
+  "description": "Vanilla JavaScript numerical simulation studio with a finite-difference 2D wave equation solver, typed-array buffers, deterministic pulse fields, obstacle masks, stability controls, Canvas 2D heatmap rendering, energy diagnostics, benchmark timing, JSON export, technical report copy, and PNG capture.",
+  "category": "Numerical Simulation",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "Finite Difference Solver",
+    "Wave Equation",
+    "Typed Arrays",
+    "Numerical Stability",
+    "Export Tools"
+  ]
+}

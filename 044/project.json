@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "044",
+  "name": "Quadtree Range Query",
+  "description": "Vanilla JavaScript quadtree range-query engine with deterministic spatial points, subdivision, rectangular queries, brute-force verification, Canvas 2D index rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Data Structures",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Vanilla JavaScript",
+    "Quadtree",
+    "Spatial Indexing",
+    "Range Query Metrics"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "048",
+  "name": "Dijkstra Routing Grid",
+  "description": "Vanilla JavaScript Dijkstra routing grid with deterministic weighted graphs, shortest-path reconstruction, visited-node telemetry, Canvas 2D route rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Graph Algorithms",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Vanilla JavaScript",
+    "Dijkstra Search",
+    "Weighted Graphs",
+    "Route Metrics"
+  ]
+}

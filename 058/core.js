@@ -1,0 +1,7 @@
+(function () {
+  'use strict';
+  function build(values) { const n = values.length; const tree = Array(n * 4).fill(Infinity); function rec(node, l, r) { if (l === r) { tree[node] = values[l]; return; } const m = (l + r) >> 1; rec(node * 2, l, m); rec(node * 2 + 1, m + 1, r); tree[node] = Math.min(tree[node * 2], tree[node * 2 + 1]); } rec(1, 0, n - 1); return { tree, query(qL, qR) { function rec(node, l, r) { if (qR < l || r < qL) return Infinity; if (qL <= l && r <= qR) return tree[node]; const m = (l + r) >> 1; return Math.min(rec(node * 2, l, m), rec(node * 2 + 1, m + 1, r)); } return rec(1, 0, n - 1); } }; }
+  function analyze(options) { const size = Math.max(24, Math.floor(options.size || 128)); const values = Array.from({ length: size }, (_, i) => (i * 29 + 7) % 113); const st = build(values); let verified = true; const series = []; for (let l = 0; l < size; l += Math.max(1, Math.floor(size / 24))) { const r = Math.min(size - 1, l + 9); const a = st.query(l, r); const b = Math.min(...values.slice(l, r + 1)); verified = verified && a === b; series.push(a); } return { series, metrics: { items: size, score: st.query(0, size - 1), extra: series.length, verified } }; }
+  function benchmark(options) { const runs = options.runs || 8; const start = performance.now(); for (let i = 0; i < runs; i += 1) analyze(options); return { runs, avgMs: (performance.now() - start) / runs }; }
+  window.ProjectCore = { analyze, benchmark, build };
+}());

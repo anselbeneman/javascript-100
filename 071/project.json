@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "071",
+  "name": "LZW Compression Workbench",
+  "description": "Vanilla JavaScript LZW compression workbench with deterministic text streams, dictionary growth tracking, decompression validation, Canvas 2D frequency rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Compression",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "LZW",
+    "Compression",
+    "Dictionary Coding",
+    "JSON Export"
+  ]
+}

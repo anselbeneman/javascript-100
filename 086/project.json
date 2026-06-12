@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "086",
+  "name": "BK-Tree Fuzzy Search",
+  "description": "Vanilla JavaScript BK-tree fuzzy search lab with Levenshtein distance indexing, bounded metric search, result validation, Canvas 2D node rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Search Structures",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "BK-Tree",
+    "Edit Distance",
+    "Fuzzy Search",
+    "JSON Export"
+  ]
+}

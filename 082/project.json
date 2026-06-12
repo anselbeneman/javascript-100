@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "082",
+  "name": "LCS Diff Engine",
+  "description": "Vanilla JavaScript LCS diff engine with deterministic token streams, dynamic-programming edit planning, patch reconstruction checks, Canvas 2D edit rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Text Algorithms",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "LCS",
+    "Diff Algorithms",
+    "Dynamic Programming",
+    "JSON Export"
+  ]
+}

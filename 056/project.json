@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "056",
+  "name": "Union-Find Network Lab",
+  "description": "Vanilla JavaScript union-find network lab with deterministic edge streams, path compression, union by rank, component counting, Canvas 2D connectivity rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Data Structures",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Vanilla JavaScript",
+    "Union-Find",
+    "Disjoint Sets",
+    "Connectivity Metrics"
+  ]
+}

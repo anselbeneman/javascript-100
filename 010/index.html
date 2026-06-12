@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Vanilla JavaScript neural network playground using Canvas 2D, a from-scratch multilayer perceptron, deterministic datasets, backpropagation, live loss and accuracy diagnostics, benchmark timing, JSON export, and PNG capture."
+  >
+  <title>010 - Neural Network Playground</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="neural-shell" aria-labelledby="project-title">
+    <h1 id="project-title" class="visually-hidden">Neural Network Playground</h1>
+
+    <section class="viewport-panel" aria-label="Neural network canvas">
+      <div class="canvas-frame" id="canvasFrame">
+        <canvas id="neuralCanvas" width="1280" height="720" aria-label="Interactive neural network decision boundary"></canvas>
+        <div class="canvas-readout" aria-hidden="true">
+          <span id="datasetBadge">XOR Field</span>
+          <span id="modeBadge">Training</span>
+          <span id="seedBadge">Seed 10</span>
+        </div>
+      </div>
+
+      <div class="metrics-bar" aria-label="Neural network metrics">
+        <div><span>FPS</span><strong id="fpsValue">0</strong></div>
+        <div><span>Loss</span><strong id="lossValue">0.000</strong></div>
+        <div><span>Accuracy</span><strong id="accuracyValue">0%</strong></div>
+        <div><span>Epoch</span><strong id="epochValue">0</strong></div>
+        <div><span>Hidden</span><strong id="hiddenMetricValue">8</strong></div>
+        <div><span>Samples</span><strong id="samplesValue">0</strong></div>
+        <div><span>Bench</span><strong id="benchmarkValue">Not run</strong></div>
+        <div><span>Status</span><strong id="statusValue" aria-live="polite">Ready</strong></div>
+      </div>
+    </section>
+
+    <aside class="control-panel" aria-label="Neural network controls">
+      <section class="control-group" aria-labelledby="dataset-heading">
+        <h2 id="dataset-heading">Dataset</h2>
+        <label for="datasetSelect">Preset</label>
+        <select id="datasetSelect">
+          <option value="xor" selected>XOR Field</option>
+          <option value="circles">Nested Circles</option>
+          <option value="moons">Two Moons</option>
+          <option value="spiral">Twin Spiral</option>
+        </select>
+
+        <label for="sampleRange">
+          <span>Samples</span>
+          <output id="sampleValue" for="sampleRange">180</output>
+        </label>
+        <input id="sampleRange" type="range" min="80" max="420" step="20" value="180">
+
+        <label for="noiseRange">
+          <span>Noise</span>
+          <output id="noiseValue" for="noiseRange">8%</output>
+        </label>
+        <input id="noiseRange" type="range" min="0" max="32" step="1" value="8">
+
+        <div class="button-row">
+          <button id="trainButton" type="button">Pause</button>
+          <button id="stepButton" type="button">Step</button>
+          <button id="resetButton" type="button">Reset</button>
+        </div>
+      </section>
+
+      <section class="control-group" aria-labelledby="model-heading">
+        <h2 id="model-heading">Model</h2>
+        <label for="hiddenRange">
+          <span>Hidden Units</span>
+          <output id="hiddenControlValue" for="hiddenRange">8</output>
+        </label>
+        <input id="hiddenRange" type="range" min="3" max="18" step="1" value="8">
+
+        <label for="learningRateRange">
+          <span>Learning Rate</span>
+          <output id="rateValue" for="learningRateRange">0.45</output>
+        </label>
+        <input id="learningRateRange" type="range" min="5" max="95" step="1" value="45">
+
+        <label for="regularizationRange">
+          <span>L2 Regularization</span>
+          <output id="regularizationValue" for="regularizationRange">0.000</output>
+        </label>
+        <input id="regularizationRange" type="range" min="0" max="40" step="1" value="0">
+
+        <label for="stepsRange">
+          <span>Epochs / Frame</span>
+          <output id="stepsValue" for="stepsRange">2</output>
+        </label>
+        <input id="stepsRange" type="range" min="1" max="12" step="1" value="2">
+      </section>
+
+      <section class="control-group" aria-labelledby="diagnostics-heading">
+        <h2 id="diagnostics-heading">Diagnostics</h2>
+        <button id="randomizeButton" type="button">Randomize Seed</button>
+        <button id="benchmarkButton" type="button">Benchmark Training</button>
+        <label class="toggle-row" for="boundaryToggle">
+          <span>Decision Boundary</span>
+          <input id="boundaryToggle" type="checkbox" checked>
+        </label>
+        <label class="toggle-row" for="curveToggle">
+          <span>Loss Curve</span>
+          <input id="curveToggle" type="checkbox" checked>
+        </label>
+      </section>
+
+      <section class="control-group" aria-labelledby="evidence-heading">
+        <h2 id="evidence-heading">Evidence</h2>
+        <div class="button-row button-row-two">
+          <button id="pngButton" type="button">PNG</button>
+          <button id="jsonButton" type="button">JSON</button>
+        </div>
+        <button id="reportButton" type="button">Copy technical report</button>
+      </section>
+    </aside>
+  </main>
+  <script src="neural-core.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

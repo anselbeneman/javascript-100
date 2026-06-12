@@ -1,0 +1,17 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "011",
+  "name": "Bytecode VM Studio",
+  "description": "Vanilla JavaScript bytecode virtual machine studio with Canvas 2D visualization, a handwritten tokenizer, Pratt parser, AST compiler, stack-based bytecode VM, deterministic sample execution, source presets, live diagnostics, benchmark timing, JSON export, technical report copy, and PNG capture.",
+  "category": "Language Systems",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "Parser",
+    "Bytecode VM",
+    "Compiler",
+    "Diagnostics",
+    "Export Tools"
+  ]
+}

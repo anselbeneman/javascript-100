@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "062",
+  "name": "Reservoir Sampling Lab",
+  "description": "Vanilla JavaScript reservoir sampling lab with deterministic streams, fixed-size sample replacement, uniqueness checks, Canvas 2D sample rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Streaming Algorithms",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Vanilla JavaScript",
+    "Reservoir Sampling",
+    "Streaming",
+    "Sampling Metrics"
+  ]
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Vanilla JavaScript genetic route optimizer using deterministic city generation, traveling-salesperson scoring, tournament selection, ordered crossover, mutation, convergence charts, benchmark timing, JSON export, and PNG capture."
+  >
+  <title>015 - Genetic Route Optimizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="genetic-shell" aria-labelledby="project-title">
+    <h1 id="project-title" class="visually-hidden">Genetic Route Optimizer</h1>
+
+    <section class="viewport-panel" aria-label="Genetic route optimizer canvas">
+      <div class="canvas-frame" id="canvasFrame">
+        <canvas id="routeCanvas" width="1280" height="720" aria-label="Genetic route optimization visualization"></canvas>
+        <div class="canvas-readout" aria-hidden="true">
+          <span id="modeBadge">Ordered crossover</span>
+          <span id="generationBadge">0 generations</span>
+          <span id="seedBadge">Seed 15</span>
+        </div>
+      </div>
+
+      <div class="metrics-bar" aria-label="Genetic route metrics">
+        <div><span>Cities</span><strong id="cityValue">0</strong></div>
+        <div><span>Best</span><strong id="bestValue">0.000</strong></div>
+        <div><span>Initial</span><strong id="initialValue">0.000</strong></div>
+        <div><span>Improve</span><strong id="improvementValue">0%</strong></div>
+        <div><span>Baseline</span><strong id="baselineValue">0.000</strong></div>
+        <div><span>Pop</span><strong id="populationValue">0</strong></div>
+        <div><span>Bench</span><strong id="benchmarkValue">Not run</strong></div>
+        <div><span>Status</span><strong id="statusValue" aria-live="polite">Ready</strong></div>
+      </div>
+    </section>
+
+    <aside class="control-panel" aria-label="Genetic route controls">
+      <section class="control-group" aria-labelledby="optimizer-heading">
+        <h2 id="optimizer-heading">Optimizer</h2>
+        <label for="presetSelect">Preset</label>
+        <select id="presetSelect">
+          <option value="balanced" selected>Balanced Tour</option>
+          <option value="dense">Dense Map</option>
+          <option value="fast">Fast Preview</option>
+          <option value="long">Long Run</option>
+        </select>
+
+        <div class="button-row">
+          <button id="runButton" type="button">Run</button>
+          <button id="benchmarkButton" type="button">Benchmark</button>
+          <button id="randomizeButton" type="button">Seed</button>
+        </div>
+      </section>
+
+      <section class="control-group" aria-labelledby="model-heading">
+        <h2 id="model-heading">Model</h2>
+        <label for="cityRange">
+          <span>Cities</span>
+          <output id="cityControlValue" for="cityRange">28</output>
+        </label>
+        <input id="cityRange" type="range" min="10" max="70" step="1" value="28">
+
+        <label for="populationRange">
+          <span>Population</span>
+          <output id="populationControlValue" for="populationRange">72</output>
+        </label>
+        <input id="populationRange" type="range" min="20" max="180" step="1" value="72">
+
+        <label for="generationRange">
+          <span>Generations</span>
+          <output id="generationControlValue" for="generationRange">120</output>
+        </label>
+        <input id="generationRange" type="range" min="20" max="420" step="1" value="120">
+
+        <label for="mutationRange">
+          <span>Mutation</span>
+          <output id="mutationValue" for="mutationRange">14%</output>
+        </label>
+        <input id="mutationRange" type="range" min="2" max="44" step="1" value="14">
+      </section>
+
+      <section class="control-group" aria-labelledby="view-heading">
+        <h2 id="view-heading">View</h2>
+        <label class="switch-row" for="baselineToggle">
+          <span>Baseline</span>
+          <input id="baselineToggle" type="checkbox" checked>
+        </label>
+        <label class="switch-row" for="historyToggle">
+          <span>Convergence</span>
+          <input id="historyToggle" type="checkbox" checked>
+        </label>
+        <label class="switch-row" for="labelsToggle">
+          <span>Labels</span>
+          <input id="labelsToggle" type="checkbox">
+        </label>
+      </section>
+
+      <section class="control-group" aria-labelledby="evidence-heading">
+        <h2 id="evidence-heading">Evidence</h2>
+        <div class="button-row button-row-two">
+          <button id="pngButton" type="button">PNG</button>
+          <button id="jsonButton" type="button">JSON</button>
+        </div>
+        <button id="reportButton" type="button">Copy technical report</button>
+      </section>
+    </aside>
+  </main>
+  <script src="genetic-core.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

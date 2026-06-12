@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vanilla JavaScript exact-cover Sudoku solver using Algorithm X, deterministic puzzle presets, row-column-box constraint modeling, backtracking diagnostics, Canvas 2D board rendering, JSON export, and PNG capture.">
+  <title>024 - Exact Cover Sudoku</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell" aria-labelledby="project-title">
+    <h1 id="project-title" class="visually-hidden">Exact Cover Sudoku</h1>
+    <section class="viewport-panel">
+      <div class="canvas-frame" id="canvasFrame">
+        <canvas id="sudokuCanvas" width="1280" height="720" aria-label="Exact cover Sudoku board visualization"></canvas>
+        <div class="canvas-readout"><span id="modeBadge">Algorithm X</span><span id="presetBadge">Balanced</span><span id="solvedBadge">Ready</span></div>
+      </div>
+      <div class="metrics-bar">
+        <div><span>Givens</span><strong id="givenValue">0</strong></div>
+        <div><span>Candidates</span><strong id="candidateValue">0</strong></div>
+        <div><span>Decisions</span><strong id="decisionValue">0</strong></div>
+        <div><span>Backtracks</span><strong id="backtrackValue">0</strong></div>
+        <div><span>Depth</span><strong id="depthValue">0</strong></div>
+        <div><span>Rows</span><strong id="rowValue">0</strong></div>
+        <div><span>Bench</span><strong id="benchmarkValue">Not run</strong></div>
+        <div><span>Status</span><strong id="statusValue">Ready</strong></div>
+      </div>
+    </section>
+    <aside class="control-panel">
+      <section class="control-group">
+        <h2>Puzzle</h2>
+        <label for="presetSelect">Preset</label>
+        <select id="presetSelect"><option value="balanced" selected>Balanced</option><option value="hard">Hard</option><option value="expert">Expert</option></select>
+        <div class="button-row"><button id="solveButton" type="button">Solve</button><button id="benchmarkButton" type="button">Benchmark</button></div>
+      </section>
+      <section class="control-group">
+        <h2>Evidence</h2>
+        <div class="button-row button-row-two"><button id="pngButton" type="button">PNG</button><button id="jsonButton" type="button">JSON</button></div>
+        <button id="reportButton" type="button">Copy technical report</button>
+      </section>
+    </aside>
+  </main>
+  <script src="exact-core.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

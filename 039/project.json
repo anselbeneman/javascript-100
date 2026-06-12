@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "039",
+  "name": "B-Tree Index Visualizer",
+  "description": "Vanilla JavaScript B-tree index visualizer with deterministic key insertion, node splitting, logarithmic search, height and occupancy metrics, Canvas 2D tree rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Data Structures",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Vanilla JavaScript",
+    "B-Tree",
+    "Index Structures",
+    "Search Metrics"
+  ]
+}

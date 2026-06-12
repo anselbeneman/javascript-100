@@ -1,0 +1,17 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "026",
+  "name": "BM25 Search Lab",
+  "description": "Vanilla JavaScript search-ranking studio with deterministic document corpora, tokenization, inverted index construction, BM25 scoring, query explanation, top-k ranking, Canvas 2D score visualization, benchmark timing, JSON export, technical report copy, and PNG capture.",
+  "category": "Search",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "BM25 Ranking",
+    "Inverted Index",
+    "Tokenization",
+    "Search Algorithms",
+    "Export Tools"
+  ]
+}

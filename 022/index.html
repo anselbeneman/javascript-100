@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vanilla JavaScript Monte Carlo Tree Search laboratory using deterministic game states, UCB1 selection, node expansion, rollouts, backpropagation, Canvas 2D tree rendering, diagnostics, JSON export, and PNG capture.">
+  <title>022 - MCTS Strategy Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell" aria-labelledby="project-title">
+    <h1 id="project-title" class="visually-hidden">MCTS Strategy Lab</h1>
+    <section class="viewport-panel">
+      <div class="canvas-frame" id="canvasFrame">
+        <canvas id="mctsCanvas" width="1280" height="720" aria-label="Monte Carlo tree search visualization"></canvas>
+        <div class="canvas-readout"><span id="modeBadge">UCB1</span><span id="moveBadge">Best -</span><span id="seedBadge">Seed 22</span></div>
+      </div>
+      <div class="metrics-bar">
+        <div><span>Iterations</span><strong id="iterationValue">0</strong></div>
+        <div><span>Nodes</span><strong id="nodeValue">0</strong></div>
+        <div><span>Depth</span><strong id="depthValue">0</strong></div>
+        <div><span>Best Move</span><strong id="bestMoveValue">-</strong></div>
+        <div><span>Win Rate</span><strong id="winRateValue">0%</strong></div>
+        <div><span>Branching</span><strong id="branchValue">0</strong></div>
+        <div><span>Bench</span><strong id="benchmarkValue">Not run</strong></div>
+        <div><span>Status</span><strong id="statusValue">Ready</strong></div>
+      </div>
+    </section>
+    <aside class="control-panel">
+      <section class="control-group">
+        <h2>Search</h2>
+        <label for="presetSelect">Board</label>
+        <select id="presetSelect">
+          <option value="empty" selected>Empty Board</option>
+          <option value="fork">Fork Defense</option>
+          <option value="edge">Edge Trap</option>
+        </select>
+        <div class="button-row">
+          <button id="runButton" type="button">Run</button>
+          <button id="benchmarkButton" type="button">Benchmark</button>
+          <button id="seedButton" type="button">Seed</button>
+        </div>
+      </section>
+      <section class="control-group">
+        <h2>Parameters</h2>
+        <label for="iterationRange"><span>Iterations</span><output id="iterationControlValue">1200</output></label>
+        <input id="iterationRange" type="range" min="120" max="4200" step="40" value="1200">
+        <label for="explorationRange"><span>Exploration</span><output id="explorationValue">1.41</output></label>
+        <input id="explorationRange" type="range" min="40" max="240" step="1" value="141">
+      </section>
+      <section class="control-group">
+        <h2>Evidence</h2>
+        <div class="button-row button-row-two">
+          <button id="pngButton" type="button">PNG</button>
+          <button id="jsonButton" type="button">JSON</button>
+        </div>
+        <button id="reportButton" type="button">Copy technical report</button>
+      </section>
+    </aside>
+  </main>
+  <script src="mcts-core.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

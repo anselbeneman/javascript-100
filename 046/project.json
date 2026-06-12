@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "046",
+  "name": "Markov Text Chain Lab",
+  "description": "Vanilla JavaScript Markov text chain lab with tokenization, transition tables, deterministic corpus analysis, entropy metrics, Canvas 2D distribution rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Text Algorithms",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Vanilla JavaScript",
+    "Markov Chains",
+    "Text Metrics",
+    "Entropy"
+  ]
+}

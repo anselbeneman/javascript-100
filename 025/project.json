@@ -1,0 +1,17 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "025",
+  "name": "Regex NFA Engine",
+  "description": "Vanilla JavaScript regular-expression engine studio with deterministic parser, Thompson-style NFA construction, epsilon-closure simulation, match tracing, automaton diagnostics, Canvas 2D graph rendering, benchmark timing, JSON export, technical report copy, and PNG capture.",
+  "category": "Language Tools",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "Regex Parser",
+    "NFA Simulation",
+    "Automata Theory",
+    "Compiler Techniques",
+    "Export Tools"
+  ]
+}

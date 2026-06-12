@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "076",
+  "name": "DBSCAN Cluster Explorer",
+  "description": "Vanilla JavaScript DBSCAN cluster explorer with deterministic clustered samples, epsilon-neighborhood expansion, noise detection, Canvas 2D scatter rendering, benchmark mode, PNG export, and JSON evidence.",
+  "category": "Machine Learning",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "DBSCAN",
+    "Clustering",
+    "Spatial Search",
+    "JSON Export"
+  ]
+}

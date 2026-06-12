@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "058",
+  "name": "Segment Tree Range Min",
+  "description": "Vanilla JavaScript segment tree range-min lab with deterministic arrays, recursive tree construction, range queries, brute-force validation, Canvas 2D query rendering, benchmark mode, and JSON export.",
+  "category": "Data Structures",
+  "status": "Complete",
+  "difficulty": "Advanced",
+  "tech": [
+    "Canvas 2D",
+    "Vanilla JavaScript",
+    "Segment Tree",
+    "Range Minimum",
+    "Query Metrics"
+  ]
+}

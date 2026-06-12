@@ -1,0 +1,17 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "id": "016",
+  "name": "Fourier Epicycle Studio",
+  "description": "Vanilla JavaScript Fourier analysis studio with deterministic path generation, discrete Fourier transform coefficients, harmonic reconstruction, epicycle chain rendering, reconstruction error metrics, Canvas 2D plotting, benchmark timing, JSON export, technical report copy, and PNG capture.",
+  "category": "Signal Processing",
+  "status": "Complete",
+  "difficulty": "Expert",
+  "tech": [
+    "Canvas 2D",
+    "Discrete Fourier Transform",
+    "Complex Numbers",
+    "Signal Reconstruction",
+    "Deterministic Seeds",
+    "Export Tools"
+  ]
+}
